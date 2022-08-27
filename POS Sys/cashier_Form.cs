@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace POS_Sys
 {
-    public partial class Form1 : Form
+    public partial class cashier_Form : Form
     {
-        public Form1()
+        public cashier_Form()
         {
             InitializeComponent();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
