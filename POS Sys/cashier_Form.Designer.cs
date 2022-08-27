@@ -32,21 +32,21 @@ namespace POS_Sys
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cashier_Form));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,6 +90,51 @@ namespace POS_Sys
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(395, 753);
             this.panel1.TabIndex = 5;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(89, 429);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(226, 34);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "اتمام عملية الشراء";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(89, 678);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(226, 34);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "تسجيل خروج";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(89, 356);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(226, 34);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "إرجاع منتج";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(89, 281);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(226, 34);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "البحث عن منتج";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(89, 206);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(226, 34);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "عملية شراء جديدة";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -141,42 +186,6 @@ namespace POS_Sys
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(89, 206);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(226, 34);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "عملية شراء جديدة";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(89, 281);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(226, 34);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "البحث عن منتج";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(89, 356);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(226, 34);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "إرجاع منتج";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(89, 678);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(226, 34);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "تسجيل خروج";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label7);
@@ -188,15 +197,23 @@ namespace POS_Sys
             this.panel3.Size = new System.Drawing.Size(942, 97);
             this.panel3.TabIndex = 3;
             // 
-            // label2
+            // label7
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(864, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 18);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "رقم العملية ";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(753, 58);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 18);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "0000000000";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(753, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 18);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "0000000000";
             // 
             // label5
             // 
@@ -208,32 +225,15 @@ namespace POS_Sys
             this.label5.Text = "التاريخ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label6
+            // label2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(753, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 18);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "0000000000";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(753, 58);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 18);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "0000000000";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(89, 429);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(226, 34);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "اتمام عملية الشراء";
-            this.button5.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(864, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 18);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "رقم العملية ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // dataGridView1
             // 
@@ -273,7 +273,7 @@ namespace POS_Sys
             // ProductName
             // 
             this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ProductName.HeaderText = "ProductName";
+            this.ProductName.HeaderText = "Product Name";
             this.ProductName.MinimumWidth = 6;
             this.ProductName.Name = "ProductName";
             // 

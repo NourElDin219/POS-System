@@ -81,6 +81,7 @@ namespace POS_Sys
             // 
             // label9
             // 
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Image = ((System.Drawing.Image)(resources.GetObject("label9.Image")));
             this.label9.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.label9.Location = new System.Drawing.Point(86, 470);
@@ -92,6 +93,7 @@ namespace POS_Sys
             // 
             // label8
             // 
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
             this.label8.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.label8.Location = new System.Drawing.Point(86, 711);
@@ -104,6 +106,7 @@ namespace POS_Sys
             // 
             // label2
             // 
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
             this.label2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.label2.Location = new System.Drawing.Point(86, 412);
@@ -115,6 +118,7 @@ namespace POS_Sys
             // 
             // label5
             // 
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
             this.label5.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.label5.Location = new System.Drawing.Point(86, 348);
@@ -127,6 +131,7 @@ namespace POS_Sys
             // 
             // label6
             // 
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
             this.label6.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.label6.Location = new System.Drawing.Point(86, 282);
@@ -138,6 +143,7 @@ namespace POS_Sys
             // 
             // label7
             // 
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
             this.label7.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.label7.Location = new System.Drawing.Point(86, 219);
