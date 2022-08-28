@@ -32,12 +32,12 @@ namespace POS_Sys
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txt_Password = new System.Windows.Forms.TextBox();
+            this.txt_Username = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,8 +56,8 @@ namespace POS_Sys
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txt_Password);
+            this.panel1.Controls.Add(this.txt_Username);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.label4);
@@ -67,6 +67,47 @@ namespace POS_Sys
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(395, 531);
             this.panel1.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(112, 420);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(167, 50);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "تسجيل الدخول";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txt_Password
+            // 
+            this.txt_Password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Password.Location = new System.Drawing.Point(106, 335);
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_Password.Size = new System.Drawing.Size(182, 34);
+            this.txt_Password.TabIndex = 14;
+            // 
+            // txt_Username
+            // 
+            this.txt_Username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Username.Location = new System.Drawing.Point(106, 235);
+            this.txt_Username.Name = "txt_Username";
+            this.txt_Username.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_Username.Size = new System.Drawing.Size(182, 34);
+            this.txt_Username.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(122, 293);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 23);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "كلمة السر";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // button4
             // 
@@ -79,6 +120,7 @@ namespace POS_Sys
             // 
             // label4
             // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(122, 197);
             this.label4.Name = "label4";
@@ -86,45 +128,6 @@ namespace POS_Sys
             this.label4.TabIndex = 2;
             this.label4.Text = "اسم المستخدم";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label1
-            // 
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(122, 293);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 23);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "كلمة السر";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(106, 235);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox2.Size = new System.Drawing.Size(182, 34);
-            this.textBox2.TabIndex = 13;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(106, 335);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(182, 34);
-            this.textBox1.TabIndex = 14;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(112, 420);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 50);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "تسجيل الدخول";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // Login
             // 
@@ -151,8 +154,8 @@ namespace POS_Sys
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_Password;
+        private System.Windows.Forms.TextBox txt_Username;
         private System.Windows.Forms.Button button1;
     }
 }

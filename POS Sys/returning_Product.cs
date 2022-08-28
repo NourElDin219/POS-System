@@ -7,21 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Data.Common;
 
 namespace POS_Sys
 {
-    public partial class Login : Form
+    public partial class returning_Product : Form
     {
-        public Login()
+        public returning_Product()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            
 
         }
     }
