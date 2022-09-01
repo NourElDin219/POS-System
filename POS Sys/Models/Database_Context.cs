@@ -10,7 +10,7 @@ namespace POS_Sys.Models
     {
         public DatabaseContext() : base("Data Source=DESKTOP-6D2T5N4; Integrated Security=true;Initial Catalog=POS;")
         {
-
+            
         }
         public DbSet<Users> User { get; set; }
         public DbSet<Roles> Role { get; set; }
