@@ -35,8 +35,27 @@ namespace POS_Sys
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Cs_Products products = new Cs_Products();
-            dataGridView1.DataSource = products.GetProducts();
+            userSettings1.Visible = true;
+        }
+
+        private void admin_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            userSettings1.Visible = true;
+        }
+
+        private void userSettings1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
