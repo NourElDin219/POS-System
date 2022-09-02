@@ -12,6 +12,7 @@ namespace POS_Sys.CS
         private string Username;
         private string Password;
         private string Role;
+        private int Role_ID;
         private Users user;
         public UserCrudOps()
         {
@@ -19,7 +20,9 @@ namespace POS_Sys.CS
             Username = "";
             Password = "";
             Role = "";
+            Role_ID = 0;
             user = new Users();
+            
         }
 
         public string getName()
@@ -56,9 +59,32 @@ namespace POS_Sys.CS
         }
         public void CreateUser(string name, string username, string password, string role)
         {
+            
             user.Name = name;
             user.UserName = username;
             user.Password = password;
+            if (role == "Admin")
+            {
+                Role_ID = 1;
+            }
+            else if (role == "Supervisor")
+            {
+                Role_ID = 2;
+            }
+            else
+            {
+                Role_ID = 3;
+            }
+            using(DatabaseContext db=new DatabaseContext())
+            {
+                if (db.User.Where(x => x.UserName == username).Count() == 0)
+                {
+                    user.Role = db.Role.FirstOrDefault(s => s.Id == Role_ID);
+                    db.User.Add(user);
+                    db.SaveChanges();
+                    
+                }
+            }
         }
         public void ReadUser(string user_Text,string user_Pass)
         {
