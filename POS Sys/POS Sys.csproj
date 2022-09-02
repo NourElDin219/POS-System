@@ -141,7 +141,9 @@
     <Compile Include="confirm_Purchase.Designer.cs">
       <DependentUpon>confirm_Purchase.cs</DependentUpon>
     </Compile>
+    <Compile Include="CS\Cs_Products.cs" />
     <Compile Include="CS\UserAuthentication.cs" />
+    <Compile Include="CS\UserCrudOps.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +153,10 @@
     <Compile Include="Migrations\202208302156413_firstmigration.cs" />
     <Compile Include="Migrations\202208302156413_firstmigration.designer.cs">
       <DependentUpon>202208302156413_firstmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209021640563_addQuantity.cs" />
+    <Compile Include="Migrations\202209021640563_addQuantity.designer.cs">
+      <DependentUpon>202209021640563_addQuantity.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categories.cs" />
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202208302156413_firstmigration.resx">
       <DependentUpon>202208302156413_firstmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209021640563_addQuantity.resx">
+      <DependentUpon>202209021640563_addQuantity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
