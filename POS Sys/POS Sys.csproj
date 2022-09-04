@@ -171,12 +171,6 @@
     <Compile Include="returning_Product.Designer.cs">
       <DependentUpon>returning_Product.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserSettings.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserSettings.Designer.cs">
-      <DependentUpon>UserSettings.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="cashier_Form.resx">
       <DependentUpon>cashier_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,9 +200,6 @@
     </Compile>
     <EmbeddedResource Include="returning_Product.resx">
       <DependentUpon>returning_Product.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserSettings.resx">
-      <DependentUpon>UserSettings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
