@@ -133,6 +133,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddOrUpdateProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrUpdateProduct.Designer.cs">
+      <DependentUpon>AddOrUpdateProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="cashier_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,7 @@
     <Compile Include="confirm_Purchase.Designer.cs">
       <DependentUpon>confirm_Purchase.cs</DependentUpon>
     </Compile>
+    <Compile Include="CS\Cs_Category.cs" />
     <Compile Include="CS\Cs_Products.cs" />
     <Compile Include="CS\UserCrudOps.cs" />
     <Compile Include="Login.cs">
@@ -187,6 +194,9 @@
     <Compile Include="Users_Form.Designer.cs">
       <DependentUpon>Users_Form.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddOrUpdateProduct.resx">
+      <DependentUpon>AddOrUpdateProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cashier_Form.resx">
       <DependentUpon>cashier_Form.cs</DependentUpon>
     </EmbeddedResource>
