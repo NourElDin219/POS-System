@@ -142,7 +142,6 @@
       <DependentUpon>confirm_Purchase.cs</DependentUpon>
     </Compile>
     <Compile Include="CS\Cs_Products.cs" />
-    <Compile Include="CS\UserAuthentication.cs" />
     <Compile Include="CS\UserCrudOps.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>

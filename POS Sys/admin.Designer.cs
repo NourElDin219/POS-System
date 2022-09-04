@@ -45,12 +45,13 @@ namespace POS_Sys
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.userSettings1 = new POS_Sys.UserSettings();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -99,6 +100,7 @@ namespace POS_Sys
             this.button6.TabIndex = 9;
             this.button6.Text = "تسجيل الخروج";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label4
             // 
@@ -199,19 +201,21 @@ namespace POS_Sys
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.userSettings1);
+            this.panel4.Controls.Add(this.dataGridView1);
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(790, 753);
             this.panel4.TabIndex = 2;
             // 
-            // userSettings1
+            // dataGridView1
             // 
-            this.userSettings1.Location = new System.Drawing.Point(0, 0);
-            this.userSettings1.Name = "userSettings1";
-            this.userSettings1.Size = new System.Drawing.Size(791, 753);
-            this.userSettings1.TabIndex = 0;
-            this.userSettings1.Visible = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(791, 552);
+            this.dataGridView1.TabIndex = 0;
             // 
             // admin
             // 
@@ -232,6 +236,7 @@ namespace POS_Sys
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -253,7 +258,7 @@ namespace POS_Sys
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private UserSettings userSettings1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

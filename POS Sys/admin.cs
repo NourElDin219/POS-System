@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using POS_Sys.CS;
-
+using POS_Sys.Models;
 namespace POS_Sys
 {
     public partial class admin : Form
@@ -35,7 +35,7 @@ namespace POS_Sys
 
         private void button1_Click(object sender, EventArgs e)
         {
-            userSettings1.Visible = true;
+            
         }
 
         private void admin_Load(object sender, EventArgs e)
@@ -50,12 +50,26 @@ namespace POS_Sys
 
         private void button4_Click(object sender, EventArgs e)
         {
-            userSettings1.Visible = true;
+            
+            using(DatabaseContext db=new DatabaseContext())
+            {
+               var p = db.User.ToList();
+                dataGridView1.DataSource = p;
+            }
+            
         }
 
         private void userSettings1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.ShowDialog();
+            this.Close();
         }
     }
 }

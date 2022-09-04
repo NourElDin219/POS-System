@@ -21,20 +21,19 @@ namespace POS_Sys
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UserAuthentication user = new UserAuthentication();
+            UserCrudOps user = new UserCrudOps();
             if (user.Authorized(txt_Username.Text, txt_Password.Text))
             {
                 if (user.getRole() == "Admin")
                 {
                     admin admin = new admin();
                     this.Hide();
-                    admin.Show();
+                    admin.ShowDialog();
+                    this.Close();
                 }
             }
             else
                 MessageBox.Show("Invalid Username or Password.");
-
-
         }
     }
 }

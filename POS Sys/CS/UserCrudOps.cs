@@ -108,13 +108,67 @@ namespace POS_Sys.CS
                 }
             }
         }
-        public void UpdateUser(int ID)
+        public bool Authorized(string user_Text, string user_Pass)
         {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                if (db.User.Where(x => x.UserName == user_Text && x.Password == user_Pass).Count() > 0)
+                {
+                    var ro = from U in db.User
+                             from R in db.Role
+                             where U.Role.Id == R.Id && U.UserName == user_Text
+                             select new
+                             {
+                                 n = U.Name,
+                                 r = R.Name
+                             };
+                    foreach (var obj in ro)
+                    {
+                        Name = obj.n;
+                        Role = obj.r;
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
+        public void UpdateUser(int ID,string name,string username,string password,string role)
+        {   
 
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var result = db.User.SingleOrDefault(b => b.Id == ID);
+                if (result != null)
+                {
+                    result.Name = name;
+                    result.UserName = username;
+                    result.Password = password;
+                    if (role == "Admin")
+                    {
+                        Role_ID = 1;
+                    }
+                    else if (role == "Supervisor")
+                    {
+                        Role_ID = 2;
+                    }
+                    else
+                    {
+                        Role_ID = 3;
+                    }
+                    result.Role = db.Role.FirstOrDefault(s => s.Id == Role_ID);
+                    db.SaveChanges();
+                }
+            }
         }
         public void DeleteUser(int ID)
         {
-
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var us = new Users { Id = ID };
+                db.User.Attach(us);
+                db.User.Remove(us);
+                db.SaveChanges();
+            }
         }
     }
 }

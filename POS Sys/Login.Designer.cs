@@ -84,6 +84,7 @@ namespace POS_Sys
             this.txt_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Password.Location = new System.Drawing.Point(106, 335);
             this.txt_Password.Name = "txt_Password";
+            this.txt_Password.PasswordChar = '*';
             this.txt_Password.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_Password.Size = new System.Drawing.Size(182, 34);
             this.txt_Password.TabIndex = 14;
