@@ -8,7 +8,7 @@ namespace POS_Sys.Models
 {
     public class DatabaseContext : DbContext
     {
-        public DatabaseContext() : base("Data Source=DESKTOP-6D2T5N4; Integrated Security=true;Initial Catalog=POS;")
+        public DatabaseContext() : base("Data Source=.; Integrated Security=true;Initial Catalog=POS;")
         {
             
         }

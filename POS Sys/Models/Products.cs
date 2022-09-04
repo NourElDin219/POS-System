@@ -13,6 +13,7 @@ namespace POS_Sys.Models
 
         public double PurchasingPrice { get; set; }
         public double SellingPrice { get; set; }
+        
         public Category Category { get; set; }
         public int ShopQuantity { get; set; }
         public int InvQuantity { get; set; }
