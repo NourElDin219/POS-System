@@ -50,13 +50,11 @@ namespace POS_Sys
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
-            using(DatabaseContext db=new DatabaseContext())
-            {
-               var p = db.User.ToList();
-                dataGridView1.DataSource = p;
-            }
-            
+            Users_Form frm = new Users_Form();
+            frm.TopLevel = false;
+            panel4.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
         }
 
         private void userSettings1_Load(object sender, EventArgs e)

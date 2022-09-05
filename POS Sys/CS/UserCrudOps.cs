@@ -57,7 +57,7 @@ namespace POS_Sys.CS
         {
             Role = v;
         }
-        public void CreateUser(string name, string username, string password, string role)
+        public int CreateUser(string name, string username, string password, string role)
         {
             
             user.Name = name;
@@ -82,9 +82,10 @@ namespace POS_Sys.CS
                     user.Role = db.Role.FirstOrDefault(s => s.Id == Role_ID);
                     db.User.Add(user);
                     db.SaveChanges();
-                    
+                    return 1;
                 }
             }
+            return 0;
         }
         public void ReadUser(string user_Text,string user_Pass)
         {
@@ -168,6 +169,14 @@ namespace POS_Sys.CS
                 db.User.Attach(us);
                 db.User.Remove(us);
                 db.SaveChanges();
+            }
+        }
+        public List<Users> ReadAllUsers()
+        {
+            using(DatabaseContext db = new DatabaseContext())
+            {
+                var Users = db.User.ToList();
+                return Users;
             }
         }
     }
