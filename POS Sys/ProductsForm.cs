@@ -110,5 +110,20 @@ namespace POS_Sys
                 ComboCat.SelectedIndex = 0;
 
         }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            Product.Name = NameTxt.Text;
+            Product.PurchasingPrice = Convert.ToDouble(PPriceTxt.Text);
+            Product.SellingPrice = Convert.ToDouble(SPriceTxt.Text);
+            Product.ShopQuantity = Convert.ToInt32(SQtTxt.Text);
+            Product.InvQuantity=Convert.ToInt32(IQtTxt.Text);
+            Product.Discount= Convert.ToInt32(DiscTxt.Text);
+            Product.Category.Id = Convert.ToInt32(metroComboBox1.SelectedValue);
+            Product.Category.Name = metroComboBox1.SelectedText;
+            p.AddOrUpdateProduct(Product);
+            MessageBox.Show("تم تعديل المستخدم بنجاح");
+            DisplayBtn.PerformClick();
+        }
     }
 }
