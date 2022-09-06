@@ -109,6 +109,25 @@ namespace POS_Sys.CS
                 }
             }
         }
+        public void ReadUser(string user_Text)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var ro = from U in db.User
+                         from R in db.Role
+                         where U.Role.Id == R.Id && U.UserName == user_Text
+                         select new
+                         {
+                             n = U.Name,
+                             r = R.Name
+                         };
+                foreach (var obj in ro)
+                {
+                    Name = obj.n;
+                    Role = obj.r;
+                }
+            }
+        }
         public bool Authorized(string user_Text, string user_Pass)
         {
             using (DatabaseContext db = new DatabaseContext())
@@ -173,8 +192,7 @@ namespace POS_Sys.CS
         }
         public List<Users> ReadAllUsers()
         {
-            using(DatabaseContext db = new DatabaseContext())
-            {
+            using (DatabaseContext db=new DatabaseContext()) {
                 var Users = db.User.ToList();
                 return Users;
             }
