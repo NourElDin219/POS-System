@@ -38,24 +38,22 @@ namespace POS_Sys
             this.TxtSPrice = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.TxtPPrice = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.DeleteBtn = new MetroFramework.Controls.MetroButton();
             this.DisplayBtn = new MetroFramework.Controls.MetroButton();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.DiscTxt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
+            this.IQtTxt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
+            this.SQtTxt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
+            this.SPriceTxt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox5 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox6 = new MetroFramework.Controls.MetroTextBox();
+            this.NameTxt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.EditBtn = new MetroFramework.Controls.MetroButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -71,6 +69,8 @@ namespace POS_Sys
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.TxtPPrice = new MetroFramework.Controls.MetroTextBox();
+            this.PPriceTxt = new MetroFramework.Controls.MetroTextBox();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.metroTabPage1.SuspendLayout();
@@ -104,8 +104,8 @@ namespace POS_Sys
             this.ComboCat.ItemHeight = 24;
             this.ComboCat.Items.AddRange(new object[] {
             "Admin",
-            "Supervisor",
-            "Cashier"});
+            "Cashier",
+            "Supervisor"});
             this.ComboCat.Location = new System.Drawing.Point(415, 109);
             this.ComboCat.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.ComboCat.Name = "ComboCat";
@@ -140,16 +140,6 @@ namespace POS_Sys
             this.metroLabel5.TabIndex = 6;
             this.metroLabel5.Text = "Category";
             // 
-            // TxtPPrice
-            // 
-            this.TxtPPrice.Location = new System.Drawing.Point(415, 167);
-            this.TxtPPrice.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.TxtPPrice.Name = "TxtPPrice";
-            this.TxtPPrice.PasswordChar = '●';
-            this.TxtPPrice.Size = new System.Drawing.Size(193, 24);
-            this.TxtPPrice.TabIndex = 5;
-            this.TxtPPrice.UseSystemPasswordChar = true;
-            // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
@@ -168,6 +158,7 @@ namespace POS_Sys
             this.DeleteBtn.Size = new System.Drawing.Size(115, 44);
             this.DeleteBtn.TabIndex = 5;
             this.DeleteBtn.Text = "ازالة المنتج";
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // DisplayBtn
             // 
@@ -181,19 +172,19 @@ namespace POS_Sys
             // 
             // metroTabPage2
             // 
-            this.metroTabPage2.Controls.Add(this.metroTextBox1);
+            this.metroTabPage2.Controls.Add(this.PPriceTxt);
+            this.metroTabPage2.Controls.Add(this.DiscTxt);
             this.metroTabPage2.Controls.Add(this.metroLabel2);
-            this.metroTabPage2.Controls.Add(this.metroTextBox2);
+            this.metroTabPage2.Controls.Add(this.IQtTxt);
             this.metroTabPage2.Controls.Add(this.metroLabel4);
-            this.metroTabPage2.Controls.Add(this.metroTextBox3);
+            this.metroTabPage2.Controls.Add(this.SQtTxt);
             this.metroTabPage2.Controls.Add(this.metroLabel6);
             this.metroTabPage2.Controls.Add(this.metroComboBox1);
-            this.metroTabPage2.Controls.Add(this.metroTextBox4);
+            this.metroTabPage2.Controls.Add(this.SPriceTxt);
             this.metroTabPage2.Controls.Add(this.metroLabel8);
             this.metroTabPage2.Controls.Add(this.metroLabel9);
-            this.metroTabPage2.Controls.Add(this.metroTextBox5);
             this.metroTabPage2.Controls.Add(this.metroLabel13);
-            this.metroTabPage2.Controls.Add(this.metroTextBox6);
+            this.metroTabPage2.Controls.Add(this.NameTxt);
             this.metroTabPage2.Controls.Add(this.metroLabel14);
             this.metroTabPage2.Controls.Add(this.DeleteBtn);
             this.metroTabPage2.Controls.Add(this.EditBtn);
@@ -209,13 +200,13 @@ namespace POS_Sys
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarSize = 9;
             // 
-            // metroTextBox1
+            // DiscTxt
             // 
-            this.metroTextBox1.Location = new System.Drawing.Point(717, 333);
-            this.metroTextBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.Size = new System.Drawing.Size(192, 24);
-            this.metroTextBox1.TabIndex = 32;
+            this.DiscTxt.Location = new System.Drawing.Point(717, 333);
+            this.DiscTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.DiscTxt.Name = "DiscTxt";
+            this.DiscTxt.Size = new System.Drawing.Size(192, 24);
+            this.DiscTxt.TabIndex = 32;
             // 
             // metroLabel2
             // 
@@ -227,13 +218,13 @@ namespace POS_Sys
             this.metroLabel2.TabIndex = 31;
             this.metroLabel2.Text = "Discount";
             // 
-            // metroTextBox2
+            // IQtTxt
             // 
-            this.metroTextBox2.Location = new System.Drawing.Point(717, 285);
-            this.metroTextBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.Size = new System.Drawing.Size(192, 24);
-            this.metroTextBox2.TabIndex = 30;
+            this.IQtTxt.Location = new System.Drawing.Point(717, 285);
+            this.IQtTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.IQtTxt.Name = "IQtTxt";
+            this.IQtTxt.Size = new System.Drawing.Size(192, 24);
+            this.IQtTxt.TabIndex = 30;
             // 
             // metroLabel4
             // 
@@ -245,13 +236,13 @@ namespace POS_Sys
             this.metroLabel4.TabIndex = 29;
             this.metroLabel4.Text = "Inventory Quantity";
             // 
-            // metroTextBox3
+            // SQtTxt
             // 
-            this.metroTextBox3.Location = new System.Drawing.Point(717, 235);
-            this.metroTextBox3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.Size = new System.Drawing.Size(192, 24);
-            this.metroTextBox3.TabIndex = 28;
+            this.SQtTxt.Location = new System.Drawing.Point(717, 235);
+            this.SQtTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.SQtTxt.Name = "SQtTxt";
+            this.SQtTxt.Size = new System.Drawing.Size(192, 24);
+            this.SQtTxt.TabIndex = 28;
             // 
             // metroLabel6
             // 
@@ -277,13 +268,13 @@ namespace POS_Sys
             this.metroComboBox1.Size = new System.Drawing.Size(193, 30);
             this.metroComboBox1.TabIndex = 26;
             // 
-            // metroTextBox4
+            // SPriceTxt
             // 
-            this.metroTextBox4.Location = new System.Drawing.Point(717, 187);
-            this.metroTextBox4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.Size = new System.Drawing.Size(192, 24);
-            this.metroTextBox4.TabIndex = 25;
+            this.SPriceTxt.Location = new System.Drawing.Point(717, 187);
+            this.SPriceTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.SPriceTxt.Name = "SPriceTxt";
+            this.SPriceTxt.Size = new System.Drawing.Size(192, 24);
+            this.SPriceTxt.TabIndex = 25;
             // 
             // metroLabel8
             // 
@@ -305,16 +296,6 @@ namespace POS_Sys
             this.metroLabel9.TabIndex = 23;
             this.metroLabel9.Text = "Category";
             // 
-            // metroTextBox5
-            // 
-            this.metroTextBox5.Location = new System.Drawing.Point(717, 132);
-            this.metroTextBox5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.metroTextBox5.Name = "metroTextBox5";
-            this.metroTextBox5.PasswordChar = '●';
-            this.metroTextBox5.Size = new System.Drawing.Size(192, 24);
-            this.metroTextBox5.TabIndex = 22;
-            this.metroTextBox5.UseSystemPasswordChar = true;
-            // 
             // metroLabel13
             // 
             this.metroLabel13.AutoSize = true;
@@ -325,13 +306,13 @@ namespace POS_Sys
             this.metroLabel13.TabIndex = 21;
             this.metroLabel13.Text = "Purchasing Price";
             // 
-            // metroTextBox6
+            // NameTxt
             // 
-            this.metroTextBox6.Location = new System.Drawing.Point(717, 17);
-            this.metroTextBox6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.metroTextBox6.Name = "metroTextBox6";
-            this.metroTextBox6.Size = new System.Drawing.Size(192, 24);
-            this.metroTextBox6.TabIndex = 20;
+            this.NameTxt.Location = new System.Drawing.Point(717, 17);
+            this.NameTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.NameTxt.Name = "NameTxt";
+            this.NameTxt.Size = new System.Drawing.Size(192, 24);
+            this.NameTxt.TabIndex = 20;
             // 
             // metroLabel14
             // 
@@ -396,6 +377,7 @@ namespace POS_Sys
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(581, 482);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // TxtName
             // 
@@ -417,6 +399,7 @@ namespace POS_Sys
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.TxtPPrice);
             this.metroTabPage1.Controls.Add(this.TxtDiscount);
             this.metroTabPage1.Controls.Add(this.metroLabel12);
             this.metroTabPage1.Controls.Add(this.TxtIQuantity);
@@ -429,7 +412,6 @@ namespace POS_Sys
             this.metroTabPage1.Controls.Add(this.TxtSPrice);
             this.metroTabPage1.Controls.Add(this.metroLabel7);
             this.metroTabPage1.Controls.Add(this.metroLabel5);
-            this.metroTabPage1.Controls.Add(this.TxtPPrice);
             this.metroTabPage1.Controls.Add(this.metroLabel3);
             this.metroTabPage1.Controls.Add(this.TxtName);
             this.metroTabPage1.Controls.Add(this.metroLabel1);
@@ -507,7 +489,7 @@ namespace POS_Sys
             this.metroTabControl1.Location = new System.Drawing.Point(0, 72);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(933, 630);
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -534,6 +516,22 @@ namespace POS_Sys
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(933, 72);
             this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // TxtPPrice
+            // 
+            this.TxtPPrice.Location = new System.Drawing.Point(415, 167);
+            this.TxtPPrice.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.TxtPPrice.Name = "TxtPPrice";
+            this.TxtPPrice.Size = new System.Drawing.Size(193, 24);
+            this.TxtPPrice.TabIndex = 19;
+            // 
+            // PPriceTxt
+            // 
+            this.PPriceTxt.Location = new System.Drawing.Point(718, 132);
+            this.PPriceTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.PPriceTxt.Name = "PPriceTxt";
+            this.PPriceTxt.Size = new System.Drawing.Size(192, 24);
+            this.PPriceTxt.TabIndex = 33;
             // 
             // ProductsForm
             // 
@@ -566,7 +564,6 @@ namespace POS_Sys
         private MetroFramework.Controls.MetroTextBox TxtSPrice;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroTextBox TxtPPrice;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroButton DeleteBtn;
         private MetroFramework.Controls.MetroButton DisplayBtn;
@@ -585,19 +582,20 @@ namespace POS_Sys
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroTextBox TxtSQuantity;
         private MetroFramework.Controls.MetroLabel metroLabel10;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox DiscTxt;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
+        private MetroFramework.Controls.MetroTextBox IQtTxt;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
+        private MetroFramework.Controls.MetroTextBox SQtTxt;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox4;
+        private MetroFramework.Controls.MetroTextBox SPriceTxt;
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroLabel metroLabel9;
-        private MetroFramework.Controls.MetroTextBox metroTextBox5;
         private MetroFramework.Controls.MetroLabel metroLabel13;
-        private MetroFramework.Controls.MetroTextBox metroTextBox6;
+        private MetroFramework.Controls.MetroTextBox NameTxt;
         private MetroFramework.Controls.MetroLabel metroLabel14;
+        private MetroFramework.Controls.MetroTextBox TxtPPrice;
+        private MetroFramework.Controls.MetroTextBox PPriceTxt;
     }
 }
