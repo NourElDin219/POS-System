@@ -159,19 +159,19 @@ namespace POS_Sys
             // 
             // DeleteBtn
             // 
-            this.DeleteBtn.Location = new System.Drawing.Point(1004, 842);
+            this.DeleteBtn.Location = new System.Drawing.Point(902, 683);
             this.DeleteBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(148, 86);
+            this.DeleteBtn.Size = new System.Drawing.Size(148, 59);
             this.DeleteBtn.TabIndex = 5;
             this.DeleteBtn.Text = "ازالة المنتج";
             // 
             // DisplayBtn
             // 
-            this.DisplayBtn.Location = new System.Drawing.Point(0, 837);
+            this.DisplayBtn.Location = new System.Drawing.Point(43, 683);
             this.DisplayBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DisplayBtn.Name = "DisplayBtn";
-            this.DisplayBtn.Size = new System.Drawing.Size(148, 86);
+            this.DisplayBtn.Size = new System.Drawing.Size(148, 59);
             this.DisplayBtn.TabIndex = 3;
             this.DisplayBtn.Text = "عرض المنتجات";
             this.DisplayBtn.Click += new System.EventHandler(this.DisplayBtn_Click);
@@ -201,7 +201,7 @@ namespace POS_Sys
             this.metroTabPage2.Location = new System.Drawing.Point(4, 39);
             this.metroTabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(1156, 940);
+            this.metroTabPage2.Size = new System.Drawing.Size(1192, 809);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Edit Products";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
@@ -212,7 +212,7 @@ namespace POS_Sys
             this.metroTextBox1.Location = new System.Drawing.Point(892, 451);
             this.metroTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.Size = new System.Drawing.Size(248, 33);
+            this.metroTextBox1.Size = new System.Drawing.Size(247, 33);
             this.metroTextBox1.TabIndex = 32;
             // 
             // metroLabel2
@@ -229,7 +229,7 @@ namespace POS_Sys
             this.metroTextBox2.Location = new System.Drawing.Point(892, 385);
             this.metroTextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.Size = new System.Drawing.Size(248, 33);
+            this.metroTextBox2.Size = new System.Drawing.Size(247, 33);
             this.metroTextBox2.TabIndex = 30;
             // 
             // metroLabel4
@@ -246,7 +246,7 @@ namespace POS_Sys
             this.metroTextBox3.Location = new System.Drawing.Point(892, 318);
             this.metroTextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.Size = new System.Drawing.Size(248, 33);
+            this.metroTextBox3.Size = new System.Drawing.Size(247, 33);
             this.metroTextBox3.TabIndex = 28;
             // 
             // metroLabel6
@@ -277,7 +277,7 @@ namespace POS_Sys
             this.metroTextBox4.Location = new System.Drawing.Point(892, 253);
             this.metroTextBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.Size = new System.Drawing.Size(248, 33);
+            this.metroTextBox4.Size = new System.Drawing.Size(247, 33);
             this.metroTextBox4.TabIndex = 25;
             // 
             // metroLabel8
@@ -304,7 +304,7 @@ namespace POS_Sys
             this.metroTextBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTextBox5.Name = "metroTextBox5";
             this.metroTextBox5.PasswordChar = '●';
-            this.metroTextBox5.Size = new System.Drawing.Size(248, 33);
+            this.metroTextBox5.Size = new System.Drawing.Size(247, 33);
             this.metroTextBox5.TabIndex = 22;
             this.metroTextBox5.UseSystemPasswordChar = true;
             // 
@@ -322,7 +322,7 @@ namespace POS_Sys
             this.metroTextBox6.Location = new System.Drawing.Point(892, 23);
             this.metroTextBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTextBox6.Name = "metroTextBox6";
-            this.metroTextBox6.Size = new System.Drawing.Size(248, 33);
+            this.metroTextBox6.Size = new System.Drawing.Size(247, 33);
             this.metroTextBox6.TabIndex = 20;
             // 
             // metroLabel14
@@ -339,7 +339,7 @@ namespace POS_Sys
             this.EditBtn.Location = new System.Drawing.Point(902, 540);
             this.EditBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.EditBtn.Name = "EditBtn";
-            this.EditBtn.Size = new System.Drawing.Size(148, 86);
+            this.EditBtn.Size = new System.Drawing.Size(148, 64);
             this.EditBtn.TabIndex = 4;
             this.EditBtn.Text = "تعديل المنتج ";
             // 
@@ -367,7 +367,7 @@ namespace POS_Sys
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -385,7 +385,7 @@ namespace POS_Sys
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(747, 829);
+            this.dataGridView1.Size = new System.Drawing.Size(747, 515);
             this.dataGridView1.TabIndex = 2;
             // 
             // TxtName
@@ -428,7 +428,7 @@ namespace POS_Sys
             this.metroTabPage1.Location = new System.Drawing.Point(4, 39);
             this.metroTabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(1156, 940);
+            this.metroTabPage1.Size = new System.Drawing.Size(1192, 809);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Add New Product";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
@@ -494,8 +494,8 @@ namespace POS_Sys
             this.metroTabControl1.Location = new System.Drawing.Point(0, 98);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
-            this.metroTabControl1.Size = new System.Drawing.Size(1164, 983);
+            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.Size = new System.Drawing.Size(1200, 852);
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -518,14 +518,14 @@ namespace POS_Sys
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1164, 98);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 98);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // ProductsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1164, 1081);
+            this.ClientSize = new System.Drawing.Size(1200, 950);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
