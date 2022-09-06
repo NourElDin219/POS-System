@@ -88,9 +88,16 @@ namespace POS_Sys
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            us.UpdateUser(users[rowIndex].Id, txt_Name.Text, txt_User.Text, txt_Password.Text, Combo_Role.Text);
-            MessageBox.Show("تم تعديل المستخدم بنجاح");
-            DisplayBtn.PerformClick();
+            int updated=us.UpdateUser(users[rowIndex].Id, txt_Name.Text, txt_User.Text, txt_Password.Text, Combo_Role.Text);
+            if (updated == 1)
+            {
+                MessageBox.Show("تم تعديل المستخدم بنجاح");
+                DisplayBtn.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("اسم المستخدم موجود مسبقا");
+            }
         }
     }
 }
