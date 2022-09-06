@@ -32,10 +32,28 @@ namespace POS_Sys
         {
             
         }
+        //private void CloseAllOtherForms()
+        //{
+        //    List<Form> formsToClose = new List<Form>();
+        //    foreach (Form form in Application.OpenForms)
+        //    {
+        //        if (form != this)
+        //        {
+        //            if (form.GetType().Name != "admin")
+        //            formsToClose.Add(form);
+        //        }
+        //    }
+
+        //    formsToClose.ForEach(f => f.Close());
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            ProductsForm frm = new ProductsForm();
+            frm.TopLevel = false;
+            panel4.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
         }
 
         private void admin_Load(object sender, EventArgs e)
@@ -50,6 +68,7 @@ namespace POS_Sys
 
         private void button4_Click(object sender, EventArgs e)
         {
+            
             Users_Form frm = new Users_Form();
             frm.TopLevel = false;
             panel4.Controls.Add(frm);

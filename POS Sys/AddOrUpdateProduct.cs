@@ -59,7 +59,7 @@ namespace POS_Sys
         }
         public void FillForm()
         {
-             NameText.Text= Product.Name;
+            NameText.Text= Product.Name;
             PurchasingPriceText.Text=Product.PurchasingPrice.ToString() ;
             DiscountText.Text=Product.Discount.ToString() ;
             SellingPriceText.Text=Product.SellingPrice.ToString() ;
@@ -110,6 +110,11 @@ namespace POS_Sys
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CategoryList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

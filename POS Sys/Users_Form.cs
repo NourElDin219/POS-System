@@ -99,5 +99,125 @@ namespace POS_Sys
                 MessageBox.Show("اسم المستخدم موجود مسبقا");
             }
         }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RoleCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Nametxt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Passtxt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Usrtxt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Combo_Role_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Name_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Password_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_User_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

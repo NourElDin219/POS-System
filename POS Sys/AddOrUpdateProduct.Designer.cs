@@ -114,7 +114,7 @@
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label9.Location = new System.Drawing.Point(954, 472);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 29);
+            this.label9.Size = new System.Drawing.Size(83, 29);
             this.label9.TabIndex = 21;
             this.label9.Text = " : الكمية";
             // 
@@ -123,7 +123,7 @@
             this.QuantityText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.06154F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuantityText.Location = new System.Drawing.Point(628, 466);
             this.QuantityText.Name = "QuantityText";
-            this.QuantityText.Size = new System.Drawing.Size(250, 40);
+            this.QuantityText.Size = new System.Drawing.Size(250, 38);
             this.QuantityText.TabIndex = 20;
             this.QuantityText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
             // 
@@ -133,8 +133,9 @@
             this.CategoryList.FormattingEnabled = true;
             this.CategoryList.Location = new System.Drawing.Point(627, 390);
             this.CategoryList.Name = "CategoryList";
-            this.CategoryList.Size = new System.Drawing.Size(250, 34);
+            this.CategoryList.Size = new System.Drawing.Size(250, 33);
             this.CategoryList.TabIndex = 19;
+            this.CategoryList.SelectedIndexChanged += new System.EventHandler(this.CategoryList_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -144,7 +145,7 @@
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label8.Location = new System.Drawing.Point(954, 394);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 29);
+            this.label8.Size = new System.Drawing.Size(85, 29);
             this.label8.TabIndex = 18;
             this.label8.Text = " : النوع ";
             // 
@@ -153,7 +154,7 @@
             this.DiscountText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.06154F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DiscountText.Location = new System.Drawing.Point(628, 317);
             this.DiscountText.Name = "DiscountText";
-            this.DiscountText.Size = new System.Drawing.Size(243, 40);
+            this.DiscountText.Size = new System.Drawing.Size(243, 38);
             this.DiscountText.TabIndex = 17;
             this.DiscountText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
             // 
@@ -165,7 +166,7 @@
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label7.Location = new System.Drawing.Point(901, 323);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(146, 29);
+            this.label7.Size = new System.Drawing.Size(135, 29);
             this.label7.TabIndex = 16;
             this.label7.Text = " : نسبة الخصم";
             // 
@@ -177,7 +178,7 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label6.Location = new System.Drawing.Point(922, 256);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 29);
+            this.label6.Size = new System.Drawing.Size(116, 29);
             this.label6.TabIndex = 15;
             this.label6.Text = " : سعر البيع";
             // 
@@ -186,7 +187,7 @@
             this.SellingPriceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.06154F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SellingPriceText.Location = new System.Drawing.Point(628, 250);
             this.SellingPriceText.Name = "SellingPriceText";
-            this.SellingPriceText.Size = new System.Drawing.Size(243, 40);
+            this.SellingPriceText.Size = new System.Drawing.Size(243, 38);
             this.SellingPriceText.TabIndex = 14;
             this.SellingPriceText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
@@ -195,7 +196,7 @@
             this.PurchasingPriceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.06154F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PurchasingPriceText.Location = new System.Drawing.Point(628, 167);
             this.PurchasingPriceText.Name = "PurchasingPriceText";
-            this.PurchasingPriceText.Size = new System.Drawing.Size(243, 40);
+            this.PurchasingPriceText.Size = new System.Drawing.Size(243, 38);
             this.PurchasingPriceText.TabIndex = 13;
             this.PurchasingPriceText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
@@ -207,7 +208,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Location = new System.Drawing.Point(901, 178);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(145, 29);
+            this.label5.Size = new System.Drawing.Size(134, 29);
             this.label5.TabIndex = 12;
             this.label5.Text = " : سعر الشراء";
             // 
@@ -219,7 +220,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(922, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 29);
+            this.label2.Size = new System.Drawing.Size(127, 29);
             this.label2.TabIndex = 11;
             this.label2.Text = " : اسم المنتج ";
             // 
@@ -228,7 +229,7 @@
             this.NameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.06154F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameText.Location = new System.Drawing.Point(628, 93);
             this.NameText.Name = "NameText";
-            this.NameText.Size = new System.Drawing.Size(243, 40);
+            this.NameText.Size = new System.Drawing.Size(243, 38);
             this.NameText.TabIndex = 10;
             // 
             // button7
@@ -259,7 +260,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(907, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 29);
+            this.label1.Size = new System.Drawing.Size(127, 29);
             this.label1.TabIndex = 11;
             this.label1.Text = " : اسم المنتج ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -269,7 +270,7 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.06154F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(594, 104);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(243, 40);
+            this.textBox1.Size = new System.Drawing.Size(243, 38);
             this.textBox1.TabIndex = 10;
             // 
             // button6

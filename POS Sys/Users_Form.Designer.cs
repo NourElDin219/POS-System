@@ -29,9 +29,9 @@ namespace POS_Sys
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
@@ -77,6 +77,7 @@ namespace POS_Sys
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1032, 68);
             this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // label1
             // 
@@ -88,6 +89,7 @@ namespace POS_Sys
             this.label1.TabIndex = 1;
             this.label1.Text = "User Accounts";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // metroTabControl1
             // 
@@ -96,10 +98,11 @@ namespace POS_Sys
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 68);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1032, 685);
             this.metroTabControl1.TabIndex = 1;
             this.metroTabControl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTabControl1.SelectedIndexChanged += new System.EventHandler(this.metroTabControl1_SelectedIndexChanged);
             // 
             // metroTabPage1
             // 
@@ -122,6 +125,7 @@ namespace POS_Sys
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Create User";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
+            this.metroTabPage1.Click += new System.EventHandler(this.metroTabPage1_Click);
             this.metroTabPage1.Resize += new System.EventHandler(this.metroTabPage1_Resize);
             // 
             // CancelBtn
@@ -154,6 +158,7 @@ namespace POS_Sys
             this.RoleCombo.Name = "RoleCombo";
             this.RoleCombo.Size = new System.Drawing.Size(220, 30);
             this.RoleCombo.TabIndex = 10;
+            this.RoleCombo.SelectedIndexChanged += new System.EventHandler(this.RoleCombo_SelectedIndexChanged);
             // 
             // Nametxt
             // 
@@ -161,6 +166,7 @@ namespace POS_Sys
             this.Nametxt.Name = "Nametxt";
             this.Nametxt.Size = new System.Drawing.Size(220, 23);
             this.Nametxt.TabIndex = 9;
+            this.Nametxt.Click += new System.EventHandler(this.Nametxt_Click);
             // 
             // metroLabel7
             // 
@@ -170,6 +176,7 @@ namespace POS_Sys
             this.metroLabel7.Size = new System.Drawing.Size(50, 20);
             this.metroLabel7.TabIndex = 8;
             this.metroLabel7.Text = "Name:";
+            this.metroLabel7.Click += new System.EventHandler(this.metroLabel7_Click);
             // 
             // metroLabel5
             // 
@@ -179,6 +186,7 @@ namespace POS_Sys
             this.metroLabel5.Size = new System.Drawing.Size(39, 20);
             this.metroLabel5.TabIndex = 6;
             this.metroLabel5.Text = "Role:";
+            this.metroLabel5.Click += new System.EventHandler(this.metroLabel5_Click);
             // 
             // Passtxt
             // 
@@ -188,6 +196,7 @@ namespace POS_Sys
             this.Passtxt.Size = new System.Drawing.Size(220, 23);
             this.Passtxt.TabIndex = 5;
             this.Passtxt.UseSystemPasswordChar = true;
+            this.Passtxt.Click += new System.EventHandler(this.Passtxt_Click);
             // 
             // metroLabel3
             // 
@@ -197,6 +206,7 @@ namespace POS_Sys
             this.metroLabel3.Size = new System.Drawing.Size(69, 20);
             this.metroLabel3.TabIndex = 4;
             this.metroLabel3.Text = "Password:";
+            this.metroLabel3.Click += new System.EventHandler(this.metroLabel3_Click);
             // 
             // metroTextBox2
             // 
@@ -204,6 +214,7 @@ namespace POS_Sys
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.Size = new System.Drawing.Size(220, 23);
             this.metroTextBox2.TabIndex = 5;
+            this.metroTextBox2.Click += new System.EventHandler(this.metroTextBox2_Click);
             // 
             // metroLabel2
             // 
@@ -213,6 +224,7 @@ namespace POS_Sys
             this.metroLabel2.Size = new System.Drawing.Size(76, 20);
             this.metroLabel2.TabIndex = 4;
             this.metroLabel2.Text = "Username:";
+            this.metroLabel2.Click += new System.EventHandler(this.metroLabel2_Click);
             // 
             // Usrtxt
             // 
@@ -220,6 +232,7 @@ namespace POS_Sys
             this.Usrtxt.Name = "Usrtxt";
             this.Usrtxt.Size = new System.Drawing.Size(220, 23);
             this.Usrtxt.TabIndex = 3;
+            this.Usrtxt.Click += new System.EventHandler(this.Usrtxt_Click);
             // 
             // metroLabel1
             // 
@@ -229,6 +242,7 @@ namespace POS_Sys
             this.metroLabel1.Size = new System.Drawing.Size(76, 20);
             this.metroLabel1.TabIndex = 2;
             this.metroLabel1.Text = "Username:";
+            this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
             // 
             // metroTabPage2
             // 
@@ -251,6 +265,7 @@ namespace POS_Sys
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Edit User";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
+            this.metroTabPage2.Click += new System.EventHandler(this.metroTabPage2_Click);
             // 
             // Combo_Role
             // 
@@ -264,6 +279,7 @@ namespace POS_Sys
             this.Combo_Role.Name = "Combo_Role";
             this.Combo_Role.Size = new System.Drawing.Size(220, 30);
             this.Combo_Role.TabIndex = 18;
+            this.Combo_Role.SelectedIndexChanged += new System.EventHandler(this.Combo_Role_SelectedIndexChanged);
             // 
             // txt_Name
             // 
@@ -271,6 +287,7 @@ namespace POS_Sys
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(220, 23);
             this.txt_Name.TabIndex = 17;
+            this.txt_Name.Click += new System.EventHandler(this.txt_Name_Click);
             // 
             // metroLabel4
             // 
@@ -280,6 +297,7 @@ namespace POS_Sys
             this.metroLabel4.Size = new System.Drawing.Size(50, 20);
             this.metroLabel4.TabIndex = 16;
             this.metroLabel4.Text = "Name:";
+            this.metroLabel4.Click += new System.EventHandler(this.metroLabel4_Click);
             // 
             // metroLabel6
             // 
@@ -289,6 +307,7 @@ namespace POS_Sys
             this.metroLabel6.Size = new System.Drawing.Size(39, 20);
             this.metroLabel6.TabIndex = 15;
             this.metroLabel6.Text = "Role:";
+            this.metroLabel6.Click += new System.EventHandler(this.metroLabel6_Click);
             // 
             // txt_Password
             // 
@@ -298,6 +317,7 @@ namespace POS_Sys
             this.txt_Password.Size = new System.Drawing.Size(220, 23);
             this.txt_Password.TabIndex = 14;
             this.txt_Password.UseSystemPasswordChar = true;
+            this.txt_Password.Click += new System.EventHandler(this.txt_Password_Click);
             // 
             // metroLabel8
             // 
@@ -307,6 +327,7 @@ namespace POS_Sys
             this.metroLabel8.Size = new System.Drawing.Size(69, 20);
             this.metroLabel8.TabIndex = 13;
             this.metroLabel8.Text = "Password:";
+            this.metroLabel8.Click += new System.EventHandler(this.metroLabel8_Click);
             // 
             // txt_User
             // 
@@ -314,6 +335,7 @@ namespace POS_Sys
             this.txt_User.Name = "txt_User";
             this.txt_User.Size = new System.Drawing.Size(220, 23);
             this.txt_User.TabIndex = 12;
+            this.txt_User.Click += new System.EventHandler(this.txt_User_Click);
             // 
             // metroLabel9
             // 
@@ -323,6 +345,7 @@ namespace POS_Sys
             this.metroLabel9.Size = new System.Drawing.Size(76, 20);
             this.metroLabel9.TabIndex = 11;
             this.metroLabel9.Text = "Username:";
+            this.metroLabel9.Click += new System.EventHandler(this.metroLabel9_Click);
             // 
             // DeleteBtn
             // 
@@ -357,37 +380,37 @@ namespace POS_Sys
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LimeGreen;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LimeGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(0, 3);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -395,6 +418,7 @@ namespace POS_Sys
             this.dataGridView1.Size = new System.Drawing.Size(664, 577);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Users_Form
             // 

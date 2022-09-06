@@ -38,7 +38,12 @@ namespace POS_Sys.CS
             var Products = db.Product.ToList();
             return Products;
         }
-
+        public bool Exists(string product_Name)
+        {
+            if (db.Product.Any(o => o.Name == product_Name)) return true;
+            else
+                return false;
+        }
     }
 
 }
