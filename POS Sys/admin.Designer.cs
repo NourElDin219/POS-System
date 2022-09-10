@@ -45,6 +45,7 @@ namespace POS_Sys
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.CategoryBtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -67,6 +68,7 @@ namespace POS_Sys
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.Controls.Add(this.CategoryBtn);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.label4);
@@ -112,7 +114,7 @@ namespace POS_Sys
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(89, 518);
+            this.button5.Location = new System.Drawing.Point(89, 566);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(226, 34);
             this.button5.TabIndex = 8;
@@ -131,7 +133,7 @@ namespace POS_Sys
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(89, 442);
+            this.button4.Location = new System.Drawing.Point(89, 490);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(226, 34);
             this.button4.TabIndex = 7;
@@ -151,7 +153,7 @@ namespace POS_Sys
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(89, 368);
+            this.button3.Location = new System.Drawing.Point(89, 416);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(226, 34);
             this.button3.TabIndex = 6;
@@ -160,7 +162,7 @@ namespace POS_Sys
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(89, 296);
+            this.button2.Location = new System.Drawing.Point(89, 344);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(226, 34);
             this.button2.TabIndex = 5;
@@ -206,6 +208,16 @@ namespace POS_Sys
             this.panel4.Size = new System.Drawing.Size(1033, 753);
             this.panel4.TabIndex = 2;
             // 
+            // CategoryBtn
+            // 
+            this.CategoryBtn.Location = new System.Drawing.Point(89, 280);
+            this.CategoryBtn.Name = "CategoryBtn";
+            this.CategoryBtn.Size = new System.Drawing.Size(226, 34);
+            this.CategoryBtn.TabIndex = 10;
+            this.CategoryBtn.Text = "الأنواع";
+            this.CategoryBtn.UseVisualStyleBackColor = true;
+            this.CategoryBtn.Click += new System.EventHandler(this.CategoryBtn_Click);
+            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -246,6 +258,7 @@ namespace POS_Sys
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button CategoryBtn;
     }
 }
 

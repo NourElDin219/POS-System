@@ -1,6 +1,7 @@
 ﻿using POS_Sys.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,22 @@ namespace POS_Sys.CS
                 c = obj.r;
             }
             return c;
+        }
+        public void AddOrUpdateCategory(Category category)
+        {
+            db.Category.AddOrUpdate(category);
+            db.SaveChanges();
+        }
+        public Category GetCategory(int CategoryId)
+        {
+            var Category = db.Category.Find(CategoryId);
+            return Category;
+        }
+        public void DeleteCategory(int CategoryId)
+        {
+            var Category = db.Category.Find(CategoryId);
+            db.Category.Remove(Category);
+            db.SaveChanges();
         }
         public List<Category> GetCategoryList()
         {

@@ -93,5 +93,14 @@ namespace POS_Sys
         {
 
         }
+
+        private void CategoryBtn_Click(object sender, EventArgs e)
+        {
+            CategoryForm frm = new CategoryForm();
+            frm.TopLevel = false;
+            panel4.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
     }
 }

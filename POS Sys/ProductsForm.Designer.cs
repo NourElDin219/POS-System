@@ -29,9 +29,9 @@ namespace POS_Sys
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CancelBtn = new MetroFramework.Controls.MetroButton();
             this.Btn_Save = new MetroFramework.Controls.MetroButton();
             this.ComboCat = new MetroFramework.Controls.MetroComboBox();
@@ -42,6 +42,10 @@ namespace POS_Sys
             this.DeleteBtn = new MetroFramework.Controls.MetroButton();
             this.DisplayBtn = new MetroFramework.Controls.MetroButton();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.MoveTxt = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
+            this.MoveBtn = new MetroFramework.Controls.MetroButton();
+            this.PPriceTxt = new MetroFramework.Controls.MetroTextBox();
             this.DiscTxt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.IQtTxt = new MetroFramework.Controls.MetroTextBox();
@@ -60,6 +64,7 @@ namespace POS_Sys
             this.TxtName = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.TxtPPrice = new MetroFramework.Controls.MetroTextBox();
             this.TxtDiscount = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.TxtIQuantity = new MetroFramework.Controls.MetroTextBox();
@@ -69,8 +74,6 @@ namespace POS_Sys
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.TxtPPrice = new MetroFramework.Controls.MetroTextBox();
-            this.PPriceTxt = new MetroFramework.Controls.MetroTextBox();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.metroTabPage1.SuspendLayout();
@@ -152,7 +155,7 @@ namespace POS_Sys
             // 
             // DeleteBtn
             // 
-            this.DeleteBtn.Location = new System.Drawing.Point(702, 505);
+            this.DeleteBtn.Location = new System.Drawing.Point(466, 505);
             this.DeleteBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(115, 44);
@@ -172,6 +175,9 @@ namespace POS_Sys
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.MoveTxt);
+            this.metroTabPage2.Controls.Add(this.metroLabel15);
+            this.metroTabPage2.Controls.Add(this.MoveBtn);
             this.metroTabPage2.Controls.Add(this.PPriceTxt);
             this.metroTabPage2.Controls.Add(this.DiscTxt);
             this.metroTabPage2.Controls.Add(this.metroLabel2);
@@ -200,6 +206,45 @@ namespace POS_Sys
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarSize = 9;
             // 
+            // MoveTxt
+            // 
+            this.MoveTxt.Location = new System.Drawing.Point(601, 492);
+            this.MoveTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MoveTxt.Name = "MoveTxt";
+            this.MoveTxt.Size = new System.Drawing.Size(192, 24);
+            this.MoveTxt.TabIndex = 36;
+            this.MoveTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox1_KeyPress);
+            // 
+            // metroLabel15
+            // 
+            this.metroLabel15.AutoSize = true;
+            this.metroLabel15.Location = new System.Drawing.Point(833, 492);
+            this.metroLabel15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel15.Name = "metroLabel15";
+            this.metroLabel15.Size = new System.Drawing.Size(90, 20);
+            this.metroLabel15.TabIndex = 35;
+            this.metroLabel15.Text = "نقل الى المحل";
+            this.metroLabel15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // MoveBtn
+            // 
+            this.MoveBtn.Location = new System.Drawing.Point(702, 542);
+            this.MoveBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MoveBtn.Name = "MoveBtn";
+            this.MoveBtn.Size = new System.Drawing.Size(115, 47);
+            this.MoveBtn.TabIndex = 34;
+            this.MoveBtn.Text = "نقل";
+            this.MoveBtn.Click += new System.EventHandler(this.MoveBtn_Click);
+            // 
+            // PPriceTxt
+            // 
+            this.PPriceTxt.Location = new System.Drawing.Point(718, 132);
+            this.PPriceTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.PPriceTxt.Name = "PPriceTxt";
+            this.PPriceTxt.Size = new System.Drawing.Size(192, 24);
+            this.PPriceTxt.TabIndex = 33;
+            this.PPriceTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PPriceTxt_KeyPress);
+            // 
             // DiscTxt
             // 
             this.DiscTxt.Location = new System.Drawing.Point(717, 333);
@@ -207,6 +252,7 @@ namespace POS_Sys
             this.DiscTxt.Name = "DiscTxt";
             this.DiscTxt.Size = new System.Drawing.Size(192, 24);
             this.DiscTxt.TabIndex = 32;
+            this.DiscTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DiscTxt_KeyPress);
             // 
             // metroLabel2
             // 
@@ -225,6 +271,7 @@ namespace POS_Sys
             this.IQtTxt.Name = "IQtTxt";
             this.IQtTxt.Size = new System.Drawing.Size(192, 24);
             this.IQtTxt.TabIndex = 30;
+            this.IQtTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IQtTxt_KeyPress);
             // 
             // metroLabel4
             // 
@@ -243,6 +290,7 @@ namespace POS_Sys
             this.SQtTxt.Name = "SQtTxt";
             this.SQtTxt.Size = new System.Drawing.Size(192, 24);
             this.SQtTxt.TabIndex = 28;
+            this.SQtTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SQtTxt_KeyPress);
             // 
             // metroLabel6
             // 
@@ -275,6 +323,7 @@ namespace POS_Sys
             this.SPriceTxt.Name = "SPriceTxt";
             this.SPriceTxt.Size = new System.Drawing.Size(192, 24);
             this.SPriceTxt.TabIndex = 25;
+            this.SPriceTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SPriceTxt_KeyPress);
             // 
             // metroLabel8
             // 
@@ -313,6 +362,7 @@ namespace POS_Sys
             this.NameTxt.Name = "NameTxt";
             this.NameTxt.Size = new System.Drawing.Size(192, 24);
             this.NameTxt.TabIndex = 20;
+            this.NameTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTxt_KeyPress);
             // 
             // metroLabel14
             // 
@@ -340,23 +390,23 @@ namespace POS_Sys
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LimeGreen;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.LimeGreen;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -364,14 +414,14 @@ namespace POS_Sys
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -427,6 +477,14 @@ namespace POS_Sys
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarSize = 9;
             this.metroTabPage1.Resize += new System.EventHandler(this.metroTabPage1_Resize);
+            // 
+            // TxtPPrice
+            // 
+            this.TxtPPrice.Location = new System.Drawing.Point(415, 167);
+            this.TxtPPrice.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.TxtPPrice.Name = "TxtPPrice";
+            this.TxtPPrice.Size = new System.Drawing.Size(193, 24);
+            this.TxtPPrice.TabIndex = 19;
             // 
             // TxtDiscount
             // 
@@ -518,22 +576,6 @@ namespace POS_Sys
             this.flowLayoutPanel1.Size = new System.Drawing.Size(933, 72);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
-            // TxtPPrice
-            // 
-            this.TxtPPrice.Location = new System.Drawing.Point(415, 167);
-            this.TxtPPrice.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.TxtPPrice.Name = "TxtPPrice";
-            this.TxtPPrice.Size = new System.Drawing.Size(193, 24);
-            this.TxtPPrice.TabIndex = 19;
-            // 
-            // PPriceTxt
-            // 
-            this.PPriceTxt.Location = new System.Drawing.Point(718, 132);
-            this.PPriceTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.PPriceTxt.Name = "PPriceTxt";
-            this.PPriceTxt.Size = new System.Drawing.Size(192, 24);
-            this.PPriceTxt.TabIndex = 33;
-            // 
             // ProductsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -598,5 +640,8 @@ namespace POS_Sys
         private MetroFramework.Controls.MetroLabel metroLabel14;
         private MetroFramework.Controls.MetroTextBox TxtPPrice;
         private MetroFramework.Controls.MetroTextBox PPriceTxt;
+        private MetroFramework.Controls.MetroTextBox MoveTxt;
+        private MetroFramework.Controls.MetroLabel metroLabel15;
+        private MetroFramework.Controls.MetroButton MoveBtn;
     }
 }

@@ -139,6 +139,12 @@
     <Compile Include="AddOrUpdateProduct.Designer.cs">
       <DependentUpon>AddOrUpdateProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cashier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cashier.Designer.cs">
+      <DependentUpon>Cashier.cs</DependentUpon>
+    </Compile>
     <Compile Include="cashier_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,12 @@
     </Compile>
     <Compile Include="admin.Designer.cs">
       <DependentUpon>admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryForm.Designer.cs">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="confirm_Purchase.cs">
       <SubType>Form</SubType>
@@ -173,6 +185,10 @@
     <Compile Include="Migrations\202209021640563_addQuantity.cs" />
     <Compile Include="Migrations\202209021640563_addQuantity.designer.cs">
       <DependentUpon>202209021640563_addQuantity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209080744263_FK.cs" />
+    <Compile Include="Migrations\202209080744263_FK.designer.cs">
+      <DependentUpon>202209080744263_FK.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categories.cs" />
@@ -209,6 +225,9 @@
     <EmbeddedResource Include="admin.resx">
       <DependentUpon>admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CategoryForm.resx">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="confirm_Purchase.resx">
       <DependentUpon>confirm_Purchase.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202209021640563_addQuantity.resx">
       <DependentUpon>202209021640563_addQuantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209080744263_FK.resx">
+      <DependentUpon>202209080744263_FK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductsForm.resx">
       <DependentUpon>ProductsForm.cs</DependentUpon>

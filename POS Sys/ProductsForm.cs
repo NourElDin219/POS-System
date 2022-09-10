@@ -25,6 +25,7 @@ namespace POS_Sys
             p = new Cs_Products();
             cs_Category = new Cs_Category();
             P_List = new List<Products>();
+            Product = new Products();
             FillCategoryList();
         }
         private void Clear()
@@ -45,6 +46,14 @@ namespace POS_Sys
             if(ComboCat.Items.Count>0)
             ComboCat.SelectedIndex = 0;
         }
+        public void FillCategoryList2()
+        {
+            metroComboBox1.DisplayMember = "Name";
+            metroComboBox1.ValueMember = "Id";
+            metroComboBox1.DataSource = cs_Category.GetCategoryList();
+            if (metroComboBox1.Items.Count > 0)
+                metroComboBox1.SelectedIndex = 0;
+        }
         private void CancelBtn_Click(object sender, EventArgs e)
         {
             Clear();
@@ -52,7 +61,6 @@ namespace POS_Sys
 
         private void Btn_Save_Click(object sender, EventArgs e)
         {
-            Product = new Products();
             if (p.Exists(TxtName.Text))
             {
                 MessageBox.Show("المنتج موجود مسبقا");
@@ -102,28 +110,82 @@ namespace POS_Sys
             SQtTxt.Text = P_List[rowIndex].ShopQuantity.ToString();
             IQtTxt.Text = P_List[rowIndex].InvQuantity.ToString();
             DiscTxt.Text = P_List[rowIndex].Discount.ToString();
-            metroComboBox1.Text = cs_Category.GetCategorys(P_List[rowIndex].Name);
             metroComboBox1.DisplayMember = "Name";
             metroComboBox1.ValueMember = "Id";
             metroComboBox1.DataSource = cs_Category.GetCategoryList();
-            if (ComboCat.Items.Count > 0)
-                ComboCat.SelectedIndex = 0;
+            if (metroComboBox1.Items.Count > 0)
+                metroComboBox1.SelectedIndex = 0;
+            metroComboBox1.Text = cs_Category.GetCategorys(P_List[rowIndex].Name);
 
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
+            Product.Id = P_List[rowIndex].Id;
             Product.Name = NameTxt.Text;
             Product.PurchasingPrice = Convert.ToDouble(PPriceTxt.Text);
             Product.SellingPrice = Convert.ToDouble(SPriceTxt.Text);
             Product.ShopQuantity = Convert.ToInt32(SQtTxt.Text);
             Product.InvQuantity=Convert.ToInt32(IQtTxt.Text);
             Product.Discount= Convert.ToInt32(DiscTxt.Text);
-            Product.Category.Id = Convert.ToInt32(metroComboBox1.SelectedValue);
-            Product.Category.Name = metroComboBox1.SelectedText;
+            Product.CategoryId = Convert.ToInt32(metroComboBox1.SelectedValue);
+           // Product.Category.Name = metroComboBox1.SelectedText;
             p.AddOrUpdateProduct(Product);
             MessageBox.Show("تم تعديل المستخدم بنجاح");
             DisplayBtn.PerformClick();
+        }
+
+        private void metroTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void MoveBtn_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(MoveTxt.Text) < 1)
+                MessageBox.Show("برجاء ادخال رقم أكبر من الصفر");
+            else
+            {
+                if (!p.MoveToShop(P_List[rowIndex].Id, Convert.ToInt32(MoveTxt.Text)))
+                {
+                    MessageBox.Show("لا يوجد كمية كافية فى المخزن");
+                }
+                else
+                {
+                    MessageBox.Show("تم نقل المنتج بنجاح");
+                    DisplayBtn.PerformClick();
+                }
+            }
+        }
+
+        private void NameTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void PPriceTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void SPriceTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void SQtTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void IQtTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void DiscTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

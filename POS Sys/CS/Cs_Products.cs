@@ -20,9 +20,30 @@ namespace POS_Sys.CS
             var product=db.Product.Find(productId);
             return product;
         }
+        public bool MoveToShop(int ProductId, int quantity)
+        {
+            var Product = db.Product.Find(ProductId);
+            if (Product.InvQuantity - quantity < 0)
+            { return false; }
+            Product.InvQuantity -= quantity;
+            Product.ShopQuantity += quantity;
+            db.Product.AddOrUpdate(Product);
+            db.SaveChanges();
+            return true;
+
+        }
+        public bool ReturnToInventory(int ProductId, int quantity)
+        {
+            var Product = db.Product.Find(ProductId);
+            Product.InvQuantity += quantity;
+            db.Product.AddOrUpdate(Product);
+            db.SaveChanges();
+            return true;
+
+        }
         public void AddOrUpdateProduct(Products product)
         {
-            product.Category=db.Category.FirstOrDefault(s => s.Id == product.Category.Id);
+           // product.Category=db.Category.FirstOrDefault(s => s.Id == product.Category.Id);
             db.Product.AddOrUpdate(product);
             db.SaveChanges();
         }

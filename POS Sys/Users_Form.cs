@@ -43,6 +43,11 @@ namespace POS_Sys
 
         private void Btn_Save_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(Nametxt.Text)|| String.IsNullOrEmpty(Usrtxt.Text)|| String.IsNullOrEmpty(Passtxt.Text)|| String.IsNullOrEmpty(RoleCombo.Text) )
+            {
+                MessageBox.Show("برجاء ملئ جميع الخانات");
+                return;
+            }
             int success = us.CreateUser(Nametxt.Text, Usrtxt.Text, Passtxt.Text, RoleCombo.Text);
             if (success==1)
             {

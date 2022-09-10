@@ -153,15 +153,10 @@ namespace POS_Sys.CS
             return false;
         }
         public int UpdateUser(int ID,string name,string username,string password,string role)
-        {   
-
+        {
             using (DatabaseContext db = new DatabaseContext())
             {
-                if (db.User.Where(x => x.UserName == username).Count() > 0)
-                {
-                    return 0;
-                }
-                 var result = db.User.SingleOrDefault(b => b.Id == ID);
+                var result = db.User.SingleOrDefault(b => b.Id == ID);
                 if (result != null)
                 {
                     result.Name = name;
@@ -180,9 +175,14 @@ namespace POS_Sys.CS
                         Role_ID = 3;
                     }
                     result.Role = db.Role.FirstOrDefault(s => s.Id == Role_ID);
+                    if(db.User.Where(x=>x.UserName==username).Count() > 0)
+                    {
+                        return 0;
+                    }
                     db.SaveChanges();
+                    return 1;
                 }
-                return 1;
+                return 0;
             }
         }
         public void DeleteUser(int ID)
