@@ -19,6 +19,7 @@ namespace POS_Sys
         private Cs_Category cs_Category;
         private List<Products> P_List;
         private int rowIndex;
+        DataTable table;
         public ProductsForm()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace POS_Sys
             cs_Category = new Cs_Category();
             P_List = new List<Products>();
             Product = new Products();
+            table = new DataTable();
             FillCategoryList();
         }
         private void Clear()
@@ -84,6 +86,10 @@ namespace POS_Sys
         private void DisplayBtn_Click(object sender, EventArgs e)
         {
             P_List = p.GetProducts();
+            table.Columns.Add("الاسم", typeof(string));
+            table.Columns.Add("اسم المستخدم", typeof(string));
+            table.Columns.Add("كلمة السر", typeof(string));
+
             dataGridView1.DataSource = P_List;
         }
 

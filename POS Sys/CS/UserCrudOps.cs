@@ -159,6 +159,9 @@ namespace POS_Sys.CS
                 var result = db.User.SingleOrDefault(b => b.Id == ID);
                 if (result != null)
                 {
+                    bool check = false;
+                    if (result.UserName == username)
+                        check = true;
                     result.Name = name;
                     result.UserName = username;
                     result.Password = password;
@@ -175,7 +178,7 @@ namespace POS_Sys.CS
                         Role_ID = 3;
                     }
                     result.Role = db.Role.FirstOrDefault(s => s.Id == Role_ID);
-                    if(db.User.Where(x=>x.UserName==username).Count() > 0)
+                    if(db.User.Where(x=>x.UserName==username).Count()>0 && !check )
                     {
                         return 0;
                     }

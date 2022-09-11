@@ -63,9 +63,9 @@ namespace POS_Sys
             DataTable table = new DataTable();
             users=us.ReadAllUsers();
 
-            table.Columns.Add("Name", typeof(string));
-            table.Columns.Add("Username", typeof(string));
-            table.Columns.Add("Password", typeof(string));
+            table.Columns.Add("الاسم", typeof(string));
+            table.Columns.Add("اسم المستخدم", typeof(string));
+            table.Columns.Add("كلمة السر", typeof(string));
 
             for (int i = 0; i < users.Count(); i++)
             {
