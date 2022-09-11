@@ -39,5 +39,31 @@ namespace POS_Sys
             display();
             category = new Category();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            String CName = dataGridView1.Columns[e.ColumnIndex].Name;
+            if (CName == "Edit")
+            {
+                CatTxt.Text = c[e.RowIndex].Name;
+                category = c[e.RowIndex];
+                //AddBtn.Visible = false;
+                //Edit.Visible = true;
+            }
+            else if (CName == "Delete")
+            {
+                cat.DeleteCategory(c[e.RowIndex].Id);
+                MessageBox.Show("تمت ازالة النوع بنجاح");
+                display();
+            }
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            category.Name = CatTxt.Text;
+            cat.AddOrUpdateCategory(category);
+            MessageBox.Show("تمت التعديل بنجاح");
+            display();
+        }
     }
 }
