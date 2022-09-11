@@ -85,12 +85,22 @@ namespace POS_Sys
 
         private void DisplayBtn_Click(object sender, EventArgs e)
         {
+            table.Columns.Clear();
+            table.Rows.Clear();
             P_List = p.GetProducts();
-            table.Columns.Add("الاسم", typeof(string));
-            table.Columns.Add("اسم المستخدم", typeof(string));
-            table.Columns.Add("كلمة السر", typeof(string));
+            table.Columns.Add("اسم المنتج", typeof(string));
+            table.Columns.Add("سعر الشراء", typeof(double));
+            table.Columns.Add("سعر البيع", typeof(double));
+            table.Columns.Add("الكمية فى المتجر", typeof(int));
+            table.Columns.Add("الكمية فى المخزن", typeof(int));
 
-            dataGridView1.DataSource = P_List;
+            for (int i = 0; i < P_List.Count(); i++)
+            {
+                table.Rows.Add(P_List[i].Name, P_List[i].PurchasingPrice, P_List[i].SellingPrice, P_List[i].ShopQuantity, P_List[i].InvQuantity);
+            }
+            dataGridView1.DataSource = table;
+
+            
         }
 
         private void metroTabPage1_Resize(object sender, EventArgs e)
@@ -109,20 +119,22 @@ namespace POS_Sys
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            rowIndex = e.RowIndex;
-            NameTxt.Text = P_List[rowIndex].Name;
-            PPriceTxt.Text = P_List[rowIndex].PurchasingPrice.ToString();
-            SPriceTxt.Text = P_List[rowIndex].SellingPrice.ToString();
-            SQtTxt.Text = P_List[rowIndex].ShopQuantity.ToString();
-            IQtTxt.Text = P_List[rowIndex].InvQuantity.ToString();
-            DiscTxt.Text = P_List[rowIndex].Discount.ToString();
-            metroComboBox1.DisplayMember = "Name";
-            metroComboBox1.ValueMember = "Id";
-            metroComboBox1.DataSource = cs_Category.GetCategoryList();
-            if (metroComboBox1.Items.Count > 0)
-                metroComboBox1.SelectedIndex = 0;
-            metroComboBox1.Text = cs_Category.GetCategorys(P_List[rowIndex].Name);
-
+            if (e.RowIndex >= 0)
+            {
+                rowIndex = e.RowIndex;
+                NameTxt.Text = P_List[rowIndex].Name;
+                PPriceTxt.Text = P_List[rowIndex].PurchasingPrice.ToString();
+                SPriceTxt.Text = P_List[rowIndex].SellingPrice.ToString();
+                SQtTxt.Text = P_List[rowIndex].ShopQuantity.ToString();
+                IQtTxt.Text = P_List[rowIndex].InvQuantity.ToString();
+                DiscTxt.Text = P_List[rowIndex].Discount.ToString();
+                metroComboBox1.DisplayMember = "Name";
+                metroComboBox1.ValueMember = "Id";
+                metroComboBox1.DataSource = cs_Category.GetCategoryList();
+                if (metroComboBox1.Items.Count > 0)
+                    metroComboBox1.SelectedIndex = 0;
+                metroComboBox1.Text = cs_Category.GetCategorys(P_List[rowIndex].Name);
+            }
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
@@ -137,7 +149,7 @@ namespace POS_Sys
             Product.CategoryId = Convert.ToInt32(metroComboBox1.SelectedValue);
            // Product.Category.Name = metroComboBox1.SelectedText;
             p.AddOrUpdateProduct(Product);
-            MessageBox.Show("تم تعديل المستخدم بنجاح");
+            MessageBox.Show("تم تعديل المنتج بنجاح");
             DisplayBtn.PerformClick();
         }
 
