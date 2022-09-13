@@ -33,5 +33,13 @@ namespace POS_Sys
         {
             timer1.Start();
         }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.ShowDialog();
+            this.Close();
+        }
     }
 }

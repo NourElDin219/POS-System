@@ -31,6 +31,13 @@ namespace POS_Sys
                     admin.ShowDialog();
                     this.Close();
                 }
+                else if(user.getRole() == "Cashier")
+                {
+                    Sales sales = new Sales();
+                    this.Hide();
+                    sales.ShowDialog();
+                    this.Close();
+                }
             }
             else
                 MessageBox.Show("Invalid Username or Password.");

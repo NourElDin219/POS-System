@@ -54,7 +54,7 @@ namespace POS_Sys
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.txt_Password);
             this.panel1.Controls.Add(this.txt_Username);
