@@ -200,7 +200,7 @@ namespace POS_Sys
             this.metroTabPage2.Location = new System.Drawing.Point(4, 39);
             this.metroTabPage2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(925, 587);
+            this.metroTabPage2.Size = new System.Drawing.Size(925, 604);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Edit Products";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
@@ -546,11 +546,11 @@ namespace POS_Sys
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroTabControl1.Location = new System.Drawing.Point(0, 72);
+            this.metroTabControl1.Location = new System.Drawing.Point(0, 55);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 1;
-            this.metroTabControl1.Size = new System.Drawing.Size(933, 630);
+            this.metroTabControl1.Size = new System.Drawing.Size(933, 647);
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -568,13 +568,13 @@ namespace POS_Sys
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Gray;
             this.flowLayoutPanel1.Controls.Add(this.label1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(933, 72);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(933, 55);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // ProductsForm

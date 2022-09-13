@@ -133,12 +133,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddOrUpdateProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddOrUpdateProduct.Designer.cs">
-      <DependentUpon>AddOrUpdateProduct.cs</DependentUpon>
-    </Compile>
     <Compile Include="Cashier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,15 +204,18 @@
     <Compile Include="returning_Product.Designer.cs">
       <DependentUpon>returning_Product.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales.Designer.cs">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Users_Form.Designer.cs">
       <DependentUpon>Users_Form.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddOrUpdateProduct.resx">
-      <DependentUpon>AddOrUpdateProduct.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="cashier_Form.resx">
       <DependentUpon>cashier_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +254,9 @@
     </Compile>
     <EmbeddedResource Include="returning_Product.resx">
       <DependentUpon>returning_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales.resx">
+      <DependentUpon>Sales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users_Form.resx">
       <DependentUpon>Users_Form.cs</DependentUpon>
