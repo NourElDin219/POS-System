@@ -12,10 +12,11 @@ namespace POS_Sys
 {
     public partial class Sales : Form
     {
+        ViewProducts frm;
         public Sales()
         {
             InitializeComponent();
-            
+            frm = new ViewProducts();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -40,6 +41,14 @@ namespace POS_Sys
             this.Hide();
             login.ShowDialog();
             this.Close();
+        }
+
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+
+            frm.BringToFront();
+            frm.ShowDialog();
+
         }
     }
 }

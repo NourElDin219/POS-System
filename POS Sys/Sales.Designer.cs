@@ -30,11 +30,18 @@ namespace POS_Sys
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LogoutBtn = new System.Windows.Forms.Button();
+            this.DateL = new System.Windows.Forms.Label();
+            this.TimeL = new System.Windows.Forms.Label();
+            this.PaymentBtn = new System.Windows.Forms.Button();
+            this.DiscountBtn = new System.Windows.Forms.Button();
+            this.SearchBtn = new System.Windows.Forms.Button();
+            this.ReturnBtn = new System.Windows.Forms.Button();
             this.DiscountL = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.TotalAmountL = new System.Windows.Forms.Label();
@@ -55,14 +62,6 @@ namespace POS_Sys
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ReturnBtn = new System.Windows.Forms.Button();
-            this.SearchBtn = new System.Windows.Forms.Button();
-            this.DiscountBtn = new System.Windows.Forms.Button();
-            this.PaymentBtn = new System.Windows.Forms.Button();
-            this.TimeL = new System.Windows.Forms.Label();
-            this.DateL = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.LogoutBtn = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +69,7 @@ namespace POS_Sys
             this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Remove = new System.Windows.Forms.DataGridViewImageColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -99,6 +99,93 @@ namespace POS_Sys
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel1.Size = new System.Drawing.Size(395, 800);
             this.panel1.TabIndex = 6;
+            // 
+            // LogoutBtn
+            // 
+            this.LogoutBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.LogoutBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.LogoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LogoutBtn.ForeColor = System.Drawing.Color.White;
+            this.LogoutBtn.Location = new System.Drawing.Point(14, 713);
+            this.LogoutBtn.Name = "LogoutBtn";
+            this.LogoutBtn.Size = new System.Drawing.Size(366, 45);
+            this.LogoutBtn.TabIndex = 19;
+            this.LogoutBtn.Text = "تسجيل الخروج";
+            this.LogoutBtn.UseVisualStyleBackColor = false;
+            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
+            // 
+            // DateL
+            // 
+            this.DateL.ForeColor = System.Drawing.Color.White;
+            this.DateL.Location = new System.Drawing.Point(234, 768);
+            this.DateL.Name = "DateL";
+            this.DateL.Size = new System.Drawing.Size(161, 23);
+            this.DateL.TabIndex = 18;
+            this.DateL.Text = "Date";
+            this.DateL.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // TimeL
+            // 
+            this.TimeL.ForeColor = System.Drawing.Color.White;
+            this.TimeL.Location = new System.Drawing.Point(10, 768);
+            this.TimeL.Name = "TimeL";
+            this.TimeL.Size = new System.Drawing.Size(161, 23);
+            this.TimeL.TabIndex = 3;
+            this.TimeL.Text = "Time";
+            this.TimeL.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // PaymentBtn
+            // 
+            this.PaymentBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.PaymentBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.PaymentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PaymentBtn.ForeColor = System.Drawing.Color.White;
+            this.PaymentBtn.Location = new System.Drawing.Point(14, 569);
+            this.PaymentBtn.Name = "PaymentBtn";
+            this.PaymentBtn.Size = new System.Drawing.Size(366, 45);
+            this.PaymentBtn.TabIndex = 17;
+            this.PaymentBtn.Text = "دفع";
+            this.PaymentBtn.UseVisualStyleBackColor = false;
+            // 
+            // DiscountBtn
+            // 
+            this.DiscountBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.DiscountBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.DiscountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.DiscountBtn.ForeColor = System.Drawing.Color.White;
+            this.DiscountBtn.Location = new System.Drawing.Point(14, 500);
+            this.DiscountBtn.Name = "DiscountBtn";
+            this.DiscountBtn.Size = new System.Drawing.Size(366, 45);
+            this.DiscountBtn.TabIndex = 16;
+            this.DiscountBtn.Text = "اضافة خصم";
+            this.DiscountBtn.UseVisualStyleBackColor = false;
+            // 
+            // SearchBtn
+            // 
+            this.SearchBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.SearchBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SearchBtn.ForeColor = System.Drawing.Color.White;
+            this.SearchBtn.Location = new System.Drawing.Point(12, 429);
+            this.SearchBtn.Name = "SearchBtn";
+            this.SearchBtn.Size = new System.Drawing.Size(366, 45);
+            this.SearchBtn.TabIndex = 15;
+            this.SearchBtn.Text = "البحث عن منتج";
+            this.SearchBtn.UseVisualStyleBackColor = false;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
+            // 
+            // ReturnBtn
+            // 
+            this.ReturnBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.ReturnBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.ReturnBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ReturnBtn.ForeColor = System.Drawing.Color.White;
+            this.ReturnBtn.Location = new System.Drawing.Point(14, 637);
+            this.ReturnBtn.Name = "ReturnBtn";
+            this.ReturnBtn.Size = new System.Drawing.Size(366, 45);
+            this.ReturnBtn.TabIndex = 14;
+            this.ReturnBtn.Text = "ارجاع منتج";
+            this.ReturnBtn.UseVisualStyleBackColor = false;
             // 
             // DiscountL
             // 
@@ -283,14 +370,14 @@ namespace POS_Sys
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -300,14 +387,14 @@ namespace POS_Sys
             this.Discount,
             this.SubTotal,
             this.Remove});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.MintCream;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(395, 213);
@@ -317,110 +404,20 @@ namespace POS_Sys
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.MintCream;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1051, 545);
             this.dataGridView1.TabIndex = 9;
-            // 
-            // ReturnBtn
-            // 
-            this.ReturnBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.ReturnBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.ReturnBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ReturnBtn.ForeColor = System.Drawing.Color.White;
-            this.ReturnBtn.Location = new System.Drawing.Point(14, 637);
-            this.ReturnBtn.Name = "ReturnBtn";
-            this.ReturnBtn.Size = new System.Drawing.Size(366, 45);
-            this.ReturnBtn.TabIndex = 14;
-            this.ReturnBtn.Text = "ارجاع منتج";
-            this.ReturnBtn.UseVisualStyleBackColor = false;
-            // 
-            // SearchBtn
-            // 
-            this.SearchBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.SearchBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SearchBtn.ForeColor = System.Drawing.Color.White;
-            this.SearchBtn.Location = new System.Drawing.Point(12, 429);
-            this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(366, 45);
-            this.SearchBtn.TabIndex = 15;
-            this.SearchBtn.Text = "البحث عن منتج";
-            this.SearchBtn.UseVisualStyleBackColor = false;
-            // 
-            // DiscountBtn
-            // 
-            this.DiscountBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.DiscountBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.DiscountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.DiscountBtn.ForeColor = System.Drawing.Color.White;
-            this.DiscountBtn.Location = new System.Drawing.Point(14, 500);
-            this.DiscountBtn.Name = "DiscountBtn";
-            this.DiscountBtn.Size = new System.Drawing.Size(366, 45);
-            this.DiscountBtn.TabIndex = 16;
-            this.DiscountBtn.Text = "اضافة خصم";
-            this.DiscountBtn.UseVisualStyleBackColor = false;
-            // 
-            // PaymentBtn
-            // 
-            this.PaymentBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.PaymentBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.PaymentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.PaymentBtn.ForeColor = System.Drawing.Color.White;
-            this.PaymentBtn.Location = new System.Drawing.Point(14, 569);
-            this.PaymentBtn.Name = "PaymentBtn";
-            this.PaymentBtn.Size = new System.Drawing.Size(366, 45);
-            this.PaymentBtn.TabIndex = 17;
-            this.PaymentBtn.Text = "دفع";
-            this.PaymentBtn.UseVisualStyleBackColor = false;
-            // 
-            // TimeL
-            // 
-            this.TimeL.ForeColor = System.Drawing.Color.White;
-            this.TimeL.Location = new System.Drawing.Point(10, 768);
-            this.TimeL.Name = "TimeL";
-            this.TimeL.Size = new System.Drawing.Size(161, 23);
-            this.TimeL.TabIndex = 3;
-            this.TimeL.Text = "Time";
-            this.TimeL.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // DateL
-            // 
-            this.DateL.ForeColor = System.Drawing.Color.White;
-            this.DateL.Location = new System.Drawing.Point(234, 768);
-            this.DateL.Name = "DateL";
-            this.DateL.Size = new System.Drawing.Size(161, 23);
-            this.DateL.TabIndex = 18;
-            this.DateL.Text = "Date";
-            this.DateL.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // LogoutBtn
-            // 
-            this.LogoutBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.LogoutBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.LogoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.LogoutBtn.ForeColor = System.Drawing.Color.White;
-            this.LogoutBtn.Location = new System.Drawing.Point(14, 713);
-            this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.Size = new System.Drawing.Size(366, 45);
-            this.LogoutBtn.TabIndex = 19;
-            this.LogoutBtn.Text = "تسجيل الخروج";
-            this.LogoutBtn.UseVisualStyleBackColor = false;
-            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
             // 
             // Id
             // 
@@ -480,6 +477,10 @@ namespace POS_Sys
             this.Remove.Name = "Remove";
             this.Remove.ReadOnly = true;
             this.Remove.Width = 6;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Sales
             // 
