@@ -33,11 +33,11 @@ namespace POS_Sys
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.SearchTxt = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -54,19 +54,6 @@ namespace POS_Sys
             this.panel1.Size = new System.Drawing.Size(933, 33);
             this.panel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(799, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "البحث عن منتج";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -80,6 +67,19 @@ namespace POS_Sys
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(799, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "البحث عن منتج";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.SearchTxt);
@@ -89,6 +89,16 @@ namespace POS_Sys
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(933, 669);
             this.panel2.TabIndex = 1;
+            // 
+            // SearchTxt
+            // 
+            this.SearchTxt.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchTxt.Location = new System.Drawing.Point(234, 6);
+            this.SearchTxt.Name = "SearchTxt";
+            this.SearchTxt.Size = new System.Drawing.Size(509, 27);
+            this.SearchTxt.TabIndex = 4;
+            this.SearchTxt.Text = "ابحث هنا";
+            this.SearchTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // dataGridView1
             // 
@@ -136,16 +146,6 @@ namespace POS_Sys
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(933, 620);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // SearchTxt
-            // 
-            this.SearchTxt.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchTxt.Location = new System.Drawing.Point(234, 6);
-            this.SearchTxt.Name = "SearchTxt";
-            this.SearchTxt.Size = new System.Drawing.Size(509, 27);
-            this.SearchTxt.TabIndex = 4;
-            this.SearchTxt.Text = "ابحث هنا";
-            this.SearchTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // ViewProducts
             // 
