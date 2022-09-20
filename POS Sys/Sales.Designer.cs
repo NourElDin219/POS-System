@@ -62,14 +62,13 @@ namespace POS_Sys
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Remove = new System.Windows.Forms.DataGridViewImageColumn();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -262,6 +261,7 @@ namespace POS_Sys
             this.NTransaction.TabIndex = 4;
             this.NTransaction.Text = "عملية شراء جديدة";
             this.NTransaction.UseVisualStyleBackColor = false;
+            this.NTransaction.Click += new System.EventHandler(this.NTransaction_Click);
             // 
             // CashierLabel
             // 
@@ -384,7 +384,6 @@ namespace POS_Sys
             this.PName,
             this.UnitP,
             this.Quantity,
-            this.Discount,
             this.SubTotal,
             this.Remove});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -419,6 +418,10 @@ namespace POS_Sys
             this.dataGridView1.Size = new System.Drawing.Size(1051, 545);
             this.dataGridView1.TabIndex = 9;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Id
             // 
             this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -452,14 +455,6 @@ namespace POS_Sys
             this.Quantity.Name = "Quantity";
             this.Quantity.ReadOnly = true;
             // 
-            // Discount
-            // 
-            this.Discount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Discount.HeaderText = "الخصم";
-            this.Discount.MinimumWidth = 6;
-            this.Discount.Name = "Discount";
-            this.Discount.ReadOnly = true;
-            // 
             // SubTotal
             // 
             this.SubTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -477,10 +472,6 @@ namespace POS_Sys
             this.Remove.Name = "Remove";
             this.Remove.ReadOnly = true;
             this.Remove.Width = 6;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Sales
             // 
@@ -543,7 +534,6 @@ namespace POS_Sys
         private System.Windows.Forms.DataGridViewTextBoxColumn PName;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitP;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.DataGridViewImageColumn Remove;
     }

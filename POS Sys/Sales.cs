@@ -1,4 +1,6 @@
-﻿using System;
+﻿using POS_Sys.CS;
+using POS_Sys.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +15,17 @@ namespace POS_Sys
     public partial class Sales : Form
     {
         ViewProducts frm;
+        Invoice Invoice;
+        InvoiceProduct InvoiceProduct;
+        CS_Invoice CS_Invoice;
         public Sales()
         {
             InitializeComponent();
             frm = new ViewProducts();
+            Invoice = new Invoice();
+            InvoiceProduct = new InvoiceProduct();
+            CS_Invoice = new CS_Invoice();
+            TransactionL.Text = (CS_Invoice.GetLatestInvoiceNumber() + 1).ToString();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -49,6 +58,13 @@ namespace POS_Sys
             frm.BringToFront();
             frm.ShowDialog();
 
+        }
+
+        private void NTransaction_Click(object sender, EventArgs e)
+        {
+            Invoice = new Invoice();
+            InvoiceProduct = new InvoiceProduct();
+            TransactionL.Text = (CS_Invoice.GetLatestInvoiceNumber() + 1).ToString();
         }
     }
 }

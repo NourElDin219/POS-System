@@ -18,6 +18,6 @@ namespace POS_Sys.Models
         [ForeignKey("Products")]
         public int ProductId { get; set; }
         public Products Products { get; set; }
-        public int Quantity { get; set; }
+        
     }
 }

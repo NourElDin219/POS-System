@@ -164,6 +164,7 @@
       <DependentUpon>confirm_Purchase.cs</DependentUpon>
     </Compile>
     <Compile Include="CS\Cs_Category.cs" />
+    <Compile Include="CS\CS_Invoice.cs" />
     <Compile Include="CS\Cs_Products.cs" />
     <Compile Include="CS\UserCrudOps.cs" />
     <Compile Include="Login.cs">
@@ -191,6 +192,10 @@
     <Compile Include="Migrations\202209162107434_createdate.cs" />
     <Compile Include="Migrations\202209162107434_createdate.designer.cs">
       <DependentUpon>202209162107434_createdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209201600435_removeQt.cs" />
+    <Compile Include="Migrations\202209201600435_removeQt.designer.cs">
+      <DependentUpon>202209201600435_removeQt.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categories.cs" />
@@ -262,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202209162107434_createdate.resx">
       <DependentUpon>202209162107434_createdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209201600435_removeQt.resx">
+      <DependentUpon>202209201600435_removeQt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductsForm.resx">
       <DependentUpon>ProductsForm.cs</DependentUpon>
