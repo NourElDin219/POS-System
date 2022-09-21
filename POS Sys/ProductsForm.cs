@@ -183,12 +183,10 @@ namespace POS_Sys
 
         private void PPriceTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
         private void SPriceTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
         private void SQtTxt_KeyPress(object sender, KeyPressEventArgs e)

@@ -43,6 +43,7 @@ namespace POS_Sys
             this.QuantityText.TabIndex = 0;
             this.QuantityText.Text = "1";
             this.QuantityText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.QuantityText.TextChanged += new System.EventHandler(this.QuantityText_TextChanged);
             this.QuantityText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.QuantityText_KeyDown);
             this.QuantityText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.QuantityText_KeyPress);
             // 

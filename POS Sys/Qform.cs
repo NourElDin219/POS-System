@@ -47,5 +47,10 @@ namespace POS_Sys
                 button1_Click(this, new EventArgs());
             }
         }
+
+        private void QuantityText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

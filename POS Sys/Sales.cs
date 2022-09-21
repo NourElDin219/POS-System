@@ -18,9 +18,11 @@ namespace POS_Sys
         InvoiceProduct InvoiceProduct;
         CS_Invoice CS_Invoice;
         private List<Products> P_List;
+        private List<Products> p_List;
         private Cs_Products p;
         Qform qform;
         double sum;
+        int rowIndex;
         public Sales()
         {
             InitializeComponent();
@@ -28,6 +30,7 @@ namespace POS_Sys
             InvoiceProduct = new InvoiceProduct();
             CS_Invoice = new CS_Invoice();
             P_List = new List<Products>();
+            p_List = new List<Products>();
             p = new Cs_Products();
             DisplayProducts();
             sum = 0;
@@ -110,8 +113,17 @@ namespace POS_Sys
             sum = 0;
             label3.Text = "";
             dataGridView1.Rows.Clear();
+            textBox1.Clear();
         }
-
+        public void CalculateTotal()
+        {
+            sum = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                sum += Convert.ToDouble(row.Cells[4].Value);
+            }
+            CalulateDiscount();
+        }
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             String CName = dataGridView2.Columns[e.ColumnIndex].Name;
@@ -131,13 +143,32 @@ namespace POS_Sys
                     qform.ShowDialog();
                     qtity = qform.GetQuantity();
                 }
-                dataGridView1.Rows.Add(0,dataGridView2.Rows[e.RowIndex].Cells[1].Value, dataGridView2.Rows[e.RowIndex].Cells[2].Value, qtity, (qtity * Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[2].Value)));
-                sum += qtity * Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[2].Value);
+
+                if (ItemInCart(e.RowIndex))
+                {
+                    MessageBox.Show("المنتج موجود بالعربة مسبقا");
+                    return;
+                }
+                dataGridView1.Rows.Add(0,dataGridView2.Rows[e.RowIndex].Cells[1].Value, dataGridView2.Rows[e.RowIndex].Cells[2].Value, qtity, (Convert.ToDouble(qtity) * Convert.ToDouble(dataGridView2.Rows[e.RowIndex].Cells[2].Value)));
+
+                P_List[e.RowIndex].ShopQuantity -= qtity; 
+                p_List.Add(P_List[e.RowIndex]);
+                sum = 0;
+                CalculateTotal();
                 label3.Text = sum.ToString();
             }
         }
 
-
+        public bool ItemInCart(int ind)
+        {
+            if (p_List.Contains(P_List[ind]))
+            {
+                return true;
+            }
+        
+            return false;
+          
+        }
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             dataGridView1.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
@@ -145,6 +176,7 @@ namespace POS_Sys
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            rowIndex = e.RowIndex;
             PNameTxt.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             UnitPText.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             QuantityTxt.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
@@ -152,8 +184,10 @@ namespace POS_Sys
             String CName = dataGridView1.Columns[e.ColumnIndex].Name;
             if (CName == "Remove")
             {
-                sum -= Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
+                p_List.RemoveAt(e.RowIndex);
                 dataGridView1.Rows.RemoveAt(e.RowIndex);
+                sum = 0;
+                CalculateTotal();
                 label3.Text = sum.ToString();
             }
             
@@ -162,6 +196,83 @@ namespace POS_Sys
         private void DiscountBtn_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void QuantityTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void QuantityTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (Convert.ToInt32(QuantityTxt.Text) <= (Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[3].Value) + p_List[rowIndex].ShopQuantity))
+                {
+                    p_List[rowIndex].ShopQuantity += (Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[3].Value)) - Convert.ToInt32(QuantityTxt.Text);
+                    dataGridView1.Rows[rowIndex].Cells[3].Value =  Convert.ToInt32(QuantityTxt.Text);
+                    dataGridView1.Rows[rowIndex].Cells[4].Value = Convert.ToDouble(dataGridView1.Rows[rowIndex].Cells[3].Value) * Convert.ToDouble(dataGridView1.Rows[rowIndex].Cells[2].Value);
+                    MessageBox.Show("تم تعديل الكمية بنجاح");
+                }
+                else
+                {
+                    MessageBox.Show("لا يوجد كمية كافية");
+                    QuantityTxt.Focus();
+                }
+            }
+        }
+
+        private void QuantityTxt_MouseClick(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void QuantityTxt_MouseDown(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(QuantityTxt.Text) <= (Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[3].Value) + p_List[rowIndex].ShopQuantity))
+            {
+                p_List[rowIndex].ShopQuantity += (Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[3].Value)) - Convert.ToInt32(QuantityTxt.Text);
+                dataGridView1.Rows[rowIndex].Cells[3].Value = Convert.ToInt32(QuantityTxt.Text);
+                dataGridView1.Rows[rowIndex].Cells[4].Value = Convert.ToDouble(dataGridView1.Rows[rowIndex].Cells[3].Value) * Convert.ToDouble(dataGridView1.Rows[rowIndex].Cells[2].Value);
+                sum = 0;
+                CalculateTotal();
+                label3.Text = sum.ToString();
+                MessageBox.Show("تم تعديل الكمية بنجاح");
+            }
+            else
+            {
+                MessageBox.Show("لا يوجد كمية كافية");
+                QuantityTxt.Focus();
+            }
+        }
+        public void CalulateDiscount()
+        {
+            double discount = sum - ((sum * Convert.ToDouble(textBox1.Text)) / 100);
+            label3.Text = discount.ToString();
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text != null)
+            {
+                int i;
+                if (int.TryParse(textBox1.Text, out i))
+                {
+                    if (i >= 0 && i <= 100)
+                    {
+                        CalculateTotal();
+                        return;
+                    }
+                }
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }
