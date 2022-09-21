@@ -14,20 +14,33 @@ namespace POS_Sys
 {
     public partial class Sales : Form
     {
-        ViewProducts frm;
         Invoice Invoice;
         InvoiceProduct InvoiceProduct;
         CS_Invoice CS_Invoice;
+        private List<Products> P_List;
+        private Cs_Products p;
+        Qform qform;
+        double sum;
         public Sales()
         {
             InitializeComponent();
-            frm = new ViewProducts();
             Invoice = new Invoice();
             InvoiceProduct = new InvoiceProduct();
             CS_Invoice = new CS_Invoice();
-            TransactionL.Text = (CS_Invoice.GetLatestInvoiceNumber() + 1).ToString();
+            P_List = new List<Products>();
+            p = new Cs_Products();
+            DisplayProducts();
+            sum = 0;
         }
-
+        private void DisplayProducts()
+        {
+            dataGridView2.Rows.Clear();
+            P_List = p.GetProducts();
+            for (int i = 0; i < P_List.Count(); i++)
+            {
+                dataGridView2.Rows.Add(i + 1, P_List[i].Name, P_List[i].SellingPrice, P_List[i].ShopQuantity);
+            }
+        }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -46,25 +59,104 @@ namespace POS_Sys
 
         private void LogoutBtn_Click(object sender, EventArgs e)
         {
+        }
+
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void SearchTxt_TextChanged(object sender, EventArgs e)
+        {
+            string searchValue = SearchTxt.Text;
+
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    if (row.Cells[1].Value.ToString().Contains(searchValue))
+                    {
+                        row.Selected = true;
+                        break;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
+
+        private void SearchTxt_MouseClick(object sender, MouseEventArgs e)
+        {
+            SearchTxt.Clear();
+        }
+
+        private void LogoutBtn_Click_1(object sender, EventArgs e)
+        {
             Login login = new Login();
             this.Hide();
             login.ShowDialog();
             this.Close();
         }
 
-        private void SearchBtn_Click(object sender, EventArgs e)
-        {
-
-            frm.BringToFront();
-            frm.ShowDialog();
-
-        }
-
-        private void NTransaction_Click(object sender, EventArgs e)
+        private void NInvoiceBtn_Click(object sender, EventArgs e)
         {
             Invoice = new Invoice();
             InvoiceProduct = new InvoiceProduct();
-            TransactionL.Text = (CS_Invoice.GetLatestInvoiceNumber() + 1).ToString();
+            DisplayProducts();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            String CName = dataGridView2.Columns[e.ColumnIndex].Name;
+            if (CName == "AddToCart")
+            {
+                qform = new Qform();
+                qform.ShowDialog();
+                int qtity = qform.GetQuantity();
+                int q = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[3].Value);
+                if (q >= qtity)
+                {
+                    qform.dispose();
+                }
+                else
+                {
+                    MessageBox.Show("لا يوجد كمية كافية");
+                    qform.ShowDialog();
+                    qtity = qform.GetQuantity();
+                }
+                dataGridView1.Rows.Add(0,dataGridView2.Rows[e.RowIndex].Cells[1].Value, dataGridView2.Rows[e.RowIndex].Cells[2].Value, qtity, (qtity * Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[2].Value)));
+                
+            }
+        }
+        public void SumP()
+        {
+            foreach(DataGridViewRow row in dataGridView1.Rows)
+            sum += Convert.ToDouble(row.Cells[4].Value);
+        }
+
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            dataGridView1.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            String CName = dataGridView1.Columns[e.ColumnIndex].Name;
+            if (CName == "Remove")
+            {
+                sum -= Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
+                dataGridView1.Rows.RemoveAt(e.RowIndex);
+            }
+        }
+
+        private void DiscountBtn_Click(object sender, EventArgs e)
+        {
+            SumP();
+            label3.Text = sum.ToString();
         }
     }
 }
