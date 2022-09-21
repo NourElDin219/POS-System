@@ -129,14 +129,11 @@ namespace POS_Sys
                     qtity = qform.GetQuantity();
                 }
                 dataGridView1.Rows.Add(0,dataGridView2.Rows[e.RowIndex].Cells[1].Value, dataGridView2.Rows[e.RowIndex].Cells[2].Value, qtity, (qtity * Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[2].Value)));
-                
+                sum += qtity * Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[2].Value);
+                label3.Text = sum.ToString();
             }
         }
-        public void SumP()
-        {
-            foreach(DataGridViewRow row in dataGridView1.Rows)
-            sum += Convert.ToDouble(row.Cells[4].Value);
-        }
+
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
@@ -150,13 +147,13 @@ namespace POS_Sys
             {
                 sum -= Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
                 dataGridView1.Rows.RemoveAt(e.RowIndex);
+                label3.Text = sum.ToString();
             }
         }
 
         private void DiscountBtn_Click(object sender, EventArgs e)
         {
-            SumP();
-            label3.Text = sum.ToString();
+            
         }
     }
 }
