@@ -107,6 +107,9 @@ namespace POS_Sys
             Invoice = new Invoice();
             InvoiceProduct = new InvoiceProduct();
             DisplayProducts();
+            sum = 0;
+            label3.Text = "";
+            dataGridView1.Rows.Clear();
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -142,6 +145,10 @@ namespace POS_Sys
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            PNameTxt.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            UnitPText.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            QuantityTxt.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            TotalPText.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
             String CName = dataGridView1.Columns[e.ColumnIndex].Name;
             if (CName == "Remove")
             {
@@ -149,6 +156,7 @@ namespace POS_Sys
                 dataGridView1.Rows.RemoveAt(e.RowIndex);
                 label3.Text = sum.ToString();
             }
+            
         }
 
         private void DiscountBtn_Click(object sender, EventArgs e)
