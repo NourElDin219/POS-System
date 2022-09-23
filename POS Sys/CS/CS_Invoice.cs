@@ -23,13 +23,14 @@ namespace POS_Sys.CS
         }
         public void CreateInvoice(Invoice invoice, List<InvoiceProduct> products)
         {
-            db.Invoice.AddOrUpdate(invoice);
+            db.Invoice.Add(invoice);
+            db.SaveChanges();
+            int id= GetLatestInvoiceNumber();
             for (int i = 0; i < products.Count; i++)
             {
-                products[i].InvoiceId = invoice.Id;
+                products[i].InvoiceId = id;
             }
             db.InvoiceProduct.AddRange(products);
-
             db.SaveChanges();
 
         }

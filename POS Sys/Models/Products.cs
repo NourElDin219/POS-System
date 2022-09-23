@@ -21,7 +21,6 @@ namespace POS_Sys.Models
         public Category Category { get; set; }
         public int ShopQuantity { get; set; }
         public int InvQuantity { get; set; }
-        public int Discount { get; set; }
 
 
 

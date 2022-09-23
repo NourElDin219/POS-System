@@ -15,7 +15,8 @@ namespace POS_Sys
     public partial class Sales : Form
     {
         Invoice Invoice;
-        InvoiceProduct InvoiceProduct;
+        List<InvoiceProduct> InvoiceProduct;
+        InvoiceProduct invoiceProduct;
         CS_Invoice CS_Invoice;
         private List<Products> P_List;
         private List<Products> p_List;
@@ -23,17 +24,20 @@ namespace POS_Sys
         Qform qform;
         double sum;
         int rowIndex;
+        Cs_Products cs_Products;
         public Sales()
         {
             InitializeComponent();
             Invoice = new Invoice();
-            InvoiceProduct = new InvoiceProduct();
+            InvoiceProduct = new List<InvoiceProduct>();
+            invoiceProduct = new InvoiceProduct();
             CS_Invoice = new CS_Invoice();
             P_List = new List<Products>();
             p_List = new List<Products>();
             p = new Cs_Products();
             DisplayProducts();
             sum = 0;
+            cs_Products = new Cs_Products();
         }
         private void DisplayProducts()
         {
@@ -58,6 +62,7 @@ namespace POS_Sys
         private void Sales_Load(object sender, EventArgs e)
         {
             timer1.Start();
+           // this.reportViewer1.RefreshReport();
         }
 
         private void LogoutBtn_Click(object sender, EventArgs e)
@@ -108,9 +113,8 @@ namespace POS_Sys
         private void NInvoiceBtn_Click(object sender, EventArgs e)
         {
             Invoice = new Invoice();
-            InvoiceProduct = new InvoiceProduct();
+            InvoiceProduct = new List<InvoiceProduct>();
             DisplayProducts();
-            sum = 0;
             label3.Text = "";
             dataGridView1.Rows.Clear();
             textBox1.Clear();
@@ -150,10 +154,9 @@ namespace POS_Sys
                     return;
                 }
                 dataGridView1.Rows.Add(0,dataGridView2.Rows[e.RowIndex].Cells[1].Value, dataGridView2.Rows[e.RowIndex].Cells[2].Value, qtity, (Convert.ToDouble(qtity) * Convert.ToDouble(dataGridView2.Rows[e.RowIndex].Cells[2].Value)));
-
+                
                 P_List[e.RowIndex].ShopQuantity -= qtity; 
                 p_List.Add(P_List[e.RowIndex]);
-                sum = 0;
                 CalculateTotal();
                 label3.Text = sum.ToString();
             }
@@ -186,7 +189,6 @@ namespace POS_Sys
             {
                 p_List.RemoveAt(e.RowIndex);
                 dataGridView1.Rows.RemoveAt(e.RowIndex);
-                sum = 0;
                 CalculateTotal();
                 label3.Text = sum.ToString();
             }
@@ -251,6 +253,10 @@ namespace POS_Sys
         }
         public void CalulateDiscount()
         {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "0";
+            }
             double discount = sum - ((sum * Convert.ToDouble(textBox1.Text)) / 100);
             label3.Text = discount.ToString();
         }
@@ -273,6 +279,37 @@ namespace POS_Sys
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void PayAndPrintBtn_Click(object sender, EventArgs e)
+        {
+            CreateInvoice();
+            UpdateProducts();
+        }
+        public void UpdateProducts()
+        {
+            for (int i = 0; i < p_List.Count; i++)
+            {
+                cs_Products.AddOrUpdateProduct(p_List[i]);
+            }
+        }
+        public void CreateInvoice()
+        {
+            Invoice.Discount = Convert.ToInt32(textBox1.Text);
+            Invoice.PaymentMethod = "Cash";
+            Invoice.Pay = 14.5;
+            Invoice.UserId = 1008;
+            Invoice.Total = sum;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                invoiceProduct = new InvoiceProduct();
+                invoiceProduct.ProductId = p_List[i].Id;
+                invoiceProduct.Quantity = Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value);
+                InvoiceProduct.Add(invoiceProduct);
+                invoiceProduct = null;
+                GC.Collect();
+            }
+            CS_Invoice.CreateInvoice(Invoice, InvoiceProduct);
         }
     }
 }

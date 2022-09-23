@@ -37,7 +37,6 @@ namespace POS_Sys
             TxtSPrice.Clear();
             TxtSQuantity.Clear();
             TxtIQuantity.Clear();
-            TxtDiscount.Clear();
             ComboCat.Text = "";
         }
         public void FillCategoryList()
@@ -71,9 +70,8 @@ namespace POS_Sys
             else
             {
                 Product.Name = TxtName.Text;
-                Product.PurchasingPrice = Convert.ToInt32(TxtPPrice.Text);
-                Product.Discount = Convert.ToInt32(TxtDiscount.Text);
-                Product.SellingPrice = Convert.ToInt32(TxtSPrice.Text);
+                Product.PurchasingPrice = Convert.ToDouble(TxtPPrice.Text);
+                Product.SellingPrice = Convert.ToDouble(TxtSPrice.Text);
                 Product.ShopQuantity = Convert.ToInt32(TxtSQuantity.Text);
                 Product.InvQuantity = Convert.ToInt32(TxtIQuantity.Text);
                 Product.Category = cs_Category.GetCategory(ComboCat.Text);
@@ -127,7 +125,6 @@ namespace POS_Sys
                 SPriceTxt.Text = P_List[rowIndex].SellingPrice.ToString();
                 SQtTxt.Text = P_List[rowIndex].ShopQuantity.ToString();
                 IQtTxt.Text = P_List[rowIndex].InvQuantity.ToString();
-                DiscTxt.Text = P_List[rowIndex].Discount.ToString();
                 metroComboBox1.DisplayMember = "Name";
                 metroComboBox1.ValueMember = "Id";
                 metroComboBox1.DataSource = cs_Category.GetCategoryList();
@@ -145,7 +142,6 @@ namespace POS_Sys
             Product.SellingPrice = Convert.ToDouble(SPriceTxt.Text);
             Product.ShopQuantity = Convert.ToInt32(SQtTxt.Text);
             Product.InvQuantity=Convert.ToInt32(IQtTxt.Text);
-            Product.Discount= Convert.ToInt32(DiscTxt.Text);
             Product.CategoryId = Convert.ToInt32(metroComboBox1.SelectedValue);
            // Product.Category.Name = metroComboBox1.SelectedText;
             p.AddOrUpdateProduct(Product);

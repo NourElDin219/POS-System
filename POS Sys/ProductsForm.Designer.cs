@@ -46,8 +46,6 @@ namespace POS_Sys
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.MoveBtn = new MetroFramework.Controls.MetroButton();
             this.PPriceTxt = new MetroFramework.Controls.MetroTextBox();
-            this.DiscTxt = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.IQtTxt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.SQtTxt = new MetroFramework.Controls.MetroTextBox();
@@ -65,8 +63,6 @@ namespace POS_Sys
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.TxtPPrice = new MetroFramework.Controls.MetroTextBox();
-            this.TxtDiscount = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.TxtIQuantity = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.TxtSQuantity = new MetroFramework.Controls.MetroTextBox();
@@ -83,7 +79,7 @@ namespace POS_Sys
             // 
             // CancelBtn
             // 
-            this.CancelBtn.Location = new System.Drawing.Point(723, 454);
+            this.CancelBtn.Location = new System.Drawing.Point(725, 430);
             this.CancelBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(98, 44);
@@ -93,7 +89,7 @@ namespace POS_Sys
             // 
             // Btn_Save
             // 
-            this.Btn_Save.Location = new System.Drawing.Point(541, 454);
+            this.Btn_Save.Location = new System.Drawing.Point(541, 430);
             this.Btn_Save.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Btn_Save.Name = "Btn_Save";
             this.Btn_Save.Size = new System.Drawing.Size(98, 44);
@@ -179,8 +175,6 @@ namespace POS_Sys
             this.metroTabPage2.Controls.Add(this.metroLabel15);
             this.metroTabPage2.Controls.Add(this.MoveBtn);
             this.metroTabPage2.Controls.Add(this.PPriceTxt);
-            this.metroTabPage2.Controls.Add(this.DiscTxt);
-            this.metroTabPage2.Controls.Add(this.metroLabel2);
             this.metroTabPage2.Controls.Add(this.IQtTxt);
             this.metroTabPage2.Controls.Add(this.metroLabel4);
             this.metroTabPage2.Controls.Add(this.SQtTxt);
@@ -244,25 +238,6 @@ namespace POS_Sys
             this.PPriceTxt.Size = new System.Drawing.Size(192, 24);
             this.PPriceTxt.TabIndex = 33;
             this.PPriceTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PPriceTxt_KeyPress);
-            // 
-            // DiscTxt
-            // 
-            this.DiscTxt.Location = new System.Drawing.Point(717, 333);
-            this.DiscTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.DiscTxt.Name = "DiscTxt";
-            this.DiscTxt.Size = new System.Drawing.Size(192, 24);
-            this.DiscTxt.TabIndex = 32;
-            this.DiscTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DiscTxt_KeyPress);
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(586, 333);
-            this.metroLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(63, 20);
-            this.metroLabel2.TabIndex = 31;
-            this.metroLabel2.Text = "Discount";
             // 
             // IQtTxt
             // 
@@ -376,7 +351,7 @@ namespace POS_Sys
             // 
             // EditBtn
             // 
-            this.EditBtn.Location = new System.Drawing.Point(702, 399);
+            this.EditBtn.Location = new System.Drawing.Point(702, 351);
             this.EditBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.EditBtn.Name = "EditBtn";
             this.EditBtn.Size = new System.Drawing.Size(115, 47);
@@ -452,8 +427,6 @@ namespace POS_Sys
             // metroTabPage1
             // 
             this.metroTabPage1.Controls.Add(this.TxtPPrice);
-            this.metroTabPage1.Controls.Add(this.TxtDiscount);
-            this.metroTabPage1.Controls.Add(this.metroLabel12);
             this.metroTabPage1.Controls.Add(this.TxtIQuantity);
             this.metroTabPage1.Controls.Add(this.metroLabel11);
             this.metroTabPage1.Controls.Add(this.TxtSQuantity);
@@ -472,7 +445,7 @@ namespace POS_Sys
             this.metroTabPage1.Location = new System.Drawing.Point(4, 39);
             this.metroTabPage1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(925, 587);
+            this.metroTabPage1.Size = new System.Drawing.Size(925, 604);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Add New Product";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
@@ -486,24 +459,6 @@ namespace POS_Sys
             this.TxtPPrice.Name = "TxtPPrice";
             this.TxtPPrice.Size = new System.Drawing.Size(193, 24);
             this.TxtPPrice.TabIndex = 19;
-            // 
-            // TxtDiscount
-            // 
-            this.TxtDiscount.Location = new System.Drawing.Point(415, 369);
-            this.TxtDiscount.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.TxtDiscount.Name = "TxtDiscount";
-            this.TxtDiscount.Size = new System.Drawing.Size(193, 24);
-            this.TxtDiscount.TabIndex = 18;
-            // 
-            // metroLabel12
-            // 
-            this.metroLabel12.AutoSize = true;
-            this.metroLabel12.Location = new System.Drawing.Point(269, 369);
-            this.metroLabel12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(63, 20);
-            this.metroLabel12.TabIndex = 17;
-            this.metroLabel12.Text = "Discount";
             // 
             // TxtIQuantity
             // 
@@ -549,7 +504,7 @@ namespace POS_Sys
             this.metroTabControl1.Location = new System.Drawing.Point(0, 55);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(933, 647);
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -620,14 +575,10 @@ namespace POS_Sys
         private MetroFramework.Controls.MetroTabControl metroTabControl1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private MetroFramework.Controls.MetroTextBox TxtDiscount;
-        private MetroFramework.Controls.MetroLabel metroLabel12;
         private MetroFramework.Controls.MetroTextBox TxtIQuantity;
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroTextBox TxtSQuantity;
         private MetroFramework.Controls.MetroLabel metroLabel10;
-        private MetroFramework.Controls.MetroTextBox DiscTxt;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox IQtTxt;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroTextBox SQtTxt;
