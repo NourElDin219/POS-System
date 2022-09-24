@@ -88,6 +88,7 @@ namespace POS_Sys
             this.txt_Password.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_Password.Size = new System.Drawing.Size(182, 34);
             this.txt_Password.TabIndex = 14;
+            this.txt_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Password_KeyDown);
             // 
             // txt_Username
             // 
@@ -98,6 +99,7 @@ namespace POS_Sys
             this.txt_Username.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_Username.Size = new System.Drawing.Size(182, 34);
             this.txt_Username.TabIndex = 13;
+            this.txt_Username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Username_KeyDown);
             // 
             // label1
             // 

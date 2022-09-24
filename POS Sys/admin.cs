@@ -13,9 +13,21 @@ namespace POS_Sys
 {
     public partial class admin : Form
     {
+        ProductsForm pfrm;
+        Users_Form ufrm;
+        CategoryForm cfrm;
         public admin()
         {
             InitializeComponent();
+            pfrm = new ProductsForm();
+            ufrm = new Users_Form();
+            cfrm = new CategoryForm();
+            pfrm.TopLevel = false;
+            ufrm.TopLevel = false;
+            cfrm.TopLevel = false;
+            panel4.Controls.Add(pfrm);
+            panel4.Controls.Add(ufrm);
+            panel4.Controls.Add(cfrm);
         }
         private void label8_Click(object sender, EventArgs e)
         {
@@ -31,28 +43,10 @@ namespace POS_Sys
         {
             
         }
-        //private void CloseAllOtherForms()
-        //{
-        //    List<Form> formsToClose = new List<Form>();
-        //    foreach (Form form in Application.OpenForms)
-        //    {
-        //        if (form != this)
-        //        {
-        //            if (form.GetType().Name != "admin")
-        //            formsToClose.Add(form);
-        //        }
-        //    }
-
-        //    formsToClose.ForEach(f => f.Close());
-        //}
-
         private void button1_Click(object sender, EventArgs e)
         {
-            ProductsForm frm = new ProductsForm();
-            frm.TopLevel = false;
-            panel4.Controls.Add(frm);
-            frm.BringToFront();
-            frm.Show();
+            pfrm.BringToFront();
+            pfrm.Show();
         }
 
         private void admin_Load(object sender, EventArgs e)
@@ -67,12 +61,8 @@ namespace POS_Sys
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
-            Users_Form frm = new Users_Form();
-            frm.TopLevel = false;
-            panel4.Controls.Add(frm);
-            frm.BringToFront();
-            frm.Show();
+            ufrm.BringToFront();
+            ufrm.Show();
         }
 
         private void userSettings1_Load(object sender, EventArgs e)
@@ -83,6 +73,9 @@ namespace POS_Sys
         private void button6_Click(object sender, EventArgs e)
         {
             Login login = new Login();
+            ufrm.Dispose();
+            cfrm.Dispose();
+            pfrm.Dispose();
             this.Hide();
             login.ShowDialog();
             this.Close();
@@ -95,11 +88,8 @@ namespace POS_Sys
 
         private void CategoryBtn_Click(object sender, EventArgs e)
         {
-            CategoryForm frm = new CategoryForm();
-            frm.TopLevel = false;
-            panel4.Controls.Add(frm);
-            frm.BringToFront();
-            frm.Show();
+            cfrm.BringToFront();
+            cfrm.Show();
         }
     }
 }

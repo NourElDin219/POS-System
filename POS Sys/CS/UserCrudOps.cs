@@ -22,7 +22,7 @@ namespace POS_Sys.CS
             Role = "";
             Role_ID = 0;
             user = new Users();
-            
+
         }
 
         public string getName()
@@ -59,7 +59,7 @@ namespace POS_Sys.CS
         }
         public int CreateUser(string name, string username, string password, string role)
         {
-            
+
             user.Name = name;
             user.UserName = username;
             user.Password = password;
@@ -75,7 +75,7 @@ namespace POS_Sys.CS
             {
                 Role_ID = 3;
             }
-            using(DatabaseContext db=new DatabaseContext())
+            using (DatabaseContext db = new DatabaseContext())
             {
                 if (db.User.Where(x => x.UserName == username).Count() == 0)
                 {
@@ -87,7 +87,7 @@ namespace POS_Sys.CS
             }
             return 0;
         }
-        public void ReadUser(string user_Text,string user_Pass)
+        public void ReadUser(string user_Text, string user_Pass)
         {
             using (DatabaseContext db = new DatabaseContext())
             {
@@ -152,7 +152,7 @@ namespace POS_Sys.CS
             }
             return false;
         }
-        public int UpdateUser(int ID,string name,string username,string password,string role)
+        public int UpdateUser(int ID, string name, string username, string password, string role)
         {
             using (DatabaseContext db = new DatabaseContext())
             {
@@ -178,7 +178,7 @@ namespace POS_Sys.CS
                         Role_ID = 3;
                     }
                     result.Role = db.Role.FirstOrDefault(s => s.Id == Role_ID);
-                    if(db.User.Where(x=>x.UserName==username).Count()>0 && !check )
+                    if (db.User.Where(x => x.UserName == username).Count() > 0 && !check)
                     {
                         return 0;
                     }
@@ -200,9 +200,17 @@ namespace POS_Sys.CS
         }
         public List<Users> ReadAllUsers()
         {
-            using (DatabaseContext db=new DatabaseContext()) {
+            using (DatabaseContext db = new DatabaseContext())
+            {
                 var Users = db.User.ToList();
                 return Users;
+            }
+        }
+        public void ReadUsers()
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var Users = db.User.ToList();
             }
         }
     }

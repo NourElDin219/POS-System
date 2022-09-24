@@ -10,18 +10,23 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.Common;
 using POS_Sys.CS;
+using POS_Sys.Models;
+
 namespace POS_Sys
 {
     public partial class Login : Form
     {
+        UserCrudOps user;
         public Login()
         {
             InitializeComponent();
+            user = new UserCrudOps();
+            user.ReadUsers();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UserCrudOps user = new UserCrudOps();
+             
             if (user.Authorized(txt_Username.Text, txt_Password.Text))
             {
                 if (user.getRole() == "Admin")
@@ -41,6 +46,22 @@ namespace POS_Sys
             }
             else
                 MessageBox.Show("Invalid Username or Password.");
+        }
+
+        private void txt_Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
+        }
+
+        private void txt_Username_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
         }
     }
 }

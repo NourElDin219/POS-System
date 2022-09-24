@@ -24,7 +24,7 @@ namespace POS_Sys
         Qform qform;
         double sum;
         int rowIndex;
-        Cs_Products cs_Products;
+        Cs_Products cs_Products; 
         public Sales()
         {
             InitializeComponent();
@@ -38,6 +38,7 @@ namespace POS_Sys
             DisplayProducts();
             sum = 0;
             cs_Products = new Cs_Products();
+           
         }
         private void DisplayProducts()
         {
@@ -62,7 +63,6 @@ namespace POS_Sys
         private void Sales_Load(object sender, EventArgs e)
         {
             timer1.Start();
-           // this.reportViewer1.RefreshReport();
         }
 
         private void LogoutBtn_Click(object sender, EventArgs e)
@@ -77,6 +77,7 @@ namespace POS_Sys
 
         private void SearchTxt_TextChanged(object sender, EventArgs e)
         {
+            
             string searchValue = SearchTxt.Text;
 
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -310,6 +311,11 @@ namespace POS_Sys
                 GC.Collect();
             }
             CS_Invoice.CreateInvoice(Invoice, InvoiceProduct);
+        }
+
+        private void SearchTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          
         }
     }
 }
