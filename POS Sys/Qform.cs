@@ -56,5 +56,10 @@ namespace POS_Sys
         private void Qform_FormClosing(object sender, FormClosingEventArgs e)
         {
         }
+
+        private void Qform_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            QuantityText.Text = "0";
+        }
     }
 }

@@ -138,28 +138,31 @@ namespace POS_Sys
                 qform.ShowDialog();
                 int qtity = qform.GetQuantity();
                 int q = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[3].Value);
-                if (q >= qtity)
+                if (qtity > 0)
                 {
-                    qform.dispose();
-                }
-                else
-                {
-                    MessageBox.Show("لا يوجد كمية كافية");
-                    qform.ShowDialog();
-                    qtity = qform.GetQuantity();
-                }
+                    if (q >= qtity)
+                    {
+                        qform.dispose();
+                    }
+                    else
+                    {
+                        MessageBox.Show("لا يوجد كمية كافية");
+                        qform.ShowDialog();
+                        qtity = qform.GetQuantity();
+                    }
 
-                if (ItemInCart(e.RowIndex))
-                {
-                    MessageBox.Show("المنتج موجود بالعربة مسبقا");
-                    return;
+                    if (ItemInCart(e.RowIndex))
+                    {
+                        MessageBox.Show("المنتج موجود بالعربة مسبقا");
+                        return;
+                    }
+                    dataGridView1.Rows.Add(0, dataGridView2.Rows[e.RowIndex].Cells[1].Value, dataGridView2.Rows[e.RowIndex].Cells[2].Value, qtity, (Convert.ToDouble(qtity) * Convert.ToDouble(dataGridView2.Rows[e.RowIndex].Cells[2].Value)));
+
+                    P_List[e.RowIndex].ShopQuantity -= qtity;
+                    p_List.Add(P_List[e.RowIndex]);
+                    CalculateTotal();
+                    label3.Text = sum.ToString();
                 }
-                dataGridView1.Rows.Add(0,dataGridView2.Rows[e.RowIndex].Cells[1].Value, dataGridView2.Rows[e.RowIndex].Cells[2].Value, qtity, (Convert.ToDouble(qtity) * Convert.ToDouble(dataGridView2.Rows[e.RowIndex].Cells[2].Value)));
-                
-                P_List[e.RowIndex].ShopQuantity -= qtity; 
-                p_List.Add(P_List[e.RowIndex]);
-                CalculateTotal();
-                label3.Text = sum.ToString();
             }
         }
 

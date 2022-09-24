@@ -72,6 +72,7 @@ namespace POS_Sys
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "الكمية";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Qform_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Qform_FormClosed);
             this.Load += new System.EventHandler(this.Qform_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
