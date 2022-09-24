@@ -52,5 +52,9 @@ namespace POS_Sys
         {
 
         }
+
+        private void Qform_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
     }
 }

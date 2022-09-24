@@ -64,12 +64,14 @@ namespace POS_Sys
             this.ClientSize = new System.Drawing.Size(353, 121);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.QuantityText);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Qform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "الكمية";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Qform_FormClosing);
             this.Load += new System.EventHandler(this.Qform_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
