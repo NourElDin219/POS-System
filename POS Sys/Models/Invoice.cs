@@ -13,7 +13,7 @@ namespace POS_Sys.Models
         public double Total { get; set; }
         public double Pay { get; set; }
 
-        public int Discount { get; set; }
+        public double Discount { get; set; }
         public string PaymentMethod { get; set; }
 
         // forieng key

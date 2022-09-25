@@ -24,8 +24,9 @@ namespace POS_Sys
         Qform qform;
         double sum;
         int rowIndex;
+        int CashierId;
         Cs_Products cs_Products; 
-        public Sales()
+        public Sales(string CashierName,int CashierId)
         {
             InitializeComponent();
             Invoice = new Invoice();
@@ -38,6 +39,7 @@ namespace POS_Sys
             DisplayProducts();
             sum = 0;
             cs_Products = new Cs_Products();
+            this.CashierId = CashierId;
            
         }
         private void DisplayProducts()
@@ -115,6 +117,7 @@ namespace POS_Sys
         {
             Invoice = new Invoice();
             InvoiceProduct = new List<InvoiceProduct>();
+            p_List.Clear();
             DisplayProducts();
             label3.Text = "";
             dataGridView1.Rows.Clear();
@@ -305,14 +308,18 @@ namespace POS_Sys
             {
                 cs_Products.AddOrUpdateProduct(p_List[i]);
             }
+            NInvoiceBtn.PerformClick();
         }
         public void CreateInvoice()
         {
-            Invoice.Discount = Convert.ToInt32(textBox1.Text);
-            Invoice.PaymentMethod = "Cash";
-            Invoice.Pay = 14.5;
-            Invoice.UserId = 1008;
-            Invoice.Total = sum;
+            PayAndPrint PnP = new PayAndPrint(sum, Convert.ToDouble(label3.Text));
+            PnP.ShowDialog();
+            Invoice.Pay = PnP.paid;
+            Invoice.Discount = sum - Convert.ToDouble(label3.Text);
+            Invoice.PaymentMethod = PnP.method;
+            Invoice.Total = PnP.total;
+            Invoice.UserId = CashierId;
+            PnP.Dispose();
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 invoiceProduct = new InvoiceProduct();
@@ -323,6 +330,7 @@ namespace POS_Sys
                 GC.Collect();
             }
             CS_Invoice.CreateInvoice(Invoice, InvoiceProduct);
+            
         }
 
         private void SearchTxt_KeyPress(object sender, KeyPressEventArgs e)

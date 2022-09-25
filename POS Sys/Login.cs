@@ -38,7 +38,7 @@ namespace POS_Sys
                 }
                 else if(user.getRole() == "Cashier")
                 {
-                    Sales sales = new Sales();
+                    Sales sales = new Sales(user.getName(),user.Id);
                     this.Hide();
                     sales.ShowDialog();
                     this.Close();

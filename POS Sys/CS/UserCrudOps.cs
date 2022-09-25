@@ -14,6 +14,7 @@ namespace POS_Sys.CS
         private string Role;
         private int Role_ID;
         private Users user;
+        public int Id;
         public UserCrudOps()
         {
             Name = "";
@@ -140,12 +141,14 @@ namespace POS_Sys.CS
                              select new
                              {
                                  n = U.Name,
+                                 i=U.Id,
                                  r = R.Name
                              };
                     foreach (var obj in ro)
                     {
                         Name = obj.n;
                         Role = obj.r;
+                        Id = obj.i;
                     }
                     return true;
                 }
