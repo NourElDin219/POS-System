@@ -127,7 +127,7 @@ namespace POS_Sys
             {
                 sum += Convert.ToDouble(row.Cells[4].Value);
             }
-            CalulateDiscount();
+            //CalulateDiscount();
         }
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -138,7 +138,7 @@ namespace POS_Sys
                 qform.ShowDialog();
                 int qtity = qform.GetQuantity();
                 int q = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[3].Value);
-                if (qtity > 0)
+        here:   if (qtity > 0)
                 {
                     if (q >= qtity)
                     {
@@ -149,6 +149,7 @@ namespace POS_Sys
                         MessageBox.Show("لا يوجد كمية كافية");
                         qform.ShowDialog();
                         qtity = qform.GetQuantity();
+                        goto here;
                     }
 
                     if (ItemInCart(e.RowIndex))
@@ -261,8 +262,16 @@ namespace POS_Sys
             {
                 textBox1.Text = "0";
             }
-            double discount = sum - ((sum * Convert.ToDouble(textBox1.Text)) / 100);
-            label3.Text = discount.ToString();
+            if (comboBox1.SelectedItem.ToString() == "%")
+            {
+                double discount = sum - ((sum * Convert.ToDouble(textBox1.Text)) / 100);
+                label3.Text = discount.ToString();
+            }
+            else if(comboBox1.SelectedItem.ToString() == "$")
+            {
+                double discount = sum - Convert.ToDouble(textBox1.Text);
+                label3.Text = discount.ToString();
+            }
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -319,6 +328,11 @@ namespace POS_Sys
         private void SearchTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
           
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CalulateDiscount();
         }
     }
 }
