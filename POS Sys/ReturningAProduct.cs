@@ -89,6 +89,10 @@ namespace POS_Sys
                         dataGridView1.Rows.Add(++i, obj.ProductName, obj.UnitPrice, obj.Quantity, Convert.ToDouble((obj.UnitPrice) * (obj.Quantity)));
                     }
                 }
+                else
+                {
+                    MessageBox.Show("لا توجد فاتورة بهذا الرقم");
+                }
             }
         }
 
