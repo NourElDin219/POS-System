@@ -342,5 +342,13 @@ namespace POS_Sys
         {
             CalulateDiscount();
         }
+
+        private void ReturnBtn_Click(object sender, EventArgs e)
+        {
+            ReturningAProduct frm = new ReturningAProduct();
+            frm.ShowDialog();
+            frm.Dispose();
+            DisplayProducts();
+        }
     }
 }

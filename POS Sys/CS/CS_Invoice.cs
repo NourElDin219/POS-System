@@ -55,6 +55,28 @@ namespace POS_Sys.CS
         {
             var invoices = db.Invoice.OrderBy(b => b.Id).Skip(PageIndex * 10).Take(10).ToList();
             return invoices;
+        } 
+        public void EditInvoiceProduct(int IPID)
+        {
+            var IP = db.InvoiceProduct.Find(IPID);
+            db.InvoiceProduct.Remove(IP);
+            db.SaveChanges();
+        }
+        public void UpdateInvoice(int Id,double total)
+        {
+            Invoice inv = new Invoice();
+            inv = db.Invoice.Find(Id);
+            inv.Pay = total;
+            inv.Total = total;
+            db.Invoice.AddOrUpdate(inv);
+            db.SaveChanges();
+        }
+        public void RemoveInvoice(int Id)
+        {
+            Invoice inv = new Invoice();
+            inv = db.Invoice.Find(Id);
+            db.Invoice.Remove(inv);
+            db.SaveChanges();
         }
     }
 }

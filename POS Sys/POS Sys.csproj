@@ -173,6 +173,7 @@
     <Compile Include="CS\CS_Invoice.cs" />
     <Compile Include="CS\Cs_Products.cs" />
     <Compile Include="CS\UserCrudOps.cs" />
+    <Compile Include="InvoiceDetail.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,7 +247,12 @@
     <Compile Include="Qform.Designer.cs">
       <DependentUpon>Qform.cs</DependentUpon>
     </Compile>
-    <Compile Include="Receipt.cs" />
+    <Compile Include="ReturningAProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturningAProduct.Designer.cs">
+      <DependentUpon>ReturningAProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +324,9 @@
       <DependentUpon>Qform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="ReturningAProduct.resx">
+      <DependentUpon>ReturningAProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sales.resx">
       <DependentUpon>Sales.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +334,7 @@
       <DependentUpon>Users_Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\InvoiceDetail.datasource" />
     <None Include="Properties\DataSources\POS_Sys.Models.Products.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
