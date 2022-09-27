@@ -32,6 +32,7 @@ namespace POS_Sys
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ProfitBtn = new System.Windows.Forms.Button();
             this.CategoryBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
@@ -66,6 +67,7 @@ namespace POS_Sys
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.ProfitBtn);
             this.panel1.Controls.Add(this.CategoryBtn);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.button6);
@@ -80,6 +82,16 @@ namespace POS_Sys
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel1.Size = new System.Drawing.Size(395, 753);
             this.panel1.TabIndex = 5;
+            // 
+            // ProfitBtn
+            // 
+            this.ProfitBtn.Location = new System.Drawing.Point(89, 462);
+            this.ProfitBtn.Name = "ProfitBtn";
+            this.ProfitBtn.Size = new System.Drawing.Size(226, 34);
+            this.ProfitBtn.TabIndex = 11;
+            this.ProfitBtn.Text = "الارباح";
+            this.ProfitBtn.UseVisualStyleBackColor = true;
+            this.ProfitBtn.Click += new System.EventHandler(this.ProfitBtn_Click);
             // 
             // CategoryBtn
             // 
@@ -235,6 +247,7 @@ namespace POS_Sys
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button CategoryBtn;
+        private System.Windows.Forms.Button ProfitBtn;
     }
 }
 

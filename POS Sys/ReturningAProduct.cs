@@ -1,6 +1,5 @@
 ﻿using POS_Sys.CS;
 using POS_Sys.Models;
-using POS_Sys.CS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -126,7 +125,16 @@ namespace POS_Sys
                 cs_Products.AddOrUpdateProduct(products[i]);
                 dataGridView1.Rows.RemoveAt(i);
             }
+            dataGridView1.Rows.Clear();
             CS_Invoice.Deleteinvoice(Convert.ToInt32(textBox1.Text));
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SearchBtn.PerformClick();
+            }
         }
     }
 }

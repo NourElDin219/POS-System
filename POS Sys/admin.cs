@@ -16,18 +16,22 @@ namespace POS_Sys
         ProductsForm pfrm;
         Users_Form ufrm;
         CategoryForm cfrm;
+        Profit prfrm;
         public admin()
         {
             InitializeComponent();
             pfrm = new ProductsForm();
             ufrm = new Users_Form();
             cfrm = new CategoryForm();
+            prfrm = new Profit();
             pfrm.TopLevel = false;
             ufrm.TopLevel = false;
             cfrm.TopLevel = false;
+            prfrm.TopLevel = false;
             panel4.Controls.Add(pfrm);
             panel4.Controls.Add(ufrm);
             panel4.Controls.Add(cfrm);
+            panel4.Controls.Add(prfrm);
         }
         private void label8_Click(object sender, EventArgs e)
         {
@@ -76,6 +80,7 @@ namespace POS_Sys
             ufrm.Dispose();
             cfrm.Dispose();
             pfrm.Dispose();
+            prfrm.Dispose();
             this.Hide();
             login.ShowDialog();
             this.Close();
@@ -90,6 +95,12 @@ namespace POS_Sys
         {
             cfrm.BringToFront();
             cfrm.Show();
+        }
+
+        private void ProfitBtn_Click(object sender, EventArgs e)
+        {
+            prfrm.BringToFront();
+            prfrm.Show();
         }
     }
 }

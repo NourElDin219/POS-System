@@ -169,6 +169,7 @@ namespace POS_Sys
             this.textBox1.Size = new System.Drawing.Size(231, 30);
             this.textBox1.TabIndex = 12;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // SearchBtn
             // 

@@ -38,8 +38,17 @@ namespace POS_Sys
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if(textBox2.Text !="")
-            textBox3.Text = ( Convert.ToDouble(textBox2.Text)-total).ToString();
+            if (textBox2.Text != "")
+            {
+                try
+                {
+                    textBox3.Text = (Convert.ToDouble(textBox2.Text) - total).ToString();
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

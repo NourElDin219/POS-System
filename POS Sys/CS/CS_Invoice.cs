@@ -78,5 +78,42 @@ namespace POS_Sys.CS
             db.Invoice.Remove(inv);
             db.SaveChanges();
         }
+        public double GetTotalInvoiceSumForToday()
+        {
+
+            var Result = db.Invoice.Where(x => x.CreatedDate >= DateTime.Today).Sum(x => (double?)x.Total)??0;
+            
+            
+            return Result;
+        }
+
+        public double GetTotalInvoiceSumForThisMonth()
+        {
+            DateTime d = DateTime.Now;
+            var MonthDate = new DateTime(d.Year, d.Month, 1);
+            var Result = db.Invoice.Where(x => x.CreatedDate >= MonthDate).Sum(x => (double?)x.Total)??0;
+            return Result;
+        }
+        public double GetTotalInvoiceSumForThisYear()
+        {
+            DateTime d = DateTime.Now;
+            var YearDate = new DateTime(d.Year, 1, 1);
+            var Result = db.Invoice.Where(x => x.CreatedDate >= YearDate).Sum(x => (double?)x.Total)??0;
+            return Result;
+        }
+        public double GetTotalInvoiceSumForThisMonth(int m,int y)
+        {
+            //DateTime d = DateTime.Now;
+            var MonthDate = new DateTime(y, m, 1);
+            var Result = db.Invoice.Where(x => x.CreatedDate >= MonthDate).Sum(x => (double?)x.Total)??0;
+            return Result;
+        }
+        public double GetTotalInvoiceSumForThisYear(int y)
+        {
+            //DateTime d = DateTime.Now;
+            var YearDate = new DateTime(y, 1, 1);
+            var Result = db.Invoice.Where(x => x.CreatedDate >= YearDate).Sum(x => (double?)x.Total)??0;
+            return Result;
+        }
     }
 }
