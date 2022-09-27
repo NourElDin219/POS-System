@@ -101,6 +101,7 @@ namespace POS_Sys.CS
             var Result = db.Invoice.Where(x => x.CreatedDate >= YearDate).Sum(x => (double?)x.Total)??0;
             return Result;
         }
+        //Shoof dh 
         public double GetTotalInvoiceSumForThisMonth(int m,int y)
         {
             //DateTime d = DateTime.Now;

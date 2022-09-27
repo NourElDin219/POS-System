@@ -17,7 +17,7 @@ namespace POS_Sys
         public Profit()
         {
             InitializeComponent();
-            YearCombobox.DataSource= Enumerable.Range(2020, DateTime.UtcNow.Year - 2019).ToList();
+            YearCombobox.DataSource= Enumerable.Range(2022, DateTime.UtcNow.Year - 2019).ToList();
             Cs_Invoice = new CS_Invoice();
         }
 
