@@ -102,19 +102,27 @@ namespace POS_Sys.CS
             return Result;
         }
         //Shoof dh 
-        public double GetTotalInvoiceSumForThisMonth(int m,int y)
+        public double GetTotalInvoiceSumForThisMonth(DateTime dt)
         {
-            //DateTime d = DateTime.Now;
-            var MonthDate = new DateTime(y, m, 1);
-            var Result = db.Invoice.Where(x => x.CreatedDate >= MonthDate).Sum(x => (double?)x.Total)??0;
+            dt=new DateTime(dt.Year, dt.Month, 1);
+            var MonthDate = dt.AddMonths(1);
+            var Result = db.Invoice.Where(x => x.CreatedDate >= dt&&x.CreatedDate<MonthDate).Sum(x => (double?)x.Total)??0;
             return Result;
         }
-        public double GetTotalInvoiceSumForThisYear(int y)
+        public double GetTotalInvoiceSumForThisYear(DateTime dt)
         {
-            //DateTime d = DateTime.Now;
-            var YearDate = new DateTime(y, 1, 1);
-            var Result = db.Invoice.Where(x => x.CreatedDate >= YearDate).Sum(x => (double?)x.Total)??0;
+            dt = new DateTime(dt.Year, 1, 1);
+            var MonthDate = dt.AddYears(1);
+            var Result = db.Invoice.Where(x => x.CreatedDate >= dt && x.CreatedDate<MonthDate).Sum(x => (double?)x.Total)??0;
             return Result;
         }
+        public double GetTotalInvoiceSumForToday(DateTime dt)
+        {
+            var MonthDate = dt.AddDays(1);
+            var Result = db.Invoice.Where(x => x.CreatedDate >= dt&&x.CreatedDate<MonthDate).Sum(x => (double?)x.Total) ?? 0;
+            return Result;
+        }
+
+
     }
 }
