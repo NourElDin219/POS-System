@@ -25,7 +25,8 @@ namespace POS_Sys
         double sum;
         int rowIndex;
         int CashierId;
-        Cs_Products cs_Products; 
+        Cs_Products cs_Products;
+        string CashierName;
         public Sales(string CashierName,int CashierId)
         {
             InitializeComponent();
@@ -40,7 +41,21 @@ namespace POS_Sys
             sum = 0;
             cs_Products = new Cs_Products();
             this.CashierId = CashierId;
+            this.CashierName = CashierName;
            
+        }
+        public void RefreshForm()
+        {
+            Invoice = new Invoice();
+            InvoiceProduct = new List<InvoiceProduct>();
+            invoiceProduct = new InvoiceProduct();
+            CS_Invoice = new CS_Invoice();
+            P_List = new List<Products>();
+            p_List = new List<Products>();
+            p = new Cs_Products();
+            DisplayProducts();
+            sum = 0;
+            cs_Products = new Cs_Products();
         }
         private void DisplayProducts()
         {
@@ -348,7 +363,8 @@ namespace POS_Sys
             ReturningAProduct frm = new ReturningAProduct();
             frm.ShowDialog();
             frm.Dispose();
-            DisplayProducts();
+            RefreshForm();
+            
         }
     }
 }

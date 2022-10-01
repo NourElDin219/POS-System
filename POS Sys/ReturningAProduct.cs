@@ -100,6 +100,51 @@ namespace POS_Sys
             String CName = dataGridView1.Columns[e.ColumnIndex].Name;
             if (CName == "Remove")
             {
+                if (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value) > 1) {
+                    Qform qform = new Qform();
+                    qform.ShowDialog();
+                    int qtity = qform.GetQuantity();
+                    int q = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
+                here: if (qtity > 0)
+                    {
+                        if (q >= qtity)
+                        {
+                            qform.dispose();
+                        }
+                        else
+                        {
+                            MessageBox.Show("لا يوجد كمية كافية");
+                            qform.ShowDialog();
+                            qtity = qform.GetQuantity();
+                            goto here;
+                        }
+                    }
+                    products[e.RowIndex].ShopQuantity -= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value) - qtity;
+                    cs_Products.AddOrUpdateProduct(products[e.RowIndex]);
+                    if ((Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value) - qtity) >= 1)
+                    {
+                        CS_Invoice.UpdateInvoiceProducts(Convert.ToInt32(textBox1.Text), products[e.RowIndex].Id, (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value) - qtity));
+                        dataGridView1.Rows[e.RowIndex].Cells[3].Value = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value) - qtity;
+                        dataGridView1.Rows[e.RowIndex].Cells[4].Value = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[3].Value) * Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
+                    }
+                    else
+                    {
+                        CS_Invoice.EditInvoiceProduct(InvoiceProductIds[e.RowIndex]);
+                        dataGridView1.Rows.RemoveAt(e.RowIndex);
+                        if (dataGridView1.Rows.Count == 0)
+                        {
+                            CS_Invoice.RemoveInvoice(Convert.ToInt32(textBox1.Text));
+                            goto end;
+                        }
+                    }
+                    newTotal = 0;
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        newTotal += Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value);
+                    }
+                    CS_Invoice.UpdateInvoice(Convert.ToInt32(textBox1.Text), newTotal);
+                    goto end;
+                }
                 cs_Products.AddOrUpdateProduct(products[e.RowIndex]);
                 CS_Invoice.EditInvoiceProduct(InvoiceProductIds[e.RowIndex]);
                 dataGridView1.Rows.RemoveAt(e.RowIndex);
@@ -116,6 +161,9 @@ namespace POS_Sys
                     }
                     CS_Invoice.UpdateInvoice(Convert.ToInt32(textBox1.Text), newTotal);
                 }
+            end:if(dataGridView1.Rows.Count>0) 
+                SearchBtn.PerformClick();
+                
             }
         }
         public void RemoveAll()

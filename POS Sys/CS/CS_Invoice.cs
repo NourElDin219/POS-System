@@ -71,6 +71,14 @@ namespace POS_Sys.CS
             db.Invoice.AddOrUpdate(inv);
             db.SaveChanges();
         }
+        public void UpdateInvoiceProducts(int Id,int PID,int Qty)
+        {
+            List<InvoiceProduct> invoiceProducts =new List<InvoiceProduct>();
+            invoiceProducts = db.InvoiceProduct.Where(x => x.InvoiceId == Id &&x.ProductId==PID).ToList();
+            invoiceProducts[0].Quantity = Qty;
+            db.InvoiceProduct.AddOrUpdate(invoiceProducts[0]);
+            db.SaveChanges();
+        }
         public void RemoveInvoice(int Id)
         {
             Invoice inv = new Invoice();
