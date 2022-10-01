@@ -37,6 +37,9 @@ namespace POS_Sys
             YearlyProfit2.Text = Cs_Invoice.GetTotalInvoiceSumForThisYear(dateTimePicker1.Value).ToString();
             MonthlyProfit2.Text = Cs_Invoice.GetTotalInvoiceSumForThisMonth(dateTimePicker1.Value).ToString();
             label2.Text = Cs_Invoice.GetTotalInvoiceSumForToday(dateTimePicker1.Value).ToString();
+            label1.Text = dateTimePicker1.Value.Day.ToString();
+            label7.Text = dateTimePicker1.Value.Month.ToString();
+            label8.Text = dateTimePicker1.Value.Year.ToString();
 
         }
         private void label1_Click(object sender, EventArgs e)
