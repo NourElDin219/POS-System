@@ -17,6 +17,8 @@ namespace POS_Sys
         Users_Form ufrm;
         CategoryForm cfrm;
         Profit prfrm;
+        string CName;
+        int CId;
         public admin()
         {
             InitializeComponent();
@@ -54,6 +56,8 @@ namespace POS_Sys
             panel4.Controls.Add(ufrm);
             panel4.Controls.Add(cfrm);
             panel4.Controls.Add(prfrm);
+            CName = Name;
+            CId = id;
         }
         private void label8_Click(object sender, EventArgs e)
         {
@@ -123,6 +127,15 @@ namespace POS_Sys
         {
             prfrm.BringToFront();
             prfrm.Show();
+        }
+
+        private void SalesBtn_Click(object sender, EventArgs e)
+        {
+            Sales sale = new Sales(CName, CId);
+            this.Hide();
+            sale.ShowDialog();
+            sale.Dispose();
+            this.Show();
         }
     }
 }
