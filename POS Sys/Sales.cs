@@ -360,11 +360,22 @@ namespace POS_Sys
 
         private void ReturnBtn_Click(object sender, EventArgs e)
         {
-            ReturningAProduct frm = new ReturningAProduct();
-            frm.ShowDialog();
-            frm.Dispose();
-            RefreshForm();
-            
+            Password pform = new Password();
+            pform.ShowDialog();
+            string password = pform.GetPassword();
+            pform.Dispose();
+            if (password == "123")
+            {
+                ReturningAProduct frm = new ReturningAProduct();
+                frm.ShowDialog();
+                frm.Dispose();
+                RefreshForm();
+            }
+            else if (password == "")
+                return;
+            else
+                MessageBox.Show("أنت لا تملك الصلاحية للقيام بهذه العملية");
+
         }
     }
 }
