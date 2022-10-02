@@ -29,23 +29,21 @@ namespace POS_Sys
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CancelBtn = new MetroFramework.Controls.MetroButton();
             this.Btn_Save = new MetroFramework.Controls.MetroButton();
             this.ComboCat = new MetroFramework.Controls.MetroComboBox();
             this.TxtSPrice = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.DeleteBtn = new MetroFramework.Controls.MetroButton();
             this.DisplayBtn = new MetroFramework.Controls.MetroButton();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.MoveTxt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.MoveBtn = new MetroFramework.Controls.MetroButton();
-            this.PPriceTxt = new MetroFramework.Controls.MetroTextBox();
             this.IQtTxt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.SQtTxt = new MetroFramework.Controls.MetroTextBox();
@@ -54,7 +52,6 @@ namespace POS_Sys
             this.SPriceTxt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             this.NameTxt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.EditBtn = new MetroFramework.Controls.MetroButton();
@@ -62,7 +59,6 @@ namespace POS_Sys
             this.TxtName = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.TxtPPrice = new MetroFramework.Controls.MetroTextBox();
             this.TxtIQuantity = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.TxtSQuantity = new MetroFramework.Controls.MetroTextBox();
@@ -70,6 +66,7 @@ namespace POS_Sys
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.SearchTxt = new System.Windows.Forms.TextBox();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.metroTabPage1.SuspendLayout();
@@ -113,7 +110,7 @@ namespace POS_Sys
             // 
             // TxtSPrice
             // 
-            this.TxtSPrice.Location = new System.Drawing.Point(415, 222);
+            this.TxtSPrice.Location = new System.Drawing.Point(415, 168);
             this.TxtSPrice.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.TxtSPrice.Name = "TxtSPrice";
             this.TxtSPrice.Size = new System.Drawing.Size(193, 24);
@@ -122,7 +119,7 @@ namespace POS_Sys
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(269, 222);
+            this.metroLabel7.Location = new System.Drawing.Point(269, 168);
             this.metroLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(84, 20);
@@ -138,16 +135,6 @@ namespace POS_Sys
             this.metroLabel5.Size = new System.Drawing.Size(66, 20);
             this.metroLabel5.TabIndex = 6;
             this.metroLabel5.Text = "Category";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(269, 167);
-            this.metroLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(112, 20);
-            this.metroLabel3.TabIndex = 4;
-            this.metroLabel3.Text = "Purchasing Price";
             // 
             // DeleteBtn
             // 
@@ -171,10 +158,10 @@ namespace POS_Sys
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.SearchTxt);
             this.metroTabPage2.Controls.Add(this.MoveTxt);
             this.metroTabPage2.Controls.Add(this.metroLabel15);
             this.metroTabPage2.Controls.Add(this.MoveBtn);
-            this.metroTabPage2.Controls.Add(this.PPriceTxt);
             this.metroTabPage2.Controls.Add(this.IQtTxt);
             this.metroTabPage2.Controls.Add(this.metroLabel4);
             this.metroTabPage2.Controls.Add(this.SQtTxt);
@@ -183,7 +170,6 @@ namespace POS_Sys
             this.metroTabPage2.Controls.Add(this.SPriceTxt);
             this.metroTabPage2.Controls.Add(this.metroLabel8);
             this.metroTabPage2.Controls.Add(this.metroLabel9);
-            this.metroTabPage2.Controls.Add(this.metroLabel13);
             this.metroTabPage2.Controls.Add(this.NameTxt);
             this.metroTabPage2.Controls.Add(this.metroLabel14);
             this.metroTabPage2.Controls.Add(this.DeleteBtn);
@@ -230,18 +216,9 @@ namespace POS_Sys
             this.MoveBtn.Text = "نقل";
             this.MoveBtn.Click += new System.EventHandler(this.MoveBtn_Click);
             // 
-            // PPriceTxt
-            // 
-            this.PPriceTxt.Location = new System.Drawing.Point(718, 132);
-            this.PPriceTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.PPriceTxt.Name = "PPriceTxt";
-            this.PPriceTxt.Size = new System.Drawing.Size(192, 24);
-            this.PPriceTxt.TabIndex = 33;
-            this.PPriceTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PPriceTxt_KeyPress);
-            // 
             // IQtTxt
             // 
-            this.IQtTxt.Location = new System.Drawing.Point(717, 285);
+            this.IQtTxt.Location = new System.Drawing.Point(725, 298);
             this.IQtTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.IQtTxt.Name = "IQtTxt";
             this.IQtTxt.Size = new System.Drawing.Size(192, 24);
@@ -251,7 +228,7 @@ namespace POS_Sys
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(586, 285);
+            this.metroLabel4.Location = new System.Drawing.Point(594, 298);
             this.metroLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(124, 20);
@@ -260,7 +237,7 @@ namespace POS_Sys
             // 
             // SQtTxt
             // 
-            this.SQtTxt.Location = new System.Drawing.Point(717, 235);
+            this.SQtTxt.Location = new System.Drawing.Point(725, 248);
             this.SQtTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.SQtTxt.Name = "SQtTxt";
             this.SQtTxt.Size = new System.Drawing.Size(192, 24);
@@ -270,7 +247,7 @@ namespace POS_Sys
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(586, 235);
+            this.metroLabel6.Location = new System.Drawing.Point(594, 248);
             this.metroLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(96, 20);
@@ -285,7 +262,7 @@ namespace POS_Sys
             "Admin",
             "Supervisor",
             "Cashier"});
-            this.metroComboBox1.Location = new System.Drawing.Point(717, 75);
+            this.metroComboBox1.Location = new System.Drawing.Point(725, 148);
             this.metroComboBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(193, 30);
@@ -293,7 +270,7 @@ namespace POS_Sys
             // 
             // SPriceTxt
             // 
-            this.SPriceTxt.Location = new System.Drawing.Point(717, 187);
+            this.SPriceTxt.Location = new System.Drawing.Point(725, 200);
             this.SPriceTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.SPriceTxt.Name = "SPriceTxt";
             this.SPriceTxt.Size = new System.Drawing.Size(192, 24);
@@ -303,7 +280,7 @@ namespace POS_Sys
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(586, 187);
+            this.metroLabel8.Location = new System.Drawing.Point(594, 200);
             this.metroLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(84, 20);
@@ -313,26 +290,16 @@ namespace POS_Sys
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(586, 75);
+            this.metroLabel9.Location = new System.Drawing.Point(594, 148);
             this.metroLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(66, 20);
             this.metroLabel9.TabIndex = 23;
             this.metroLabel9.Text = "Category";
             // 
-            // metroLabel13
-            // 
-            this.metroLabel13.AutoSize = true;
-            this.metroLabel13.Location = new System.Drawing.Point(586, 132);
-            this.metroLabel13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(112, 20);
-            this.metroLabel13.TabIndex = 21;
-            this.metroLabel13.Text = "Purchasing Price";
-            // 
             // NameTxt
             // 
-            this.NameTxt.Location = new System.Drawing.Point(717, 17);
+            this.NameTxt.Location = new System.Drawing.Point(726, 99);
             this.NameTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.NameTxt.Name = "NameTxt";
             this.NameTxt.Size = new System.Drawing.Size(192, 24);
@@ -342,7 +309,7 @@ namespace POS_Sys
             // metroLabel14
             // 
             this.metroLabel14.AutoSize = true;
-            this.metroLabel14.Location = new System.Drawing.Point(586, 17);
+            this.metroLabel14.Location = new System.Drawing.Point(595, 99);
             this.metroLabel14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel14.Name = "metroLabel14";
             this.metroLabel14.Size = new System.Drawing.Size(99, 20);
@@ -365,23 +332,23 @@ namespace POS_Sys
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LimeGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.LimeGreen;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -390,14 +357,14 @@ namespace POS_Sys
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -426,7 +393,6 @@ namespace POS_Sys
             // 
             // metroTabPage1
             // 
-            this.metroTabPage1.Controls.Add(this.TxtPPrice);
             this.metroTabPage1.Controls.Add(this.TxtIQuantity);
             this.metroTabPage1.Controls.Add(this.metroLabel11);
             this.metroTabPage1.Controls.Add(this.TxtSQuantity);
@@ -437,7 +403,6 @@ namespace POS_Sys
             this.metroTabPage1.Controls.Add(this.TxtSPrice);
             this.metroTabPage1.Controls.Add(this.metroLabel7);
             this.metroTabPage1.Controls.Add(this.metroLabel5);
-            this.metroTabPage1.Controls.Add(this.metroLabel3);
             this.metroTabPage1.Controls.Add(this.TxtName);
             this.metroTabPage1.Controls.Add(this.metroLabel1);
             this.metroTabPage1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -452,17 +417,9 @@ namespace POS_Sys
             this.metroTabPage1.VerticalScrollbarSize = 9;
             this.metroTabPage1.Resize += new System.EventHandler(this.metroTabPage1_Resize);
             // 
-            // TxtPPrice
-            // 
-            this.TxtPPrice.Location = new System.Drawing.Point(415, 167);
-            this.TxtPPrice.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.TxtPPrice.Name = "TxtPPrice";
-            this.TxtPPrice.Size = new System.Drawing.Size(193, 24);
-            this.TxtPPrice.TabIndex = 19;
-            // 
             // TxtIQuantity
             // 
-            this.TxtIQuantity.Location = new System.Drawing.Point(415, 320);
+            this.TxtIQuantity.Location = new System.Drawing.Point(415, 266);
             this.TxtIQuantity.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.TxtIQuantity.Name = "TxtIQuantity";
             this.TxtIQuantity.Size = new System.Drawing.Size(193, 24);
@@ -471,7 +428,7 @@ namespace POS_Sys
             // metroLabel11
             // 
             this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(269, 320);
+            this.metroLabel11.Location = new System.Drawing.Point(269, 266);
             this.metroLabel11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(124, 20);
@@ -480,7 +437,7 @@ namespace POS_Sys
             // 
             // TxtSQuantity
             // 
-            this.TxtSQuantity.Location = new System.Drawing.Point(415, 270);
+            this.TxtSQuantity.Location = new System.Drawing.Point(415, 216);
             this.TxtSQuantity.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.TxtSQuantity.Name = "TxtSQuantity";
             this.TxtSQuantity.Size = new System.Drawing.Size(193, 24);
@@ -489,7 +446,7 @@ namespace POS_Sys
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(269, 270);
+            this.metroLabel10.Location = new System.Drawing.Point(269, 216);
             this.metroLabel10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(96, 20);
@@ -504,7 +461,7 @@ namespace POS_Sys
             this.metroTabControl1.Location = new System.Drawing.Point(0, 55);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(933, 647);
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -531,6 +488,18 @@ namespace POS_Sys
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(933, 55);
             this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // SearchTxt
+            // 
+            this.SearchTxt.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchTxt.Location = new System.Drawing.Point(588, 6);
+            this.SearchTxt.Name = "SearchTxt";
+            this.SearchTxt.Size = new System.Drawing.Size(334, 27);
+            this.SearchTxt.TabIndex = 37;
+            this.SearchTxt.Text = "ابحث عن منتج";
+            this.SearchTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.SearchTxt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SearchTxt_MouseClick);
+            this.SearchTxt.TextChanged += new System.EventHandler(this.SearchTxt_TextChanged);
             // 
             // ProductsForm
             // 
@@ -563,7 +532,6 @@ namespace POS_Sys
         private MetroFramework.Controls.MetroTextBox TxtSPrice;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroButton DeleteBtn;
         private MetroFramework.Controls.MetroButton DisplayBtn;
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
@@ -587,13 +555,11 @@ namespace POS_Sys
         private MetroFramework.Controls.MetroTextBox SPriceTxt;
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroLabel metroLabel9;
-        private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroTextBox NameTxt;
         private MetroFramework.Controls.MetroLabel metroLabel14;
-        private MetroFramework.Controls.MetroTextBox TxtPPrice;
-        private MetroFramework.Controls.MetroTextBox PPriceTxt;
         private MetroFramework.Controls.MetroTextBox MoveTxt;
         private MetroFramework.Controls.MetroLabel metroLabel15;
         private MetroFramework.Controls.MetroButton MoveBtn;
+        private System.Windows.Forms.TextBox SearchTxt;
     }
 }

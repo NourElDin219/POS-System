@@ -65,7 +65,7 @@ namespace POS_Sys
                                  UnitPrice = P.SellingPrice,
                                  Quantity = IP.Quantity,
                                  ProductId = P.Id,
-                                 PPrice = P.PurchasingPrice,
+                                
                                  SPrice = P.SellingPrice,
                                  CatId = P.CategoryId,
                                  ShopQty = P.ShopQuantity,
@@ -78,7 +78,6 @@ namespace POS_Sys
                     {
                         product.Id = obj.ProductId;
                         product.Name = obj.ProductName;
-                        product.PurchasingPrice = obj.PPrice;
                         product.SellingPrice = obj.SPrice;
                         product.CategoryId = obj.CatId;
                         product.InvQuantity = obj.InvQty;

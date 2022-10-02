@@ -90,6 +90,13 @@ namespace POS_Sys
             us.ReadUser(users[rowIndex].UserName);
             Combo_Role.Text = us.getRole();
         }
+        public void Supervisor()
+        {
+            EditBtn.Hide();
+            DeleteBtn.Hide();
+            RoleCombo.Items.Clear();
+            RoleCombo.Items.Add("Cashier");
+        }
 
         private void EditBtn_Click(object sender, EventArgs e)
         {

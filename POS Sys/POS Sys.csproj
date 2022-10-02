@@ -212,6 +212,10 @@
     <Compile Include="Migrations\202209251838324_inttodouble.designer.cs">
       <DependentUpon>202209251838324_inttodouble.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202210021458133_removePPrice.cs" />
+    <Compile Include="Migrations\202210021458133_removePPrice.designer.cs">
+      <DependentUpon>202210021458133_removePPrice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\Database_Context.cs" />
@@ -307,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202209251838324_inttodouble.resx">
       <DependentUpon>202209251838324_inttodouble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202210021458133_removePPrice.resx">
+      <DependentUpon>202210021458133_removePPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PayAndPrint.resx">
       <DependentUpon>PayAndPrint.cs</DependentUpon>

@@ -43,7 +43,6 @@ namespace POS_Sys.CS
         }
         public void AddOrUpdateProduct(Products product)
         {
-           // product.Category=db.Category.FirstOrDefault(s => s.Id == product.Category.Id);
             db.Product.AddOrUpdate(product);
             db.SaveChanges();
         }

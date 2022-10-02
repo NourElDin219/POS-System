@@ -33,6 +33,28 @@ namespace POS_Sys
             panel4.Controls.Add(cfrm);
             panel4.Controls.Add(prfrm);
         }
+        public admin(string Name,int id,string role)
+        {
+            InitializeComponent();
+            pfrm = new ProductsForm();
+            ufrm = new Users_Form();
+            cfrm = new CategoryForm();
+            prfrm = new Profit();
+            pfrm.TopLevel = false;
+            ufrm.TopLevel = false;
+            cfrm.TopLevel = false;
+            prfrm.TopLevel = false;
+            if (role == "Supervisor")
+            {
+                pfrm.Supervisor();
+                this.CategoryBtn.Hide();
+                ufrm.Supervisor();
+            }
+            panel4.Controls.Add(pfrm);
+            panel4.Controls.Add(ufrm);
+            panel4.Controls.Add(cfrm);
+            panel4.Controls.Add(prfrm);
+        }
         private void label8_Click(object sender, EventArgs e)
         {
 

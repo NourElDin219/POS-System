@@ -33,7 +33,6 @@ namespace POS_Sys
         private void Clear()
         {
             TxtName.Clear();
-            TxtPPrice.Clear();
             TxtSPrice.Clear();
             TxtSQuantity.Clear();
             TxtIQuantity.Clear();
@@ -70,11 +69,10 @@ namespace POS_Sys
             else
             {
                 Product.Name = TxtName.Text;
-                Product.PurchasingPrice = Convert.ToDouble(TxtPPrice.Text);
                 Product.SellingPrice = Convert.ToDouble(TxtSPrice.Text);
                 Product.ShopQuantity = Convert.ToInt32(TxtSQuantity.Text);
                 Product.InvQuantity = Convert.ToInt32(TxtIQuantity.Text);
-                Product.Category = cs_Category.GetCategory(ComboCat.Text);
+                Product.CategoryId = cs_Category.GetCategory(ComboCat.Text).Id;
                 p.AddOrUpdateProduct(Product);
                 MessageBox.Show("تمت اضافة المنتج بنجاح");
                 Clear();
@@ -87,14 +85,13 @@ namespace POS_Sys
             table.Rows.Clear();
             P_List = p.GetProducts();
             table.Columns.Add("اسم المنتج", typeof(string));
-            table.Columns.Add("سعر الشراء", typeof(double));
             table.Columns.Add("سعر البيع", typeof(double));
             table.Columns.Add("الكمية فى المتجر", typeof(int));
             table.Columns.Add("الكمية فى المخزن", typeof(int));
 
             for (int i = 0; i < P_List.Count(); i++)
             {
-                table.Rows.Add(P_List[i].Name, P_List[i].PurchasingPrice, P_List[i].SellingPrice, P_List[i].ShopQuantity, P_List[i].InvQuantity);
+                table.Rows.Add(P_List[i].Name, P_List[i].SellingPrice, P_List[i].ShopQuantity, P_List[i].InvQuantity);
             }
             dataGridView1.DataSource = table;
 
@@ -121,7 +118,6 @@ namespace POS_Sys
             {
                 rowIndex = e.RowIndex;
                 NameTxt.Text = P_List[rowIndex].Name;
-                PPriceTxt.Text = P_List[rowIndex].PurchasingPrice.ToString();
                 SPriceTxt.Text = P_List[rowIndex].SellingPrice.ToString();
                 SQtTxt.Text = P_List[rowIndex].ShopQuantity.ToString();
                 IQtTxt.Text = P_List[rowIndex].InvQuantity.ToString();
@@ -138,7 +134,6 @@ namespace POS_Sys
         {
             Product.Id = P_List[rowIndex].Id;
             Product.Name = NameTxt.Text;
-            Product.PurchasingPrice = Convert.ToDouble(PPriceTxt.Text);
             Product.SellingPrice = Convert.ToDouble(SPriceTxt.Text);
             Product.ShopQuantity = Convert.ToInt32(SQtTxt.Text);
             Product.InvQuantity=Convert.ToInt32(IQtTxt.Text);
@@ -198,6 +193,40 @@ namespace POS_Sys
         private void DiscTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+        public void Supervisor()
+        {
+            EditBtn.Hide();
+            DeleteBtn.Hide();
+            Btn_Save.Hide();
+            CancelBtn.Hide();
+        }
+
+        private void SearchTxt_TextChanged(object sender, EventArgs e)
+        {
+            string searchValue = SearchTxt.Text;
+
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells[0].Value.ToString().Contains(searchValue))
+                    {
+                        row.Selected = true;
+                        break;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
+
+        private void SearchTxt_MouseClick(object sender, MouseEventArgs e)
+        {
+            SearchTxt.Clear();
         }
     }
 }

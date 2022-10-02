@@ -29,9 +29,9 @@ namespace POS_Sys
              
             if (user.Authorized(txt_Username.Text, txt_Password.Text))
             {
-                if (user.getRole() == "Admin")
+                if (user.getRole() == "Admin"|| user.getRole() == "Supervisor")
                 {
-                    admin admin = new admin();
+                    admin admin = new admin(user.getName(), user.Id, user.getRole());
                     this.Hide();
                     admin.ShowDialog();
                     this.Close();
@@ -43,6 +43,7 @@ namespace POS_Sys
                     sales.ShowDialog();
                     this.Close();
                 }
+
             }
             else
                 MessageBox.Show("Invalid Username or Password.");
