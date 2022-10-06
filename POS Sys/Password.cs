@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using POS_Sys.CS;
 namespace POS_Sys
 {
     public partial class Password : Form
     {
+        UserCrudOps user;
         public Password()
         {
             InitializeComponent();
+            user = new UserCrudOps();
+            this.ActiveControl = UsernameTxt;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,9 +32,16 @@ namespace POS_Sys
                 button1_Click(this, new EventArgs());
             }
         }
-        public string GetPassword()
+        public bool Authorized()
         {
-            return QuantityText.Text;
+            if (user.Authorized(UsernameTxt.Text, QuantityText.Text))
+            {
+                if (user.getRole() == "Admin" || user.getRole() == "Supervisor")
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

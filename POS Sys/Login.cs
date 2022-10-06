@@ -20,6 +20,7 @@ namespace POS_Sys
         public Login()
         {
             InitializeComponent();
+            this.ActiveControl = txt_Username;
             user = new UserCrudOps();
             user.ReadUsers();
         }

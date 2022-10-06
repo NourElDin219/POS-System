@@ -345,7 +345,6 @@ namespace POS_Sys
                 GC.Collect();
             }
             CS_Invoice.CreateInvoice(Invoice, InvoiceProduct);
-            
         }
 
         private void SearchTxt_KeyPress(object sender, KeyPressEventArgs e)
@@ -362,19 +361,19 @@ namespace POS_Sys
         {
             Password pform = new Password();
             pform.ShowDialog();
-            string password = pform.GetPassword();
+            bool Authorized = pform.Authorized();
             pform.Dispose();
-            if (password == "123")
+            if (Authorized)
             {
                 ReturningAProduct frm = new ReturningAProduct();
                 frm.ShowDialog();
                 frm.Dispose();
                 RefreshForm();
             }
-            else if (password == "")
-                return;
-            else
+            else if (!Authorized)
                 MessageBox.Show("أنت لا تملك الصلاحية للقيام بهذه العملية");
+            else
+                return;
 
         }
     }
