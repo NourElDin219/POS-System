@@ -26,7 +26,9 @@ namespace POS_Sys
         int rowIndex;
         int CashierId;
         Cs_Products cs_Products;
+        Cs_Category Cs_Category;
         string CashierName;
+        bool check;
         public Sales(string CashierName,int CashierId)
         {
             InitializeComponent();
@@ -37,6 +39,7 @@ namespace POS_Sys
             P_List = new List<Products>();
             p_List = new List<Products>();
             p = new Cs_Products();
+            Cs_Category = new Cs_Category();
             DisplayProducts();
             sum = 0;
             cs_Products = new Cs_Products();
@@ -63,7 +66,7 @@ namespace POS_Sys
             P_List = p.GetProducts();
             for (int i = 0; i < P_List.Count(); i++)
             {
-                dataGridView2.Rows.Add(i + 1, P_List[i].Name, P_List[i].SellingPrice, P_List[i].ShopQuantity);
+                dataGridView2.Rows.Add(i + 1, P_List[i].Name,Cs_Category.GetCategory(P_List[i].CategoryId).Name, P_List[i].SellingPrice, P_List[i].ShopQuantity);
             }
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -155,7 +158,7 @@ namespace POS_Sys
                 qform = new Qform();
                 qform.ShowDialog();
                 int qtity = qform.GetQuantity();
-                int q = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[3].Value);
+                int q = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[4].Value);
         here:   if (qtity > 0)
                 {
                     if (q >= qtity)
@@ -175,7 +178,7 @@ namespace POS_Sys
                         MessageBox.Show("المنتج موجود بالعربة مسبقا");
                         return;
                     }
-                    dataGridView1.Rows.Add(0, dataGridView2.Rows[e.RowIndex].Cells[1].Value, dataGridView2.Rows[e.RowIndex].Cells[2].Value, qtity, (Convert.ToDouble(qtity) * Convert.ToDouble(dataGridView2.Rows[e.RowIndex].Cells[2].Value)));
+                    dataGridView1.Rows.Add(0, dataGridView2.Rows[e.RowIndex].Cells[1].Value,dataGridView2.Rows[e.RowIndex].Cells[3].Value, qtity, (Convert.ToDouble(qtity) * Convert.ToDouble(dataGridView2.Rows[e.RowIndex].Cells[3].Value)));
 
                     P_List[e.RowIndex].ShopQuantity -= qtity;
                     p_List.Add(P_List[e.RowIndex]);
@@ -314,7 +317,9 @@ namespace POS_Sys
 
         private void PayAndPrintBtn_Click(object sender, EventArgs e)
         {
+            check = false;
             CreateInvoice();
+            if(!check)
             UpdateProducts();
         }
         public void UpdateProducts()
@@ -329,6 +334,16 @@ namespace POS_Sys
         {
             PayAndPrint PnP = new PayAndPrint(sum, Convert.ToDouble(label3.Text));
             PnP.ShowDialog();
+            if (PnP.paid == 0 || PnP.method == null)
+            {
+                check = true;
+                return;
+            }
+            if (PnP.paid < PnP.total)
+            {
+                MessageBox.Show("المبلغ المدفوع أقل من المطلوب");
+                PnP.ShowDialog();
+            }
             Invoice.Pay = PnP.paid;
             Invoice.Discount = sum - Convert.ToDouble(label3.Text);
             Invoice.PaymentMethod = PnP.method;
