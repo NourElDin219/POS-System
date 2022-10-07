@@ -21,6 +21,8 @@ namespace POS_Sys
         private List<int> InvoiceProductIds;
         private double newTotal;
         private Products product;
+        private double Total;
+        private double Discount;
         public ReturningAProduct()
         {
             InitializeComponent();
@@ -29,6 +31,9 @@ namespace POS_Sys
             cs_Products = new Cs_Products();
             InvoiceProductIds = new List<int>();
             product = new Products();
+            Total = 0;
+            Discount = 0;
+            this.ActiveControl = textBox1;
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
@@ -46,7 +51,22 @@ namespace POS_Sys
                 MessageBox.Show("لا توجد فاتورة بهذا الرقم");
             }
         }
-
+        public void GetTotalAndDiscount()
+        {
+            int index = Convert.ToInt32(textBox1.Text);
+            using (db = new DatabaseContext())
+            {
+                var invoice = db.Invoice.Find(index);
+                Discount = invoice.Discount;
+                Total = invoice.Total;
+            } 
+            //foreach(DataGridViewRow row in dataGridView1.Rows)
+            //{
+            //    Total += Convert.ToDouble(row.Cells[4].Value);
+            //}
+            TotalLabel.Text = Total.ToString();
+            DiscountLabel.Text = Discount.ToString();
+        }
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             products.Clear();
@@ -86,6 +106,7 @@ namespace POS_Sys
                         InvoiceProductIds.Add(obj.InvoiceProductID);
                         dataGridView1.Rows.Add(++i, obj.ProductName, obj.UnitPrice, obj.Quantity, Convert.ToDouble((obj.UnitPrice) * (obj.Quantity)));
                     }
+                    GetTotalAndDiscount();
                 }
                 else
                 {

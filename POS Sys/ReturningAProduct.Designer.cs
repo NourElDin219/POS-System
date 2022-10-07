@@ -44,6 +44,10 @@ namespace POS_Sys
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SearchBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TotalLabel = new System.Windows.Forms.Label();
+            this.DiscountLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,7 +187,7 @@ namespace POS_Sys
             // 
             // DeleteBtn
             // 
-            this.DeleteBtn.Location = new System.Drawing.Point(930, 15);
+            this.DeleteBtn.Location = new System.Drawing.Point(961, 15);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(113, 32);
             this.DeleteBtn.TabIndex = 15;
@@ -191,11 +195,49 @@ namespace POS_Sys
             this.DeleteBtn.UseVisualStyleBackColor = true;
             this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
+            // label2
+            // 
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(488, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 32);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "اجمالى المطلوب";
+            // 
+            // label3
+            // 
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(774, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 32);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "الخصم";
+            // 
+            // TotalLabel
+            // 
+            this.TotalLabel.ForeColor = System.Drawing.Color.Black;
+            this.TotalLabel.Location = new System.Drawing.Point(632, 15);
+            this.TotalLabel.Name = "TotalLabel";
+            this.TotalLabel.Size = new System.Drawing.Size(122, 32);
+            this.TotalLabel.TabIndex = 26;
+            // 
+            // DiscountLabel
+            // 
+            this.DiscountLabel.ForeColor = System.Drawing.Color.Black;
+            this.DiscountLabel.Location = new System.Drawing.Point(842, 15);
+            this.DiscountLabel.Name = "DiscountLabel";
+            this.DiscountLabel.Size = new System.Drawing.Size(113, 32);
+            this.DiscountLabel.TabIndex = 27;
+            // 
             // ReturningAProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1086, 607);
+            this.Controls.Add(this.DiscountLabel);
+            this.Controls.Add(this.TotalLabel);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.SearchBtn);
             this.Controls.Add(this.textBox1);
@@ -230,5 +272,9 @@ namespace POS_Sys
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewImageColumn Remove;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label TotalLabel;
+        private System.Windows.Forms.Label DiscountLabel;
     }
 }
