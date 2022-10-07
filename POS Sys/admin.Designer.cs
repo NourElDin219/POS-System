@@ -32,6 +32,7 @@ namespace POS_Sys
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SalesBtn = new System.Windows.Forms.Button();
             this.ProfitBtn = new System.Windows.Forms.Button();
             this.CategoryBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -45,7 +46,6 @@ namespace POS_Sys
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.SalesBtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -84,6 +84,16 @@ namespace POS_Sys
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel1.Size = new System.Drawing.Size(395, 753);
             this.panel1.TabIndex = 5;
+            // 
+            // SalesBtn
+            // 
+            this.SalesBtn.Location = new System.Drawing.Point(89, 522);
+            this.SalesBtn.Name = "SalesBtn";
+            this.SalesBtn.Size = new System.Drawing.Size(226, 34);
+            this.SalesBtn.TabIndex = 12;
+            this.SalesBtn.Text = "كاشير";
+            this.SalesBtn.UseVisualStyleBackColor = true;
+            this.SalesBtn.Click += new System.EventHandler(this.SalesBtn_Click);
             // 
             // ProfitBtn
             // 
@@ -170,6 +180,7 @@ namespace POS_Sys
             this.button3.TabIndex = 6;
             this.button3.Text = "سجل المبيعات";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label3
             // 
@@ -209,16 +220,6 @@ namespace POS_Sys
             this.panel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel4.Size = new System.Drawing.Size(1033, 753);
             this.panel4.TabIndex = 2;
-            // 
-            // SalesBtn
-            // 
-            this.SalesBtn.Location = new System.Drawing.Point(89, 522);
-            this.SalesBtn.Name = "SalesBtn";
-            this.SalesBtn.Size = new System.Drawing.Size(226, 34);
-            this.SalesBtn.TabIndex = 12;
-            this.SalesBtn.Text = "كاشير";
-            this.SalesBtn.UseVisualStyleBackColor = true;
-            this.SalesBtn.Click += new System.EventHandler(this.SalesBtn_Click);
             // 
             // admin
             // 

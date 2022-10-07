@@ -13,12 +13,13 @@ namespace POS_Sys
 {
     public partial class admin : Form
     {
-        ProductsForm pfrm;
-        Users_Form ufrm;
-        CategoryForm cfrm;
-        Profit prfrm;
-        string CName;
-        int CId;
+        private ProductsForm pfrm;
+        private Users_Form ufrm;
+        private CategoryForm cfrm;
+        private Profit prfrm;
+        private Reports rfrm;
+        private string CName;
+        private int CId;
         public admin()
         {
             InitializeComponent();
@@ -26,14 +27,17 @@ namespace POS_Sys
             ufrm = new Users_Form();
             cfrm = new CategoryForm();
             prfrm = new Profit();
+            rfrm = new Reports();
             pfrm.TopLevel = false;
             ufrm.TopLevel = false;
             cfrm.TopLevel = false;
             prfrm.TopLevel = false;
+            rfrm.TopLevel = false;
             panel4.Controls.Add(pfrm);
             panel4.Controls.Add(ufrm);
             panel4.Controls.Add(cfrm);
             panel4.Controls.Add(prfrm);
+            panel4.Controls.Add(rfrm);
         }
         public admin(string Name,int id,string role)
         {
@@ -42,10 +46,12 @@ namespace POS_Sys
             ufrm = new Users_Form();
             cfrm = new CategoryForm();
             prfrm = new Profit();
+            rfrm = new Reports();
             pfrm.TopLevel = false;
             ufrm.TopLevel = false;
             cfrm.TopLevel = false;
             prfrm.TopLevel = false;
+            rfrm.TopLevel = false;
             if (role == "Supervisor")
             {
                 pfrm.Supervisor();
@@ -56,6 +62,7 @@ namespace POS_Sys
             panel4.Controls.Add(ufrm);
             panel4.Controls.Add(cfrm);
             panel4.Controls.Add(prfrm);
+            panel4.Controls.Add(rfrm);
             CName = Name;
             CId = id;
         }
@@ -107,6 +114,7 @@ namespace POS_Sys
             cfrm.Dispose();
             pfrm.Dispose();
             prfrm.Dispose();
+            rfrm.Dispose();
             this.Hide();
             login.ShowDialog();
             this.Close();
@@ -136,6 +144,12 @@ namespace POS_Sys
             sale.ShowDialog();
             sale.Dispose();
             this.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            rfrm.BringToFront();
+            rfrm.Show();
         }
     }
 }

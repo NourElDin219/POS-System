@@ -163,17 +163,11 @@
     <Compile Include="CategoryForm.Designer.cs">
       <DependentUpon>CategoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="confirm_Purchase.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="confirm_Purchase.Designer.cs">
-      <DependentUpon>confirm_Purchase.cs</DependentUpon>
-    </Compile>
     <Compile Include="CS\Cs_Category.cs" />
     <Compile Include="CS\CS_Invoice.cs" />
     <Compile Include="CS\Cs_Products.cs" />
+    <Compile Include="CS\InvoiceVM.cs" />
     <Compile Include="CS\UserCrudOps.cs" />
-    <Compile Include="InvoiceDetail.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,9 +287,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CategoryForm.resx">
       <DependentUpon>CategoryForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="confirm_Purchase.resx">
-      <DependentUpon>confirm_Purchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
