@@ -168,6 +168,8 @@
     <Compile Include="CS\Cs_Products.cs" />
     <Compile Include="CS\InvoiceVM.cs" />
     <Compile Include="CS\UserCrudOps.cs" />
+    <Compile Include="InvoiceProductVM.cs" />
+    <Compile Include="InvoiceReceiptVM.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -360,6 +362,8 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\InvoiceDetail.datasource" />
+    <None Include="Properties\DataSources\InvoiceProductVM.datasource" />
+    <None Include="Properties\DataSources\InvoiceReceiptVM.datasource" />
     <None Include="Properties\DataSources\POS_Sys.Models.Products.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
