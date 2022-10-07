@@ -29,6 +29,7 @@ namespace POS_Sys
         Cs_Category Cs_Category;
         string CashierName;
         bool check;
+        int index;
         public Sales(string CashierName,int CashierId)
         {
             InitializeComponent();
@@ -153,12 +154,13 @@ namespace POS_Sys
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             String CName = dataGridView2.Columns[e.ColumnIndex].Name;
-            if (CName == "AddToCart")
+            if (CName == "AddToCart" && e.RowIndex!=-1)
             {
+                index = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[0].Value) - 1;
                 qform = new Qform();
                 qform.ShowDialog();
                 int qtity = qform.GetQuantity();
-                int q = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[4].Value);
+                int q = Convert.ToInt32(dataGridView2.Rows[index].Cells[4].Value);
         here:   if (qtity > 0)
                 {
                     if (q >= qtity)
@@ -173,15 +175,15 @@ namespace POS_Sys
                         goto here;
                     }
 
-                    if (ItemInCart(e.RowIndex))
+                    if (ItemInCart(index))
                     {
                         MessageBox.Show("المنتج موجود بالعربة مسبقا");
                         return;
                     }
-                    dataGridView1.Rows.Add(0, dataGridView2.Rows[e.RowIndex].Cells[1].Value,dataGridView2.Rows[e.RowIndex].Cells[3].Value, qtity, (Convert.ToDouble(qtity) * Convert.ToDouble(dataGridView2.Rows[e.RowIndex].Cells[3].Value)));
+                    dataGridView1.Rows.Add(0, dataGridView2.Rows[index].Cells[1].Value,dataGridView2.Rows[index].Cells[3].Value, qtity, (Convert.ToDouble(qtity) * Convert.ToDouble(dataGridView2.Rows[index].Cells[3].Value)));
 
-                    P_List[e.RowIndex].ShopQuantity -= qtity;
-                    p_List.Add(P_List[e.RowIndex]);
+                    P_List[index].ShopQuantity -= qtity;
+                    p_List.Add(P_List[index]);
                     CalculateTotal();
                     label3.Text = sum.ToString();
                 }
