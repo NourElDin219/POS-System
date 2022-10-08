@@ -16,10 +16,12 @@ namespace POS_Sys
         private UserCrudOps us;
         private List<Users> users;
         private int rowIndex;
+        private bool isSupervisor;
         public Users_Form()
         {
             InitializeComponent();
             us = new UserCrudOps();
+            isSupervisor = false;
         }
 
         private void metroTabPage1_Resize(object sender, EventArgs e)
@@ -72,6 +74,8 @@ namespace POS_Sys
                 table.Rows.Add( users[i].Name, users[i].UserName, users[i].Password);
             }
             dataGridView1.DataSource = table;
+            if(isSupervisor)
+                dataGridView1.Columns["كلمة السر"].Visible = false;
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
@@ -96,6 +100,8 @@ namespace POS_Sys
             DeleteBtn.Hide();
             RoleCombo.Items.Clear();
             RoleCombo.Items.Add("Cashier");
+            isSupervisor = true;
+            
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
