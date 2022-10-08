@@ -52,6 +52,31 @@ namespace POS_Sys.CS
                 return invoicesVM;
             }
         }
+        public List<InvoiceVM> GetTotalInvoicesForToday(DateTime dt)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var MonthDate = dt.AddDays(1);
+                var Result = db.Invoice.Where(x => x.CreatedDate >= dt && x.CreatedDate < MonthDate).ToList();
+
+                List<InvoiceVM> invoicesVM = new List<InvoiceVM>();
+                InvoiceVM invoices1 = new InvoiceVM();
+
+                foreach (var invoice in Result)
+                {
+                    invoices1.PaymentMethod = invoice.PaymentMethod;
+                    invoices1.CreatedDate = invoice.CreatedDate;
+                    invoices1.Discount = invoice.Discount;
+                    invoices1.Id = invoice.Id;
+                    invoices1.Pay = invoice.Pay;
+                    invoices1.Total = invoice.Total;
+                    invoices1.UserName = db.User.Find(invoice.UserId).Name;
+                    invoicesVM.Add(invoices1);
+                }
+                return invoicesVM;
+            }
+
+        }
         public InvoiceVM GetInvoice(int invoiceId)
         {
             using(DatabaseContext db = new DatabaseContext())
@@ -73,5 +98,6 @@ namespace POS_Sys.CS
                 return invoices1;
             }
         }
+
     }
 }
