@@ -231,5 +231,10 @@ namespace POS_Sys
         {
 
         }
+
+        private void Users_Form_Load(object sender, EventArgs e)
+        {
+            DisplayBtn.PerformClick();
+        }
     }
 }

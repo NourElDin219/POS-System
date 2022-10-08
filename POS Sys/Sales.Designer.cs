@@ -70,13 +70,14 @@ namespace POS_Sys
             this.Remove = new System.Windows.Forms.DataGridViewImageColumn();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddToCart = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -197,6 +198,7 @@ namespace POS_Sys
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.comboBox2);
             this.panel3.Controls.Add(this.PrintLastBtn);
             this.panel3.Controls.Add(this.ReturnBtn);
             this.panel3.Controls.Add(this.EditBtn);
@@ -215,6 +217,7 @@ namespace POS_Sys
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1446, 213);
             this.panel3.TabIndex = 8;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // PrintLastBtn
             // 
@@ -261,7 +264,7 @@ namespace POS_Sys
             // SearchTxt
             // 
             this.SearchTxt.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchTxt.Location = new System.Drawing.Point(990, 180);
+            this.SearchTxt.Location = new System.Drawing.Point(1047, 183);
             this.SearchTxt.Name = "SearchTxt";
             this.SearchTxt.Size = new System.Drawing.Size(387, 27);
             this.SearchTxt.TabIndex = 4;
@@ -512,15 +515,6 @@ namespace POS_Sys
             this.dataGridView2.TabIndex = 3;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dataGridView2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(849, 213);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(597, 545);
-            this.panel1.TabIndex = 10;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -570,6 +564,23 @@ namespace POS_Sys
             this.AddToCart.MinimumWidth = 6;
             this.AddToCart.Name = "AddToCart";
             this.AddToCart.ReadOnly = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dataGridView2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(849, 213);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(597, 545);
+            this.panel1.TabIndex = 10;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(866, 179);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(175, 31);
+            this.comboBox2.TabIndex = 24;
             // 
             // Sales
             // 
@@ -639,5 +650,6 @@ namespace POS_Sys
         private System.Windows.Forms.DataGridViewTextBoxColumn UPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewImageColumn AddToCart;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

@@ -28,7 +28,9 @@ namespace POS_Sys
             P_List = new List<Products>();
             Product = new Products();
             table = new DataTable();
+            
             FillCategoryList();
+            
         }
         private void Clear()
         {
@@ -227,6 +229,21 @@ namespace POS_Sys
         private void SearchTxt_MouseClick(object sender, MouseEventArgs e)
         {
             SearchTxt.Clear();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void metroTabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            
+        }
+
+        private void ProductsForm_Load(object sender, EventArgs e)
+        {
+            DisplayBtn.PerformClick();
         }
     }
 }

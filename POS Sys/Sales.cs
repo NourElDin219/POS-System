@@ -27,6 +27,7 @@ namespace POS_Sys
         int CashierId;
         Cs_Products cs_Products;
         Cs_Category Cs_Category;
+        List<Category> CatList;
         string CashierName;
         bool check;
         int index;
@@ -44,6 +45,7 @@ namespace POS_Sys
             DisplayProducts();
             sum = 0;
             cs_Products = new Cs_Products();
+            CatList = new List<Category>();
             this.CashierId = CashierId;
             this.CashierName = CashierName;
            
@@ -84,6 +86,7 @@ namespace POS_Sys
         private void Sales_Load(object sender, EventArgs e)
         {
             timer1.Start();
+
         }
 
         private void LogoutBtn_Click(object sender, EventArgs e)
@@ -391,6 +394,11 @@ namespace POS_Sys
                 MessageBox.Show("أنت لا تملك الصلاحية للقيام بهذه العملية");
             else
                 return;
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

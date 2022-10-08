@@ -435,6 +435,7 @@ namespace POS_Sys
             this.Name = "Users_Form";
             this.Text = "Users_Form";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Users_Form_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
