@@ -31,7 +31,7 @@ namespace POS_Sys
         string CashierName;
         bool check;
         int index;
-        public Sales(string CashierName,int CashierId)
+        public Sales(string CashierName, int CashierId)
         {
             InitializeComponent();
             Invoice = new Invoice();
@@ -48,7 +48,7 @@ namespace POS_Sys
             CatList = new List<Category>();
             this.CashierId = CashierId;
             this.CashierName = CashierName;
-           
+
         }
         public void RefreshForm()
         {
@@ -69,7 +69,7 @@ namespace POS_Sys
             P_List = p.GetProducts();
             for (int i = 0; i < P_List.Count(); i++)
             {
-                dataGridView2.Rows.Add(i + 1, P_List[i].Name,Cs_Category.GetCategory(P_List[i].CategoryId).Name, P_List[i].SellingPrice, P_List[i].ShopQuantity);
+                dataGridView2.Rows.Add(i + 1, P_List[i].Name, Cs_Category.GetCategory(P_List[i].CategoryId).Name, P_List[i].SellingPrice, P_List[i].ShopQuantity);
             }
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -86,7 +86,10 @@ namespace POS_Sys
         private void Sales_Load(object sender, EventArgs e)
         {
             timer1.Start();
-
+            CatList = Cs_Category.GetCategoryList();
+            for (int i = 0; i < CatList.Count; i++)
+                comboBox2.Items.Add(CatList[i].Name);
+            comboBox2.SelectedIndex = -1;
         }
 
         private void LogoutBtn_Click(object sender, EventArgs e)
@@ -101,7 +104,7 @@ namespace POS_Sys
 
         private void SearchTxt_TextChanged(object sender, EventArgs e)
         {
-            
+
             string searchValue = SearchTxt.Text;
 
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -157,14 +160,14 @@ namespace POS_Sys
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             String CName = dataGridView2.Columns[e.ColumnIndex].Name;
-            if (CName == "AddToCart" && e.RowIndex!=-1)
+            if (CName == "AddToCart" && e.RowIndex != -1)
             {
                 index = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[0].Value) - 1;
                 qform = new Qform();
                 qform.ShowDialog();
                 int qtity = qform.GetQuantity();
                 int q = Convert.ToInt32(dataGridView2.Rows[index].Cells[4].Value);
-        here:   if (qtity > 0)
+            here: if (qtity > 0)
                 {
                     if (q >= qtity)
                     {
@@ -183,7 +186,7 @@ namespace POS_Sys
                         MessageBox.Show("المنتج موجود بالعربة مسبقا");
                         return;
                     }
-                    dataGridView1.Rows.Add(0, dataGridView2.Rows[index].Cells[1].Value,dataGridView2.Rows[index].Cells[3].Value, qtity, (Convert.ToDouble(qtity) * Convert.ToDouble(dataGridView2.Rows[index].Cells[3].Value)));
+                    dataGridView1.Rows.Add(0, dataGridView2.Rows[index].Cells[1].Value, dataGridView2.Rows[index].Cells[3].Value, qtity, (Convert.ToDouble(qtity) * Convert.ToDouble(dataGridView2.Rows[index].Cells[3].Value)));
 
                     P_List[index].ShopQuantity -= qtity;
                     p_List.Add(P_List[index]);
@@ -199,9 +202,9 @@ namespace POS_Sys
             {
                 return true;
             }
-        
+
             return false;
-          
+
         }
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
@@ -223,12 +226,12 @@ namespace POS_Sys
                 CalculateTotal();
                 label3.Text = sum.ToString();
             }
-            
+
         }
 
         private void DiscountBtn_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void QuantityTxt_KeyPress(object sender, KeyPressEventArgs e)
@@ -244,7 +247,7 @@ namespace POS_Sys
                 if (Convert.ToInt32(QuantityTxt.Text) <= (Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[3].Value) + p_List[rowIndex].ShopQuantity))
                 {
                     p_List[rowIndex].ShopQuantity += (Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[3].Value)) - Convert.ToInt32(QuantityTxt.Text);
-                    dataGridView1.Rows[rowIndex].Cells[3].Value =  Convert.ToInt32(QuantityTxt.Text);
+                    dataGridView1.Rows[rowIndex].Cells[3].Value = Convert.ToInt32(QuantityTxt.Text);
                     dataGridView1.Rows[rowIndex].Cells[4].Value = Convert.ToDouble(dataGridView1.Rows[rowIndex].Cells[3].Value) * Convert.ToDouble(dataGridView1.Rows[rowIndex].Cells[2].Value);
                     MessageBox.Show("تم تعديل الكمية بنجاح");
                 }
@@ -293,7 +296,7 @@ namespace POS_Sys
                 double discount = sum - ((sum * Convert.ToDouble(textBox1.Text)) / 100);
                 label3.Text = discount.ToString();
             }
-            else if(comboBox1.SelectedItem.ToString() == "$")
+            else if (comboBox1.SelectedItem.ToString() == "$")
             {
                 double discount = sum - Convert.ToDouble(textBox1.Text);
                 label3.Text = discount.ToString();
@@ -324,8 +327,8 @@ namespace POS_Sys
         {
             check = false;
             CreateInvoice();
-            if(!check)
-            UpdateProducts();
+            if (!check)
+                UpdateProducts();
         }
         public void UpdateProducts()
         {
@@ -369,7 +372,7 @@ namespace POS_Sys
 
         private void SearchTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-          
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -400,6 +403,47 @@ namespace POS_Sys
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void ResetFilterBtn_Click(object sender, EventArgs e)
+        {
+            comboBox2.SelectedIndex = -1;
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedIndex == -1)
+            {
+                SetAllRowsVisible(dataGridView2, true);
+            }
+            else
+            {
+                ApplyGridViewFilters();
+            }
+        }
+        private void ApplyGridViewFilters()
+        { 
+            FilterGridviewByEmpId(comboBox2.SelectedItem.ToString());
+        }
+
+        private void FilterGridviewByEmpId(string category)
+        {
+            SetAllRowsVisible(dataGridView2, true);
+            foreach (DataGridViewRow row in dataGridView2.Rows)
+            {
+                if (!row.Cells[2].Value.Equals(category))
+                {
+                    row.Visible = false;
+                }
+            }
+        }
+
+        private void SetAllRowsVisible(DataGridView gv, bool visibility)
+        {
+            foreach (DataGridViewRow row in gv.Rows)
+            {
+                row.Visible = visibility;
+            }
         }
     }
 }
