@@ -49,5 +49,20 @@ namespace POS_Sys
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+        private void DisplayDayBtn_Click(object sender, EventArgs e)
+        {
+            if (InvoiceVM.GetTotalInvoicesForToday(dateTimePicker1.Value) == null)
+            {
+                MessageBox.Show("لا يوجد فواتير بهذا اليوم");
+                return;
+            }
+            InvoiceList.Clear();
+            InvoiceList=InvoiceVM.GetTotalInvoicesForToday(dateTimePicker1.Value.Date);
+            InvoiceDGV.DataSource = null;
+            InvoiceDGV.Columns.Clear();
+            InvoiceDGV.Rows.Clear();
+            InvoiceDGV.DataSource = InvoiceList;
+        }
     }
 }

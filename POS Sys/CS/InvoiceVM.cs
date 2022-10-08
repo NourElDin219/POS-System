@@ -60,10 +60,10 @@ namespace POS_Sys.CS
                 var Result = db.Invoice.Where(x => x.CreatedDate >= dt && x.CreatedDate < MonthDate).ToList();
 
                 List<InvoiceVM> invoicesVM = new List<InvoiceVM>();
-                InvoiceVM invoices1 = new InvoiceVM();
 
                 foreach (var invoice in Result)
                 {
+                    InvoiceVM invoices1 = new InvoiceVM();
                     invoices1.PaymentMethod = invoice.PaymentMethod;
                     invoices1.CreatedDate = invoice.CreatedDate;
                     invoices1.Discount = invoice.Discount;

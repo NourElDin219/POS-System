@@ -29,13 +29,15 @@ namespace POS_Sys
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.InvoiceDGV = new System.Windows.Forms.DataGridView();
             this.SearchBtn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DisplayDayBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.InvoiceDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,23 +48,23 @@ namespace POS_Sys
             this.InvoiceDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.InvoiceDGV.BackgroundColor = System.Drawing.Color.White;
             this.InvoiceDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.InvoiceDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.InvoiceDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.InvoiceDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.LimeGreen;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.InvoiceDGV.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LimeGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.InvoiceDGV.DefaultCellStyle = dataGridViewCellStyle2;
             this.InvoiceDGV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.InvoiceDGV.GridColor = System.Drawing.Color.White;
             this.InvoiceDGV.Location = new System.Drawing.Point(0, 126);
@@ -72,14 +74,14 @@ namespace POS_Sys
             this.InvoiceDGV.ReadOnly = true;
             this.InvoiceDGV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.InvoiceDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.InvoiceDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.InvoiceDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.InvoiceDGV.RowHeadersVisible = false;
             this.InvoiceDGV.RowHeadersWidth = 51;
             this.InvoiceDGV.RowTemplate.Height = 24;
@@ -89,18 +91,18 @@ namespace POS_Sys
             // 
             // SearchBtn
             // 
-            this.SearchBtn.Location = new System.Drawing.Point(315, 88);
+            this.SearchBtn.Location = new System.Drawing.Point(588, 6);
             this.SearchBtn.Name = "SearchBtn";
             this.SearchBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.SearchBtn.Size = new System.Drawing.Size(75, 32);
             this.SearchBtn.TabIndex = 16;
-            this.SearchBtn.Text = "بحث";
+            this.SearchBtn.Text = "عرض";
             this.SearchBtn.UseVisualStyleBackColor = true;
             this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(396, 90);
+            this.textBox1.Location = new System.Drawing.Point(669, 8);
             this.textBox1.Name = "textBox1";
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBox1.Size = new System.Drawing.Size(231, 30);
@@ -111,18 +113,38 @@ namespace POS_Sys
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(633, 91);
+            this.label1.Location = new System.Drawing.Point(906, 9);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(97, 23);
             this.label1.TabIndex = 14;
             this.label1.Text = "رقم الفاتورة:";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(165, 9);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(302, 30);
+            this.dateTimePicker1.TabIndex = 17;
+            // 
+            // DisplayDayBtn
+            // 
+            this.DisplayDayBtn.Location = new System.Drawing.Point(12, 10);
+            this.DisplayDayBtn.Name = "DisplayDayBtn";
+            this.DisplayDayBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.DisplayDayBtn.Size = new System.Drawing.Size(125, 32);
+            this.DisplayDayBtn.TabIndex = 18;
+            this.DisplayDayBtn.Text = "عرض";
+            this.DisplayDayBtn.UseVisualStyleBackColor = true;
+            this.DisplayDayBtn.Click += new System.EventHandler(this.DisplayDayBtn_Click);
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1015, 706);
+            this.Controls.Add(this.DisplayDayBtn);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.SearchBtn);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
@@ -147,5 +169,7 @@ namespace POS_Sys
         private System.Windows.Forms.Button SearchBtn;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button DisplayDayBtn;
     }
 }
