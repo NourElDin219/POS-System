@@ -18,7 +18,7 @@ namespace POS_Sys.Models
         public DbSet<Category> Category { get; set; }
         public DbSet<Invoice> Invoice { get; set; }
         public DbSet<InvoiceProduct> InvoiceProduct { get; set; }
-
+        public DbSet<AdvancePayment> AdvancePayment { get; set; }
         public override int SaveChanges() 
         {
             var entries = ChangeTracker

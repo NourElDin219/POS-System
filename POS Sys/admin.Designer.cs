@@ -46,6 +46,7 @@ namespace POS_Sys
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.AdvacnePayBtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -68,6 +69,7 @@ namespace POS_Sys
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.AdvacnePayBtn);
             this.panel1.Controls.Add(this.SalesBtn);
             this.panel1.Controls.Add(this.ProfitBtn);
             this.panel1.Controls.Add(this.CategoryBtn);
@@ -221,6 +223,16 @@ namespace POS_Sys
             this.panel4.Size = new System.Drawing.Size(1033, 753);
             this.panel4.TabIndex = 2;
             // 
+            // AdvacnePayBtn
+            // 
+            this.AdvacnePayBtn.Location = new System.Drawing.Point(86, 584);
+            this.AdvacnePayBtn.Name = "AdvacnePayBtn";
+            this.AdvacnePayBtn.Size = new System.Drawing.Size(226, 34);
+            this.AdvacnePayBtn.TabIndex = 13;
+            this.AdvacnePayBtn.Text = "المسحوبات";
+            this.AdvacnePayBtn.UseVisualStyleBackColor = true;
+            this.AdvacnePayBtn.Click += new System.EventHandler(this.AdvacnePayBtn_Click);
+            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -262,6 +274,7 @@ namespace POS_Sys
         private System.Windows.Forms.Button CategoryBtn;
         private System.Windows.Forms.Button ProfitBtn;
         private System.Windows.Forms.Button SalesBtn;
+        private System.Windows.Forms.Button AdvacnePayBtn;
     }
 }
 

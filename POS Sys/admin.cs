@@ -20,6 +20,7 @@ namespace POS_Sys
         private Reports rfrm;
         private string CName;
         private int CId;
+        private AdvancePaymentFrm afrm;
         public admin()
         {
             InitializeComponent();
@@ -47,11 +48,13 @@ namespace POS_Sys
             cfrm = new CategoryForm();
             prfrm = new Profit();
             rfrm = new Reports();
+            afrm = new AdvancePaymentFrm();
             pfrm.TopLevel = false;
             ufrm.TopLevel = false;
             cfrm.TopLevel = false;
             prfrm.TopLevel = false;
             rfrm.TopLevel = false;
+            afrm.TopLevel = false;
             if (role == "Supervisor")
             {
                 pfrm.Supervisor();
@@ -63,6 +66,7 @@ namespace POS_Sys
             panel4.Controls.Add(cfrm);
             panel4.Controls.Add(prfrm);
             panel4.Controls.Add(rfrm);
+            panel4.Controls.Add(afrm);
             CName = Name;
             CId = id;
         }
@@ -115,6 +119,7 @@ namespace POS_Sys
             pfrm.Dispose();
             prfrm.Dispose();
             rfrm.Dispose();
+            afrm.Dispose();
             this.Hide();
             login.ShowDialog();
             this.Close();
@@ -150,6 +155,12 @@ namespace POS_Sys
         {
             rfrm.BringToFront();
             rfrm.Show();
+        }
+
+        private void AdvacnePayBtn_Click(object sender, EventArgs e)
+        {
+            afrm.BringToFront();
+            afrm.Show();
         }
     }
 }

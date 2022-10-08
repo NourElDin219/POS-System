@@ -129,6 +129,44 @@ namespace POS_Sys.CS
                 }
             }
         }
+        public void ReadUser(int userId)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var ro = from U in db.User
+                         
+                         where U.Id == userId 
+                         select new
+                         {
+                             n = U.Name,
+                            
+                         };
+                foreach (var obj in ro)
+                {
+                    Name = obj.n;
+                   
+                }
+            }
+        }
+        public void ReadUserT(string userId)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var ro = from U in db.User
+
+                         where U.Name == userId
+                         select new
+                         {
+                             n = U.Name,
+                             i=U.Id
+                         };
+                foreach (var obj in ro)
+                {
+                    Name = obj.n;
+                    Id = obj.i;
+                }
+            }
+        }
         public bool Authorized(string user_Text, string user_Pass)
         {
             using (DatabaseContext db = new DatabaseContext())
