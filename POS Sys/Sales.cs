@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
+using System.Net;
 
 namespace POS_Sys
 {
@@ -31,6 +33,8 @@ namespace POS_Sys
         string CashierName;
         bool check;
         int index;
+        private InvoiceVM InvoiceVM;
+        private List<InvoiceVM> Invoices;
         public Sales(string CashierName, int CashierId)
         {
             InitializeComponent();
@@ -46,6 +50,8 @@ namespace POS_Sys
             sum = 0;
             cs_Products = new Cs_Products();
             CatList = new List<Category>();
+            InvoiceVM = new InvoiceVM();
+            Invoices = new List<InvoiceVM>();
             this.CashierId = CashierId;
             this.CashierName = CashierName;
 
@@ -445,5 +451,39 @@ namespace POS_Sys
                 row.Visible = visibility;
             }
         }
+
+        private void SendReportBtn_Click(object sender, EventArgs e)
+        {
+            string fromMail = "alhabashy1983@gmail.com";
+            MailMessage message = new MailMessage();
+            message.BodyEncoding = System.Text.Encoding.UTF8;
+            message.From = new MailAddress(fromMail);
+            message.Subject = "التقرير اليومى";
+            message.To.Add(new MailAddress("nour.eldine@hotmail.com"));
+
+            DateTime dt = new DateTime();
+            dt = DateTime.Now;
+            Invoices = InvoiceVM.GetTotalInvoicesForToday(dt.Date);
+            message.Body += "<table width='100%' style='border:Solid 1px Black;'>";
+            message.Body += "<tr>";
+            message.Body += "<td stlye='color:blue;'>" + "رقم الفاتورة" + "</td>" + "<td stlye='color:blue;'>" + "المبلغ الكلى" + "</td>" + "<td stlye='color:blue;'>" + "المدفوع" + "</td>" + "<td stlye='color:blue;'>" + "الخصم" + "</td>" + "<td stlye='color:blue;'>" + "طريقة الدفع" + "</td>" + "<td stlye='color:blue;'>" + "الكاشير" + "</td>" + "<td stlye='color:blue;'>" + "تاريخ العملية" + "</td>" ;
+
+            foreach (var item in Invoices)
+            {
+                message.Body += "<tr>";
+                message.Body += "<td stlye='color:blue;'>" + item.Id + "</td>" + "<td stlye='color:blue;'>" + item.Total + "</td>" + "<td stlye='color:blue;'>" + item.Pay + "</td>" + "<td stlye='color:blue;'>" + item.Discount + "</td>" + "<td stlye='color:blue;'>" + item.PaymentMethod + "</td>" + "<td stlye='color:blue;'>" + item.UserName + "</td>" + "<td stlye='color:blue;'>" + item.CreatedDate + "</td>";
+                message.Body += "</tr>";
+            }
+            message.Body += "</table>";
+            message.IsBodyHtml = true;
+            var smtpClient = new SmtpClient("smtp.gmail.com")
+            {
+                Port = 587,
+                Credentials = new NetworkCredential("alhabashy1983@gmail.com", "fwbhjenehgdxshqt"),
+                EnableSsl = true,
+            };
+            smtpClient.Send(message);
+        }
+
     }
 }
