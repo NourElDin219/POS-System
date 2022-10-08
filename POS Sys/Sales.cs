@@ -138,6 +138,7 @@ namespace POS_Sys
 
         private void LogoutBtn_Click_1(object sender, EventArgs e)
         {
+            LogoutMail();
             Login login = new Login();
             this.Hide();
             login.ShowDialog();
@@ -457,6 +458,7 @@ namespace POS_Sys
             string fromMail = "alhabashy1983@gmail.com";
             MailMessage message = new MailMessage();
             message.BodyEncoding = System.Text.Encoding.UTF8;
+            message.SubjectEncoding = System.Text.Encoding.UTF8;
             message.From = new MailAddress(fromMail);
             message.Subject = "التقرير اليومى";
             message.To.Add(new MailAddress("nour.eldine@hotmail.com"));
@@ -464,17 +466,39 @@ namespace POS_Sys
             DateTime dt = new DateTime();
             dt = DateTime.Now;
             Invoices = InvoiceVM.GetTotalInvoicesForToday(dt.Date);
-            message.Body += "<table width='100%' style='border:Solid 1px Black;'>";
+            message.Body += "<html dir=\"rtl\" lang=\"ar\"><table width='100%' style='border:Solid 1px Black;'>";
             message.Body += "<tr>";
             message.Body += "<td stlye='color:blue;'>" + "رقم الفاتورة" + "</td>" + "<td stlye='color:blue;'>" + "المبلغ الكلى" + "</td>" + "<td stlye='color:blue;'>" + "المدفوع" + "</td>" + "<td stlye='color:blue;'>" + "الخصم" + "</td>" + "<td stlye='color:blue;'>" + "طريقة الدفع" + "</td>" + "<td stlye='color:blue;'>" + "الكاشير" + "</td>" + "<td stlye='color:blue;'>" + "تاريخ العملية" + "</td>" ;
-
+            message.Body += "</tr>";
             foreach (var item in Invoices)
             {
                 message.Body += "<tr>";
                 message.Body += "<td stlye='color:blue;'>" + item.Id + "</td>" + "<td stlye='color:blue;'>" + item.Total + "</td>" + "<td stlye='color:blue;'>" + item.Pay + "</td>" + "<td stlye='color:blue;'>" + item.Discount + "</td>" + "<td stlye='color:blue;'>" + item.PaymentMethod + "</td>" + "<td stlye='color:blue;'>" + item.UserName + "</td>" + "<td stlye='color:blue;'>" + item.CreatedDate + "</td>";
                 message.Body += "</tr>";
             }
-            message.Body += "</table>";
+            message.Body += "</table></html>";
+            message.IsBodyHtml = true;
+            var smtpClient = new SmtpClient("smtp.gmail.com")
+            {
+                Port = 587,
+                Credentials = new NetworkCredential("alhabashy1983@gmail.com", "fwbhjenehgdxshqt"),
+                EnableSsl = true,
+            };
+            smtpClient.Send(message);
+        }
+        public void LogoutMail()
+        {
+            string fromMail = "alhabashy1983@gmail.com";
+            MailMessage message = new MailMessage();
+            message.BodyEncoding = System.Text.Encoding.UTF8;
+            message.SubjectEncoding = System.Text.Encoding.UTF8;
+            message.From = new MailAddress(fromMail);
+            message.Subject = "تسجيل خروج";
+            message.To.Add(new MailAddress("nour.eldine@hotmail.com"));
+
+            DateTime dt = new DateTime();
+            dt = DateTime.Now;
+            message.Body = "<html dir=\"rtl\" lang=\"ar\"><body><p>"+ CashierName +" "+ "قام بتسجيل الخروج. <br>الساعة:"+" "+ dt.ToString("hh:mm tt") +"</P></body></html>";
             message.IsBodyHtml = true;
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {
