@@ -35,6 +35,7 @@ namespace POS_Sys
         int index;
         private InvoiceVM InvoiceVM;
         private List<InvoiceVM> Invoices;
+        private InvoiceProductVM IP;
         public Sales(string CashierName, int CashierId)
         {
             InitializeComponent();
@@ -52,6 +53,7 @@ namespace POS_Sys
             CatList = new List<Category>();
             InvoiceVM = new InvoiceVM();
             Invoices = new List<InvoiceVM>();
+            IP = new InvoiceProductVM();
             this.CashierId = CashierId;
             this.CashierName = CashierName;
 
@@ -334,8 +336,18 @@ namespace POS_Sys
         {
             check = false;
             CreateInvoice();
+            PrintReceipt();
             if (!check)
                 UpdateProducts();
+        }
+        public void PrintReceipt()
+        {
+            List<InvoiceProductVM> List = new List<InvoiceProductVM>();
+            List = IP.SendInvoiceToReport(InvoiceProduct);
+            using (PrintReceipt frm = new PrintReceipt(List, Invoice.Total.ToString(), Invoice.Pay.ToString(), (Invoice.Pay - Invoice.Total).ToString(), CS_Invoice.GetLatestInvoiceNumber().ToString(), Invoice.CreatedDate.ToString(), CashierName,Invoice.Discount.ToString(),Invoice.PaymentMethod))
+            {
+                frm.ShowDialog();
+            }
         }
         public void UpdateProducts()
         {
