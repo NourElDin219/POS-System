@@ -490,11 +490,12 @@ namespace POS_Sys
             }
             message.Body += "</table></html>";
             message.IsBodyHtml = true;
-            var smtpClient = new SmtpClient("smtp.gmail.com")
+            var smtpClient = new SmtpClient("smtp.gmail.com",587)
             {
-                Port = 587,
+               // Port = 465,
                 Credentials = new NetworkCredential("alhabashy1983@gmail.com", "fwbhjenehgdxshqt"),
                 EnableSsl = true,
+                
             };
             smtpClient.Send(message);
         }
