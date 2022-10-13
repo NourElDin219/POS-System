@@ -19,7 +19,8 @@ namespace POS_Sys
         {
             InitializeComponent();
             this.total = total;
-            this.ActiveControl = radioButton1;
+            this.ActiveControl = button1;
+            this.radioButton1.Checked = true;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

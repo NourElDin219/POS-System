@@ -58,8 +58,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>pDate</rd:DefaultName>
-            <Top>0.32444in</Top>
-            <Left>2.64666in</Left>
+            <Top>0.26888in</Top>
+            <Left>2.44193in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <Style>
@@ -89,8 +89,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>pOperationNo</rd:DefaultName>
-            <Top>0.32444in</Top>
-            <Left>0.28833in</Left>
+            <Top>0.26888in</Top>
+            <Left>0.0836in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>1</ZIndex>
@@ -408,8 +408,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>InvoiceDetails</DataSetName>
-            <Top>0.65777in</Top>
-            <Left>0.52999in</Left>
+            <Top>0.60221in</Top>
+            <Left>0.32526in</Left>
             <Height>0.5in</Height>
             <Width>4in</Width>
             <ZIndex>2</ZIndex>
@@ -435,8 +435,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>pCashierName</rd:DefaultName>
-            <Top>0.05556in</Top>
-            <Left>2.64666in</Left>
+            <Left>2.44193in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>3</ZIndex>
@@ -457,7 +456,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value> اجمالى المطلوب</Value>
+                    <Value>الاجمالى</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -467,8 +466,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>1.71611in</Top>
-            <Left>2.64666in</Left>
+            <Top>1.66055in</Top>
+            <Left>2.44193in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>4</ZIndex>
@@ -499,8 +498,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>1.7161in</Top>
-            <Left>1.41333in</Left>
+            <Top>1.66054in</Top>
+            <Left>1.2086in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>5</ZIndex>
@@ -531,8 +530,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>0.05556in</Top>
-            <Left>3.7625in</Left>
+            <Left>3.55777in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>6</ZIndex>
@@ -563,8 +561,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>0.30556in</Top>
-            <Left>3.7625in</Left>
+            <Top>0.25in</Top>
+            <Left>3.55777in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>7</ZIndex>
@@ -595,8 +593,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>0.32444in</Top>
-            <Left>1.35777in</Left>
+            <Top>0.26888in</Top>
+            <Left>1.15304in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>8</ZIndex>
@@ -627,8 +625,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>1.45222in</Top>
-            <Left>2.64666in</Left>
+            <Top>1.39666in</Top>
+            <Left>2.44193in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>9</ZIndex>
@@ -659,8 +657,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>1.45221in</Top>
-            <Left>1.41333in</Left>
+            <Top>1.39665in</Top>
+            <Left>1.2086in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>10</ZIndex>
@@ -691,8 +689,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>0.05556in</Top>
-            <Left>1.35777in</Left>
+            <Left>1.15304in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>11</ZIndex>
@@ -723,8 +720,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>pOperationNo</rd:DefaultName>
-            <Top>0.05556in</Top>
-            <Left>0.28833in</Left>
+            <Left>0.0836in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>12</ZIndex>
@@ -739,21 +735,38 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>2.18333in</Height>
-        <Style />
+        <Height>2.11458in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+            <Width>2pt</Width>
+          </Border>
+          <TopBorder>
+            <Style>None</Style>
+          </TopBorder>
+          <BottomBorder>
+            <Style>None</Style>
+          </BottomBorder>
+          <LeftBorder>
+            <Style>None</Style>
+          </LeftBorder>
+          <RightBorder>
+            <Style>None</Style>
+          </RightBorder>
+        </Style>
       </Body>
-      <Width>5.125in</Width>
+      <Width>4.7161in</Width>
       <Page>
         <PageHeader>
-          <Height>1.13833in</Height>
+          <Height>1.13834in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Image Name="Image2">
               <Source>Embedded</Source>
               <Value>ID310294338_3332046170451346_666236091922102261_n</Value>
               <Sizing>FitProportional</Sizing>
-              <Left>1.52999in</Left>
+              <Top>0.01389in</Top>
+              <Left>1.2086in</Left>
               <Height>1.11056in</Height>
               <Width>2in</Width>
               <Style>
@@ -766,7 +779,20 @@
           <Style>
             <Border>
               <Style>None</Style>
+              <Width>0.75pt</Width>
             </Border>
+            <TopBorder>
+              <Style>None</Style>
+            </TopBorder>
+            <BottomBorder>
+              <Style>None</Style>
+            </BottomBorder>
+            <LeftBorder>
+              <Style>None</Style>
+            </LeftBorder>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
           </Style>
         </PageHeader>
         <PageFooter>
@@ -818,8 +844,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>0.06944in</Top>
-              <Left>3.27083in</Left>
+              <Top>0.0861in</Top>
+              <Left>3.3947in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <ZIndex>1</ZIndex>
@@ -852,8 +878,8 @@
               <Source>Embedded</Source>
               <Value>phone</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.06944in</Top>
-              <Left>2.90972in</Left>
+              <Top>0.0861in</Top>
+              <Left>3.03359in</Left>
               <Height>0.275in</Height>
               <Width>0.29167in</Width>
               <ZIndex>3</ZIndex>
@@ -870,6 +896,8 @@
             </Border>
           </Style>
         </PageFooter>
+        <PageHeight>2.5in</PageHeight>
+        <PageWidth>3.13in</PageWidth>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
         <TopMargin>1in</TopMargin>

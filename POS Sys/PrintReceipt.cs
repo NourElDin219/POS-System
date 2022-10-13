@@ -45,7 +45,8 @@ namespace POS_Sys
             };
             this.reportViewer1.LocalReport.SetParameters(para);
             this.reportViewer1.RefreshReport();
-          
+            reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
+           
         }
     }
 }

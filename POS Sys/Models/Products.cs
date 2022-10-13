@@ -12,7 +12,7 @@ namespace POS_Sys.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-
+        public double PurchasingPrice { get; set; }
         public double SellingPrice { get; set; }
         
         [ForeignKey("Category")]
