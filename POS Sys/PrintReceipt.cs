@@ -38,8 +38,6 @@ namespace POS_Sys
             {
                 new Microsoft.Reporting.WinForms.ReportParameter("pDate",_Date),
                 new Microsoft.Reporting.WinForms.ReportParameter("pTotal",_Total),
-                new Microsoft.Reporting.WinForms.ReportParameter("pCash",_Cash),
-                new Microsoft.Reporting.WinForms.ReportParameter("pChange",_Change),
                 new Microsoft.Reporting.WinForms.ReportParameter("pCashierName",_CashierName),
                 new Microsoft.Reporting.WinForms.ReportParameter("pOperationNo",_OpNo),
                 new Microsoft.Reporting.WinForms.ReportParameter("pPaymentMethod",_PM),

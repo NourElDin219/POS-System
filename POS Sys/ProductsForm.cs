@@ -17,6 +17,7 @@ namespace POS_Sys
         private Products Product;
         private Cs_Products p;
         private Cs_Category cs_Category;
+        private List<Category> CategoryList;
         private List<Products> P_List;
         private int rowIndex;
         DataTable table;
@@ -28,7 +29,7 @@ namespace POS_Sys
             P_List = new List<Products>();
             Product = new Products();
             table = new DataTable();
-            
+            CategoryList = new List<Category>();
             FillCategoryList();
             
         }
@@ -70,6 +71,7 @@ namespace POS_Sys
             }
             else
             {
+                Product = new Products();
                 Product.Name = TxtName.Text;
                 Product.SellingPrice = Convert.ToDouble(TxtSPrice.Text);
                 Product.ShopQuantity = Convert.ToInt32(TxtSQuantity.Text);
@@ -83,21 +85,55 @@ namespace POS_Sys
 
         private void DisplayBtn_Click(object sender, EventArgs e)
         {
+            ResetFilterBtn.PerformClick();
             table.Columns.Clear();
             table.Rows.Clear();
             P_List = p.GetProducts();
+            table.Columns.Add("#", typeof(int));
             table.Columns.Add("اسم المنتج", typeof(string));
+            table.Columns.Add("النوع", typeof(string));
             table.Columns.Add("سعر البيع", typeof(double));
             table.Columns.Add("الكمية فى المتجر", typeof(int));
             table.Columns.Add("الكمية فى المخزن", typeof(int));
 
             for (int i = 0; i < P_List.Count(); i++)
             {
-                table.Rows.Add(P_List[i].Name, P_List[i].SellingPrice, P_List[i].ShopQuantity, P_List[i].InvQuantity);
+                table.Rows.Add(i+1,P_List[i].Name, cs_Category.GetCategorys(P_List[i].Name), P_List[i].SellingPrice, P_List[i].ShopQuantity, P_List[i].InvQuantity);
             }
             dataGridView1.DataSource = table;
 
             
+        }
+        private void ApplyGridViewFilters()
+        {
+            FilterGridviewByEmpId(comboBox2.SelectedItem.ToString());
+        }
+
+        private void FilterGridviewByEmpId(string category)
+        {
+            SetAllRowsVisible(dataGridView1, true);
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (!row.Cells[2].Value.Equals(category))
+                {
+                    CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[dataGridView1.DataSource];
+                    currencyManager1.SuspendBinding();
+                    row.Visible = false;
+                    currencyManager1.ResumeBinding();
+                }
+            }
+        }
+
+        private void SetAllRowsVisible(DataGridView gv, bool visibility)
+        {
+            foreach (DataGridViewRow row in gv.Rows)
+            {
+                CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[dataGridView1.DataSource];
+                currencyManager1.SuspendBinding();
+                row.Visible = visibility;
+                currencyManager1.ResumeBinding();
+                
+            }
         }
 
         private void metroTabPage1_Resize(object sender, EventArgs e)
@@ -109,7 +145,7 @@ namespace POS_Sys
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             rowIndex = dataGridView1.CurrentRow.Index;
-            p.DeleteProduct(P_List[rowIndex].Id);
+            p.DeleteProduct(P_List[Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[0].Value)-1].Id);
             MessageBox.Show("تمت ازالة المنتج بنجاح");
             DisplayBtn.PerformClick();
         }
@@ -134,7 +170,7 @@ namespace POS_Sys
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            Product.Id = P_List[rowIndex].Id;
+            Product.Id = P_List[Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[0].Value) - 1].Id;
             Product.Name = NameTxt.Text;
             Product.SellingPrice = Convert.ToDouble(SPriceTxt.Text);
             Product.ShopQuantity = Convert.ToInt32(SQtTxt.Text);
@@ -157,7 +193,7 @@ namespace POS_Sys
                 MessageBox.Show("برجاء ادخال رقم أكبر من الصفر");
             else
             {
-                if (!p.MoveToShop(P_List[rowIndex].Id, Convert.ToInt32(MoveTxt.Text)))
+                if (!p.MoveToShop(P_List[Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[0].Value) - 1].Id, Convert.ToInt32(MoveTxt.Text)))
                 {
                     MessageBox.Show("لا يوجد كمية كافية فى المخزن");
                 }
@@ -213,7 +249,7 @@ namespace POS_Sys
             {
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    if (row.Cells[0].Value.ToString().Contains(searchValue))
+                    if (row.Cells[1].Value.ToString().Contains(searchValue))
                     {
                         row.Selected = true;
                         break;
@@ -244,6 +280,32 @@ namespace POS_Sys
         private void ProductsForm_Load(object sender, EventArgs e)
         {
             DisplayBtn.PerformClick();
+            CategoryList = cs_Category.GetCategoryList();
+            for (int i = 0; i < CategoryList.Count; i++)
+                comboBox2.Items.Add(CategoryList[i].Name);
+            comboBox2.SelectedIndex = -1;
+        }
+
+        private void ResetFilterBtn_Click(object sender, EventArgs e)
+        {
+            comboBox2.SelectedIndex = -1;
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedIndex == -1)
+            {
+                SetAllRowsVisible(dataGridView1, true);
+            }
+            else
+            {
+                ApplyGridViewFilters();
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

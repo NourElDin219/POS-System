@@ -361,16 +361,6 @@ namespace POS_Sys
         {
             PayAndPrint PnP = new PayAndPrint(sum, Convert.ToDouble(label3.Text));
             PnP.ShowDialog();
-            if (PnP.paid == 0 || PnP.method == null)
-            {
-                check = true;
-                return;
-            }
-            if (PnP.paid < PnP.total)
-            {
-                MessageBox.Show("المبلغ المدفوع أقل من المطلوب");
-                PnP.ShowDialog();
-            }
             Invoice.Pay = PnP.paid;
             Invoice.Discount = sum - Convert.ToDouble(label3.Text);
             Invoice.PaymentMethod = PnP.method;
@@ -411,6 +401,7 @@ namespace POS_Sys
                 frm.ShowDialog();
                 frm.Dispose();
                 RefreshForm();
+              //  NInvoiceBtn.PerformClick();
             }
             else if (!Authorized)
                 MessageBox.Show("أنت لا تملك الصلاحية للقيام بهذه العملية");

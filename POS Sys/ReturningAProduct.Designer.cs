@@ -253,6 +253,7 @@ namespace POS_Sys
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ارجاع منتج";
+            this.Load += new System.EventHandler(this.ReturningAProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

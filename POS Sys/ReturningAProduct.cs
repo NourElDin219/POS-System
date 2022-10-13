@@ -204,5 +204,10 @@ namespace POS_Sys
                 SearchBtn.PerformClick();
             }
         }
+
+        private void ReturningAProduct_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

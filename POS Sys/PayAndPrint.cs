@@ -19,7 +19,7 @@ namespace POS_Sys
         {
             InitializeComponent();
             this.total = total;
-            this.ActiveControl = textBox2;
+            this.ActiveControl = radioButton1;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -35,21 +35,12 @@ namespace POS_Sys
         private void PayAndPrint_Load(object sender, EventArgs e)
         {
             textBox1.Text = total.ToString();
+            textBox2.Text = total.ToString();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (textBox2.Text != "")
-            {
-                try
-                {
-                    textBox3.Text = (Convert.ToDouble(textBox2.Text) - total).ToString();
-                }
-                catch (Exception ex)
-                {
-
-                }
-            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -68,6 +59,14 @@ namespace POS_Sys
             else
                 MessageBox.Show("برجاء اختيار طريقة الدفع");
 
+        }
+
+        private void button1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+            }
         }
     }
 }
