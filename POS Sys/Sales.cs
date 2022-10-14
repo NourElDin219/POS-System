@@ -344,9 +344,19 @@ namespace POS_Sys
         {
             List<InvoiceProductVM> List = new List<InvoiceProductVM>();
             List = IP.SendInvoiceToReport(InvoiceProduct);
-            using (PrintReceipt frm = new PrintReceipt(List, Invoice.Total.ToString(), Invoice.Pay.ToString(), (Invoice.Pay - Invoice.Total).ToString(), CS_Invoice.GetLatestInvoiceNumber().ToString(), Invoice.CreatedDate.ToString(), CashierName,Invoice.Discount.ToString(),Invoice.PaymentMethod))
+            if (Invoice.Discount > 0)
             {
-                frm.ShowDialog();
+                using (PrintReceipt frm = new PrintReceipt(List, Invoice.Total.ToString(), Invoice.Pay.ToString(), (Invoice.Pay - Invoice.Total).ToString(), CS_Invoice.GetLatestInvoiceNumber().ToString(), Invoice.CreatedDate.ToString(), CashierName, (comboBox1.SelectedItem.ToString() + " " + Invoice.Discount.ToString()), Invoice.PaymentMethod))
+                {
+                    frm.ShowDialog();
+                }
+            }
+            else
+            {
+                using (PrintReceipt frm = new PrintReceipt(List, Invoice.Total.ToString(), Invoice.Pay.ToString(), (Invoice.Pay - Invoice.Total).ToString(), CS_Invoice.GetLatestInvoiceNumber().ToString(), Invoice.CreatedDate.ToString(), CashierName, Invoice.Discount.ToString(), Invoice.PaymentMethod))
+                {
+                    frm.ShowDialog();
+                }
             }
         }
         public void UpdateProducts()
