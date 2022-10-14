@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using POS_Sys.CS;
+using POS_Sys.Models;
+
 namespace POS_Sys
 {
     public partial class Reports : Form
@@ -58,11 +60,54 @@ namespace POS_Sys
                 return;
             }
             InvoiceList.Clear();
-            InvoiceList=InvoiceVM.GetTotalInvoicesForToday(dateTimePicker1.Value.Date);
+            InvoiceList = InvoiceVM.GetTotalInvoicesForToday(dateTimePicker1.Value.Date);
             InvoiceDGV.DataSource = null;
             InvoiceDGV.Columns.Clear();
             InvoiceDGV.Rows.Clear();
             InvoiceDGV.DataSource = InvoiceList;
+        }
+
+        private void InvoiceDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void InvoiceDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int k = Convert.ToInt32(InvoiceDGV.Rows[e.RowIndex].Cells[0].Value);
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                if (db.InvoiceProduct.Where(x => x.InvoiceId == k).Count() > 0)
+                {
+                    var ro = from IP in db.InvoiceProduct
+                             from P in db.Product
+                             where IP.InvoiceId == k && P.Id == IP.ProductId
+                             select new
+                             {
+                                 ProductName = P.Name,
+                                 UnitPrice = P.SellingPrice,
+                                 Quantity = IP.Quantity,
+                                 ProductId = P.Id,
+
+                                 SPrice = P.SellingPrice,
+                                 CatId = P.CategoryId,
+                                 ShopQty = P.ShopQuantity,
+                                 InvQty = P.InvQuantity,
+                                 InvoiceProductID = IP.Id
+                             };
+                    InvoiceDGV.DataSource = null;
+                    InvoiceDGV.Rows.Clear();
+                    InvoiceDGV.Columns.Add("Name","اسم المنتج");
+                    InvoiceDGV.Columns.Add("UnitPrice", "سعر القطعة");
+                    InvoiceDGV.Columns.Add("Qty", "الكمية");
+                    InvoiceDGV.Columns.Add("TotalPrice", "السعر الكلى");
+
+                    foreach (var obj in ro)
+                    {
+                       InvoiceDGV.Rows.Add(obj.ProductName, obj.UnitPrice, obj.Quantity, Convert.ToDouble((obj.UnitPrice) * (obj.Quantity)));
+                    }
+                }
+            }
         }
     }
 }

@@ -67,7 +67,7 @@ namespace POS_Sys
             this.InvoiceDGV.DefaultCellStyle = dataGridViewCellStyle2;
             this.InvoiceDGV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.InvoiceDGV.GridColor = System.Drawing.Color.White;
-            this.InvoiceDGV.Location = new System.Drawing.Point(0, 126);
+            this.InvoiceDGV.Location = new System.Drawing.Point(0, 84);
             this.InvoiceDGV.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.InvoiceDGV.MultiSelect = false;
             this.InvoiceDGV.Name = "InvoiceDGV";
@@ -86,8 +86,10 @@ namespace POS_Sys
             this.InvoiceDGV.RowHeadersWidth = 51;
             this.InvoiceDGV.RowTemplate.Height = 24;
             this.InvoiceDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.InvoiceDGV.Size = new System.Drawing.Size(1015, 580);
+            this.InvoiceDGV.Size = new System.Drawing.Size(1015, 622);
             this.InvoiceDGV.TabIndex = 4;
+            this.InvoiceDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.InvoiceDGV_CellContentClick);
+            this.InvoiceDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.InvoiceDGV_CellDoubleClick);
             // 
             // SearchBtn
             // 
