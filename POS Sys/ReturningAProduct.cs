@@ -85,7 +85,7 @@ namespace POS_Sys
                                  UnitPrice = P.SellingPrice,
                                  Quantity = IP.Quantity,
                                  ProductId = P.Id,
-                                
+                                 PPrice=P.PurchasingPrice,
                                  SPrice = P.SellingPrice,
                                  CatId = P.CategoryId,
                                  ShopQty = P.ShopQuantity,
@@ -96,8 +96,10 @@ namespace POS_Sys
                     int i = 0;
                     foreach (var obj in ro)
                     {
+                        product = new Products();
                         product.Id = obj.ProductId;
                         product.Name = obj.ProductName;
+                        product.PurchasingPrice = obj.PPrice;
                         product.SellingPrice = obj.SPrice;
                         product.CategoryId = obj.CatId;
                         product.InvQuantity = obj.InvQty;
@@ -158,11 +160,13 @@ namespace POS_Sys
                         }
                     }
                     newTotal = 0;
+                    double totalProfit=0;
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
                         newTotal += Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value);
+                        totalProfit += products[i].PurchasingPrice;
                     }
-                    CS_Invoice.UpdateInvoice(Convert.ToInt32(textBox1.Text), newTotal);
+                    CS_Invoice.UpdateInvoice(Convert.ToInt32(textBox1.Text), newTotal,(newTotal-totalProfit));
                     goto end;
                 }
                 cs_Products.AddOrUpdateProduct(products[e.RowIndex]);
@@ -175,11 +179,14 @@ namespace POS_Sys
                 else
                 {
                     newTotal = 0;
+                    double totalProfit = 0;
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
                         newTotal += Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value);
+                        totalProfit += products[i].PurchasingPrice;
+
                     }
-                    CS_Invoice.UpdateInvoice(Convert.ToInt32(textBox1.Text), newTotal);
+                    CS_Invoice.UpdateInvoice(Convert.ToInt32(textBox1.Text), newTotal,(newTotal - totalProfit));
                 }
             end:if(dataGridView1.Rows.Count>0) 
                 SearchBtn.PerformClick();

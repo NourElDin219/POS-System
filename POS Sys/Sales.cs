@@ -377,8 +377,10 @@ namespace POS_Sys
             Invoice.Total = PnP.total;
             Invoice.UserId = CashierId;
             PnP.Dispose();
+            double totalProfit = Invoice.Total;
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
+                totalProfit -= p_List[i].PurchasingPrice;
                 invoiceProduct = new InvoiceProduct();
                 invoiceProduct.ProductId = p_List[i].Id;
                 invoiceProduct.Quantity = Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value);
@@ -386,6 +388,7 @@ namespace POS_Sys
                 invoiceProduct = null;
                 GC.Collect();
             }
+            Invoice.TotalProfit = totalProfit;
             CS_Invoice.CreateInvoice(Invoice, InvoiceProduct);
         }
 
