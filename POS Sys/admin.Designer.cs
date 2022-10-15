@@ -32,6 +32,7 @@ namespace POS_Sys
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AdvacnePayBtn = new System.Windows.Forms.Button();
             this.SalesBtn = new System.Windows.Forms.Button();
             this.ProfitBtn = new System.Windows.Forms.Button();
             this.CategoryBtn = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@ namespace POS_Sys
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.AdvacnePayBtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -87,6 +87,16 @@ namespace POS_Sys
             this.panel1.Size = new System.Drawing.Size(395, 753);
             this.panel1.TabIndex = 5;
             // 
+            // AdvacnePayBtn
+            // 
+            this.AdvacnePayBtn.Location = new System.Drawing.Point(86, 584);
+            this.AdvacnePayBtn.Name = "AdvacnePayBtn";
+            this.AdvacnePayBtn.Size = new System.Drawing.Size(226, 34);
+            this.AdvacnePayBtn.TabIndex = 13;
+            this.AdvacnePayBtn.Text = "المسحوبات";
+            this.AdvacnePayBtn.UseVisualStyleBackColor = true;
+            this.AdvacnePayBtn.Click += new System.EventHandler(this.AdvacnePayBtn_Click);
+            // 
             // SalesBtn
             // 
             this.SalesBtn.Location = new System.Drawing.Point(89, 522);
@@ -126,7 +136,7 @@ namespace POS_Sys
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(89, 676);
+            this.button6.Location = new System.Drawing.Point(89, 689);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(226, 34);
             this.button6.TabIndex = 9;
@@ -222,16 +232,6 @@ namespace POS_Sys
             this.panel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel4.Size = new System.Drawing.Size(1033, 753);
             this.panel4.TabIndex = 2;
-            // 
-            // AdvacnePayBtn
-            // 
-            this.AdvacnePayBtn.Location = new System.Drawing.Point(86, 584);
-            this.AdvacnePayBtn.Name = "AdvacnePayBtn";
-            this.AdvacnePayBtn.Size = new System.Drawing.Size(226, 34);
-            this.AdvacnePayBtn.TabIndex = 13;
-            this.AdvacnePayBtn.Text = "المسحوبات";
-            this.AdvacnePayBtn.UseVisualStyleBackColor = true;
-            this.AdvacnePayBtn.Click += new System.EventHandler(this.AdvacnePayBtn_Click);
             // 
             // admin
             // 

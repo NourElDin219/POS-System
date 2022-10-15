@@ -410,7 +410,7 @@ namespace POS_Sys
             pform.Dispose();
             if (Authorized)
             {
-                ReturningAProduct frm = new ReturningAProduct();
+                ReturningAProduct frm = new ReturningAProduct(CashierName,CashierId);
                 frm.ShowDialog();
                 frm.Dispose();
                 RefreshForm();
