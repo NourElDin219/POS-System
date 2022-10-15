@@ -11,6 +11,7 @@ namespace POS_Sys.Models
     {
         public int Id { get; set; }
         public double Total { get; set; }
+        public double TotalProfit { get; set; }
         public double Pay { get; set; }
 
         public double Discount { get; set; }

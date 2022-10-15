@@ -226,6 +226,10 @@
     <Compile Include="Migrations\202210132212102_editAP.designer.cs">
       <DependentUpon>202210132212102_editAP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202210151922353_add_profit.cs" />
+    <Compile Include="Migrations\202210151922353_add_profit.designer.cs">
+      <DependentUpon>202210151922353_add_profit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdvancePayment.cs" />
     <Compile Include="Models\Categories.cs" />
@@ -343,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202210132212102_editAP.resx">
       <DependentUpon>202210132212102_editAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202210151922353_add_profit.resx">
+      <DependentUpon>202210151922353_add_profit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Password.resx">
       <DependentUpon>Password.cs</DependentUpon>

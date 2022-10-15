@@ -15,6 +15,12 @@ namespace POS_Sys
     {
         private List<InvoiceProductVM> _List;
         private string _Total, _Cash, _Change, _OpNo, _Date, _CashierName,_Discount,_PM;
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public PrintReceipt(List<InvoiceProductVM> List,string Total,string Cash,string Change,string OpNo,string Date,string CashierName,string Discount,string PM)
         {
             InitializeComponent();
