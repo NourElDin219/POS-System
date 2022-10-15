@@ -36,39 +36,43 @@ namespace POS_Sys
             this.Btn_Save = new MetroFramework.Controls.MetroButton();
             this.ComboCat = new MetroFramework.Controls.MetroComboBox();
             this.TxtSPrice = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.DeleteBtn = new MetroFramework.Controls.MetroButton();
             this.DisplayBtn = new MetroFramework.Controls.MetroButton();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.PPriceText = new MetroFramework.Controls.MetroTextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.ResetFilterBtn = new System.Windows.Forms.Button();
             this.SearchTxt = new System.Windows.Forms.TextBox();
             this.MoveTxt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.MoveBtn = new MetroFramework.Controls.MetroButton();
             this.IQtTxt = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.SQtTxt = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.SPriceTxt = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.NameTxt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.EditBtn = new MetroFramework.Controls.MetroButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TxtName = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.TxtIQuantity = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
-            this.TxtSQuantity = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.TxtPPrice = new MetroFramework.Controls.MetroTextBox();
+            this.TxtIQuantity = new MetroFramework.Controls.MetroTextBox();
+            this.TxtSQuantity = new MetroFramework.Controls.MetroTextBox();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.ResetFilterBtn = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.metroTabPage1.SuspendLayout();
@@ -78,22 +82,22 @@ namespace POS_Sys
             // 
             // CancelBtn
             // 
-            this.CancelBtn.Location = new System.Drawing.Point(725, 430);
+            this.CancelBtn.Location = new System.Drawing.Point(489, 419);
             this.CancelBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(98, 44);
             this.CancelBtn.TabIndex = 12;
-            this.CancelBtn.Text = "Cancel";
+            this.CancelBtn.Text = "الغاء";
             this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
             // Btn_Save
             // 
-            this.Btn_Save.Location = new System.Drawing.Point(541, 430);
+            this.Btn_Save.Location = new System.Drawing.Point(305, 419);
             this.Btn_Save.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Btn_Save.Name = "Btn_Save";
             this.Btn_Save.Size = new System.Drawing.Size(98, 44);
             this.Btn_Save.TabIndex = 11;
-            this.Btn_Save.Text = "Save";
+            this.Btn_Save.Text = "اضافة";
             this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
             // 
             // ComboCat
@@ -104,7 +108,7 @@ namespace POS_Sys
             "Admin",
             "Cashier",
             "Supervisor"});
-            this.ComboCat.Location = new System.Drawing.Point(415, 109);
+            this.ComboCat.Location = new System.Drawing.Point(285, 102);
             this.ComboCat.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.ComboCat.Name = "ComboCat";
             this.ComboCat.Size = new System.Drawing.Size(193, 30);
@@ -112,31 +116,14 @@ namespace POS_Sys
             // 
             // TxtSPrice
             // 
-            this.TxtSPrice.Location = new System.Drawing.Point(415, 168);
+            this.TxtSPrice.Location = new System.Drawing.Point(285, 202);
             this.TxtSPrice.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.TxtSPrice.Name = "TxtSPrice";
+            this.TxtSPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.TxtSPrice.Size = new System.Drawing.Size(193, 24);
             this.TxtSPrice.TabIndex = 9;
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(269, 168);
-            this.metroLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(84, 20);
-            this.metroLabel7.TabIndex = 8;
-            this.metroLabel7.Text = "Selling Price";
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(269, 109);
-            this.metroLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(66, 20);
-            this.metroLabel5.TabIndex = 6;
-            this.metroLabel5.Text = "Category";
+            this.TxtSPrice.Click += new System.EventHandler(this.TxtSPrice_Click);
+            this.TxtSPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSPrice_KeyPress);
             // 
             // DeleteBtn
             // 
@@ -160,6 +147,12 @@ namespace POS_Sys
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.metroLabel8);
+            this.metroTabPage2.Controls.Add(this.metroLabel6);
+            this.metroTabPage2.Controls.Add(this.metroLabel4);
+            this.metroTabPage2.Controls.Add(this.metroLabel3);
+            this.metroTabPage2.Controls.Add(this.metroLabel2);
+            this.metroTabPage2.Controls.Add(this.PPriceText);
             this.metroTabPage2.Controls.Add(this.comboBox2);
             this.metroTabPage2.Controls.Add(this.ResetFilterBtn);
             this.metroTabPage2.Controls.Add(this.SearchTxt);
@@ -167,13 +160,9 @@ namespace POS_Sys
             this.metroTabPage2.Controls.Add(this.metroLabel15);
             this.metroTabPage2.Controls.Add(this.MoveBtn);
             this.metroTabPage2.Controls.Add(this.IQtTxt);
-            this.metroTabPage2.Controls.Add(this.metroLabel4);
             this.metroTabPage2.Controls.Add(this.SQtTxt);
-            this.metroTabPage2.Controls.Add(this.metroLabel6);
             this.metroTabPage2.Controls.Add(this.metroComboBox1);
             this.metroTabPage2.Controls.Add(this.SPriceTxt);
-            this.metroTabPage2.Controls.Add(this.metroLabel8);
-            this.metroTabPage2.Controls.Add(this.metroLabel9);
             this.metroTabPage2.Controls.Add(this.NameTxt);
             this.metroTabPage2.Controls.Add(this.metroLabel14);
             this.metroTabPage2.Controls.Add(this.DeleteBtn);
@@ -189,6 +178,92 @@ namespace POS_Sys
             this.metroTabPage2.Text = "Edit Products";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarSize = 9;
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.Location = new System.Drawing.Point(854, 352);
+            this.metroLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(48, 20);
+            this.metroLabel8.TabIndex = 47;
+            this.metroLabel8.Text = "المخزن";
+            this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(816, 298);
+            this.metroLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(86, 20);
+            this.metroLabel6.TabIndex = 46;
+            this.metroLabel6.Text = "الكمية المتاحة";
+            this.metroLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(838, 254);
+            this.metroLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(64, 20);
+            this.metroLabel4.TabIndex = 45;
+            this.metroLabel4.Text = "سعر البيع";
+            this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(833, 203);
+            this.metroLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(71, 20);
+            this.metroLabel3.TabIndex = 44;
+            this.metroLabel3.Text = "سعر الشراء";
+            this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(867, 156);
+            this.metroLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(35, 20);
+            this.metroLabel2.TabIndex = 43;
+            this.metroLabel2.Text = "النوع";
+            this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PPriceText
+            // 
+            this.PPriceText.Location = new System.Drawing.Point(600, 199);
+            this.PPriceText.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.PPriceText.Name = "PPriceText";
+            this.PPriceText.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.PPriceText.Size = new System.Drawing.Size(192, 24);
+            this.PPriceText.TabIndex = 42;
+            this.PPriceText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PPriceText_KeyPress);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(742, 39);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox2.Size = new System.Drawing.Size(175, 25);
+            this.comboBox2.TabIndex = 40;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // ResetFilterBtn
+            // 
+            this.ResetFilterBtn.Location = new System.Drawing.Point(613, 39);
+            this.ResetFilterBtn.Name = "ResetFilterBtn";
+            this.ResetFilterBtn.Size = new System.Drawing.Size(105, 30);
+            this.ResetFilterBtn.TabIndex = 39;
+            this.ResetFilterBtn.Text = "ازالة الفلتر";
+            this.ResetFilterBtn.UseVisualStyleBackColor = true;
+            this.ResetFilterBtn.Click += new System.EventHandler(this.ResetFilterBtn_Click);
             // 
             // SearchTxt
             // 
@@ -234,41 +309,23 @@ namespace POS_Sys
             // 
             // IQtTxt
             // 
-            this.IQtTxt.Location = new System.Drawing.Point(725, 298);
+            this.IQtTxt.Location = new System.Drawing.Point(600, 348);
             this.IQtTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.IQtTxt.Name = "IQtTxt";
+            this.IQtTxt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.IQtTxt.Size = new System.Drawing.Size(192, 24);
             this.IQtTxt.TabIndex = 30;
             this.IQtTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IQtTxt_KeyPress);
             // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(594, 298);
-            this.metroLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(124, 20);
-            this.metroLabel4.TabIndex = 29;
-            this.metroLabel4.Text = "Inventory Quantity";
-            // 
             // SQtTxt
             // 
-            this.SQtTxt.Location = new System.Drawing.Point(725, 248);
+            this.SQtTxt.Location = new System.Drawing.Point(600, 298);
             this.SQtTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.SQtTxt.Name = "SQtTxt";
+            this.SQtTxt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.SQtTxt.Size = new System.Drawing.Size(192, 24);
             this.SQtTxt.TabIndex = 28;
             this.SQtTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SQtTxt_KeyPress);
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(594, 248);
-            this.metroLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(96, 20);
-            this.metroLabel6.TabIndex = 27;
-            this.metroLabel6.Text = "Shop Quantity";
             // 
             // metroComboBox1
             // 
@@ -278,7 +335,7 @@ namespace POS_Sys
             "Admin",
             "Supervisor",
             "Cashier"});
-            this.metroComboBox1.Location = new System.Drawing.Point(725, 148);
+            this.metroComboBox1.Location = new System.Drawing.Point(600, 146);
             this.metroComboBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(193, 30);
@@ -286,38 +343,20 @@ namespace POS_Sys
             // 
             // SPriceTxt
             // 
-            this.SPriceTxt.Location = new System.Drawing.Point(725, 200);
+            this.SPriceTxt.Location = new System.Drawing.Point(600, 250);
             this.SPriceTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.SPriceTxt.Name = "SPriceTxt";
+            this.SPriceTxt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.SPriceTxt.Size = new System.Drawing.Size(192, 24);
             this.SPriceTxt.TabIndex = 25;
             this.SPriceTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SPriceTxt_KeyPress);
             // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(594, 200);
-            this.metroLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(84, 20);
-            this.metroLabel8.TabIndex = 24;
-            this.metroLabel8.Text = "Selling Price";
-            // 
-            // metroLabel9
-            // 
-            this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(594, 148);
-            this.metroLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(66, 20);
-            this.metroLabel9.TabIndex = 23;
-            this.metroLabel9.Text = "Category";
-            // 
             // NameTxt
             // 
-            this.NameTxt.Location = new System.Drawing.Point(726, 99);
+            this.NameTxt.Location = new System.Drawing.Point(601, 97);
             this.NameTxt.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.NameTxt.Name = "NameTxt";
+            this.NameTxt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.NameTxt.Size = new System.Drawing.Size(192, 24);
             this.NameTxt.TabIndex = 20;
             this.NameTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTxt_KeyPress);
@@ -325,16 +364,17 @@ namespace POS_Sys
             // metroLabel14
             // 
             this.metroLabel14.AutoSize = true;
-            this.metroLabel14.Location = new System.Drawing.Point(595, 99);
+            this.metroLabel14.Location = new System.Drawing.Point(833, 101);
             this.metroLabel14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(99, 20);
+            this.metroLabel14.Size = new System.Drawing.Size(69, 20);
             this.metroLabel14.TabIndex = 19;
-            this.metroLabel14.Text = "Product Name";
+            this.metroLabel14.Text = "اسم المنتج";
+            this.metroLabel14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EditBtn
             // 
-            this.EditBtn.Location = new System.Drawing.Point(702, 351);
+            this.EditBtn.Location = new System.Drawing.Point(702, 403);
             this.EditBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.EditBtn.Name = "EditBtn";
             this.EditBtn.Size = new System.Drawing.Size(115, 47);
@@ -393,36 +433,29 @@ namespace POS_Sys
             // 
             // TxtName
             // 
-            this.TxtName.Location = new System.Drawing.Point(415, 52);
+            this.TxtName.Location = new System.Drawing.Point(285, 45);
             this.TxtName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.TxtName.Name = "TxtName";
+            this.TxtName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.TxtName.Size = new System.Drawing.Size(193, 24);
             this.TxtName.TabIndex = 3;
             // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(269, 52);
-            this.metroLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(99, 20);
-            this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "Product Name";
-            // 
             // metroTabPage1
             // 
-            this.metroTabPage1.Controls.Add(this.TxtIQuantity);
-            this.metroTabPage1.Controls.Add(this.metroLabel11);
-            this.metroTabPage1.Controls.Add(this.TxtSQuantity);
+            this.metroTabPage1.Controls.Add(this.metroLabel1);
+            this.metroTabPage1.Controls.Add(this.metroLabel5);
+            this.metroTabPage1.Controls.Add(this.metroLabel7);
+            this.metroTabPage1.Controls.Add(this.metroLabel9);
             this.metroTabPage1.Controls.Add(this.metroLabel10);
+            this.metroTabPage1.Controls.Add(this.metroLabel11);
+            this.metroTabPage1.Controls.Add(this.TxtPPrice);
+            this.metroTabPage1.Controls.Add(this.TxtIQuantity);
+            this.metroTabPage1.Controls.Add(this.TxtSQuantity);
             this.metroTabPage1.Controls.Add(this.CancelBtn);
             this.metroTabPage1.Controls.Add(this.Btn_Save);
             this.metroTabPage1.Controls.Add(this.ComboCat);
             this.metroTabPage1.Controls.Add(this.TxtSPrice);
-            this.metroTabPage1.Controls.Add(this.metroLabel7);
-            this.metroTabPage1.Controls.Add(this.metroLabel5);
             this.metroTabPage1.Controls.Add(this.TxtName);
-            this.metroTabPage1.Controls.Add(this.metroLabel1);
             this.metroTabPage1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 39);
@@ -435,41 +468,99 @@ namespace POS_Sys
             this.metroTabPage1.VerticalScrollbarSize = 9;
             this.metroTabPage1.Resize += new System.EventHandler(this.metroTabPage1_Resize);
             // 
-            // TxtIQuantity
+            // metroLabel1
             // 
-            this.TxtIQuantity.Location = new System.Drawing.Point(415, 266);
-            this.TxtIQuantity.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.TxtIQuantity.Name = "TxtIQuantity";
-            this.TxtIQuantity.Size = new System.Drawing.Size(193, 24);
-            this.TxtIQuantity.TabIndex = 16;
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(539, 300);
+            this.metroLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(48, 20);
+            this.metroLabel1.TabIndex = 53;
+            this.metroLabel1.Text = "المخزن";
+            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // metroLabel11
+            // metroLabel5
             // 
-            this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(269, 266);
-            this.metroLabel11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(124, 20);
-            this.metroLabel11.TabIndex = 15;
-            this.metroLabel11.Text = "Inventory Quantity";
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(501, 254);
+            this.metroLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(86, 20);
+            this.metroLabel5.TabIndex = 52;
+            this.metroLabel5.Text = "الكمية المتاحة";
+            this.metroLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // TxtSQuantity
+            // metroLabel7
             // 
-            this.TxtSQuantity.Location = new System.Drawing.Point(415, 216);
-            this.TxtSQuantity.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.TxtSQuantity.Name = "TxtSQuantity";
-            this.TxtSQuantity.Size = new System.Drawing.Size(193, 24);
-            this.TxtSQuantity.TabIndex = 14;
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(523, 202);
+            this.metroLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(64, 20);
+            this.metroLabel7.TabIndex = 51;
+            this.metroLabel7.Text = "سعر البيع";
+            this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel9
+            // 
+            this.metroLabel9.AutoSize = true;
+            this.metroLabel9.Location = new System.Drawing.Point(518, 159);
+            this.metroLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(71, 20);
+            this.metroLabel9.TabIndex = 50;
+            this.metroLabel9.Text = "سعر الشراء";
+            this.metroLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(269, 216);
+            this.metroLabel10.Location = new System.Drawing.Point(552, 102);
             this.metroLabel10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(96, 20);
-            this.metroLabel10.TabIndex = 13;
-            this.metroLabel10.Text = "Shop Quantity";
+            this.metroLabel10.Size = new System.Drawing.Size(35, 20);
+            this.metroLabel10.TabIndex = 49;
+            this.metroLabel10.Text = "النوع";
+            this.metroLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel11
+            // 
+            this.metroLabel11.AutoSize = true;
+            this.metroLabel11.Location = new System.Drawing.Point(518, 45);
+            this.metroLabel11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(69, 20);
+            this.metroLabel11.TabIndex = 48;
+            this.metroLabel11.Text = "اسم المنتج";
+            this.metroLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TxtPPrice
+            // 
+            this.TxtPPrice.Location = new System.Drawing.Point(285, 155);
+            this.TxtPPrice.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.TxtPPrice.Name = "TxtPPrice";
+            this.TxtPPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtPPrice.Size = new System.Drawing.Size(192, 24);
+            this.TxtPPrice.TabIndex = 43;
+            this.TxtPPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPPrice_KeyPress);
+            // 
+            // TxtIQuantity
+            // 
+            this.TxtIQuantity.Location = new System.Drawing.Point(285, 300);
+            this.TxtIQuantity.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.TxtIQuantity.Name = "TxtIQuantity";
+            this.TxtIQuantity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtIQuantity.Size = new System.Drawing.Size(193, 24);
+            this.TxtIQuantity.TabIndex = 16;
+            // 
+            // TxtSQuantity
+            // 
+            this.TxtSQuantity.Location = new System.Drawing.Point(285, 250);
+            this.TxtSQuantity.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.TxtSQuantity.Name = "TxtSQuantity";
+            this.TxtSQuantity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtSQuantity.Size = new System.Drawing.Size(193, 24);
+            this.TxtSQuantity.TabIndex = 14;
             // 
             // metroTabControl1
             // 
@@ -479,10 +570,11 @@ namespace POS_Sys
             this.metroTabControl1.Location = new System.Drawing.Point(0, 55);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(933, 647);
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTabControl1.SelectedIndexChanged += new System.EventHandler(this.metroTabControl1_SelectedIndexChanged);
             this.metroTabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.metroTabControl1_Selected);
             // 
             // label1
@@ -508,27 +600,6 @@ namespace POS_Sys
             this.flowLayoutPanel1.Size = new System.Drawing.Size(933, 55);
             this.flowLayoutPanel1.TabIndex = 2;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
-            // ResetFilterBtn
-            // 
-            this.ResetFilterBtn.Location = new System.Drawing.Point(613, 39);
-            this.ResetFilterBtn.Name = "ResetFilterBtn";
-            this.ResetFilterBtn.Size = new System.Drawing.Size(105, 30);
-            this.ResetFilterBtn.TabIndex = 39;
-            this.ResetFilterBtn.Text = "ازالة الفلتر";
-            this.ResetFilterBtn.UseVisualStyleBackColor = true;
-            this.ResetFilterBtn.Click += new System.EventHandler(this.ResetFilterBtn_Click);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(742, 39);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox2.Size = new System.Drawing.Size(175, 25);
-            this.comboBox2.TabIndex = 40;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // ProductsForm
             // 
@@ -560,31 +631,22 @@ namespace POS_Sys
         private MetroFramework.Controls.MetroButton Btn_Save;
         private MetroFramework.Controls.MetroComboBox ComboCat;
         private MetroFramework.Controls.MetroTextBox TxtSPrice;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroButton DeleteBtn;
         private MetroFramework.Controls.MetroButton DisplayBtn;
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
         private MetroFramework.Controls.MetroButton EditBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private MetroFramework.Controls.MetroTextBox TxtName;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private MetroFramework.Controls.MetroTabControl metroTabControl1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private MetroFramework.Controls.MetroTextBox TxtIQuantity;
-        private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroTextBox TxtSQuantity;
-        private MetroFramework.Controls.MetroLabel metroLabel10;
         private MetroFramework.Controls.MetroTextBox IQtTxt;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroTextBox SQtTxt;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroTextBox SPriceTxt;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
         private MetroFramework.Controls.MetroTextBox NameTxt;
         private MetroFramework.Controls.MetroLabel metroLabel14;
         private MetroFramework.Controls.MetroTextBox MoveTxt;
@@ -593,5 +655,18 @@ namespace POS_Sys
         private System.Windows.Forms.TextBox SearchTxt;
         private System.Windows.Forms.Button ResetFilterBtn;
         private System.Windows.Forms.ComboBox comboBox2;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroTextBox PPriceText;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroLabel metroLabel10;
+        private MetroFramework.Controls.MetroLabel metroLabel11;
+        private MetroFramework.Controls.MetroTextBox TxtPPrice;
     }
 }

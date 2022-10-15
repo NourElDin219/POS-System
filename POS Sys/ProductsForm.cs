@@ -36,6 +36,7 @@ namespace POS_Sys
         private void Clear()
         {
             TxtName.Clear();
+            TxtPPrice.Clear();
             TxtSPrice.Clear();
             TxtSQuantity.Clear();
             TxtIQuantity.Clear();
@@ -73,6 +74,7 @@ namespace POS_Sys
             {
                 Product = new Products();
                 Product.Name = TxtName.Text;
+                Product.PurchasingPrice= Convert.ToDouble(TxtPPrice.Text);
                 Product.SellingPrice = Convert.ToDouble(TxtSPrice.Text);
                 Product.ShopQuantity = Convert.ToInt32(TxtSQuantity.Text);
                 Product.InvQuantity = Convert.ToInt32(TxtIQuantity.Text);
@@ -95,10 +97,10 @@ namespace POS_Sys
             table.Columns.Add("سعر البيع", typeof(double));
             table.Columns.Add("الكمية فى المتجر", typeof(int));
             table.Columns.Add("الكمية فى المخزن", typeof(int));
-
+            table.Columns.Add("سعر الشراء", typeof(double));
             for (int i = 0; i < P_List.Count(); i++)
             {
-                table.Rows.Add(i+1,P_List[i].Name, cs_Category.GetCategorys(P_List[i].Name), P_List[i].SellingPrice, P_List[i].ShopQuantity, P_List[i].InvQuantity);
+                table.Rows.Add(i+1,P_List[i].Name, cs_Category.GetCategorys(P_List[i].Name), P_List[i].SellingPrice, P_List[i].ShopQuantity, P_List[i].InvQuantity, P_List[i].PurchasingPrice);
             }
             dataGridView1.DataSource = table;
 
@@ -156,6 +158,7 @@ namespace POS_Sys
             {
                 rowIndex = e.RowIndex;
                 NameTxt.Text = P_List[rowIndex].Name;
+                PPriceText.Text = P_List[rowIndex].PurchasingPrice.ToString();
                 SPriceTxt.Text = P_List[rowIndex].SellingPrice.ToString();
                 SQtTxt.Text = P_List[rowIndex].ShopQuantity.ToString();
                 IQtTxt.Text = P_List[rowIndex].InvQuantity.ToString();
@@ -172,6 +175,7 @@ namespace POS_Sys
         {
             Product.Id = P_List[Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[0].Value) - 1].Id;
             Product.Name = NameTxt.Text;
+            Product.PurchasingPrice= Convert.ToDouble(PPriceText.Text);
             Product.SellingPrice = Convert.ToDouble(SPriceTxt.Text);
             Product.ShopQuantity = Convert.ToInt32(SQtTxt.Text);
             Product.InvQuantity=Convert.ToInt32(IQtTxt.Text);
@@ -216,6 +220,13 @@ namespace POS_Sys
 
         private void SPriceTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsControl(e.KeyChar)
+                    && !char.IsDigit(e.KeyChar)
+                    && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
         }
 
         private void SQtTxt_KeyPress(object sender, KeyPressEventArgs e)
@@ -305,6 +316,54 @@ namespace POS_Sys
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void metroTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtSPrice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtSPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+                    && !char.IsDigit(e.KeyChar)
+                    && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void TxtPPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+                    && !char.IsDigit(e.KeyChar)
+                    && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void PPriceText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+                    && !char.IsDigit(e.KeyChar)
+                    && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
 
         }
     }
