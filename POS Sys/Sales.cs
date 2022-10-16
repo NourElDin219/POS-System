@@ -437,7 +437,7 @@ namespace POS_Sys
 
         private void SendReportBtn_Click(object sender, EventArgs e)
         {
-
+            user.AddLogout(CashierId);
             SendReport();
         }
         public void SendReport()
@@ -485,6 +485,7 @@ namespace POS_Sys
 
             };
             smtpClient.Send(message);
+            MessageBox.Show("تم ارسال التقرير بنجاح");
         }
         
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

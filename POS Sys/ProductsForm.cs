@@ -42,6 +42,15 @@ namespace POS_Sys
             TxtIQuantity.Clear();
             ComboCat.Text = "";
         }
+        public void Clear2()
+        {
+            PPriceText.Clear();
+            SPriceTxt.Clear();
+            NameTxt.Clear();
+            SQtTxt.Clear();
+            IQtTxt.Clear();
+            metroComboBox1.Text = "";
+        }
         public void FillCategoryList()
         {
             ComboCat.DisplayMember = "Name";
@@ -159,6 +168,7 @@ namespace POS_Sys
                 p.DeleteProduct(P_List[Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[0].Value) - 1].Id);
                 MessageBox.Show("تمت ازالة المنتج بنجاح");
                 DisplayBtn.PerformClick();
+                Clear2();
             }
             catch (Exception ex)
             {
@@ -185,6 +195,7 @@ namespace POS_Sys
             }
         }
 
+
         private void EditBtn_Click(object sender, EventArgs e)
         {
             try
@@ -200,6 +211,7 @@ namespace POS_Sys
                 p.AddOrUpdateProduct(Product);
                 MessageBox.Show("تم تعديل المنتج بنجاح");
                 DisplayBtn.PerformClick();
+                Clear2();
             }
             catch (Exception ex)
             {
@@ -228,6 +240,7 @@ namespace POS_Sys
                     {
                         MessageBox.Show("تم نقل المنتج بنجاح");
                         DisplayBtn.PerformClick();
+                        Clear2();
                     }
                 }
             }
