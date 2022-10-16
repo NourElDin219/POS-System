@@ -59,7 +59,7 @@ namespace POS_Sys
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -76,10 +76,10 @@ namespace POS_Sys
             this.Remove});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LimeGreen;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
@@ -96,7 +96,7 @@ namespace POS_Sys
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
@@ -246,7 +246,7 @@ namespace POS_Sys
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1086, 607);
             this.Controls.Add(this.PrintBtn);
             this.Controls.Add(this.DiscountLabel);
