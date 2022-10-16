@@ -175,17 +175,18 @@ namespace POS_Sys
             this.metroTabPage2.Name = "metroTabPage2";
             this.metroTabPage2.Size = new System.Drawing.Size(925, 604);
             this.metroTabPage2.TabIndex = 1;
-            this.metroTabPage2.Text = "Edit Products";
+            this.metroTabPage2.Text = "تعديل المنتجات";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarSize = 9;
             // 
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(854, 352);
+            this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel8.Location = new System.Drawing.Point(846, 352);
             this.metroLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(48, 20);
+            this.metroLabel8.Size = new System.Drawing.Size(52, 20);
             this.metroLabel8.TabIndex = 47;
             this.metroLabel8.Text = "المخزن";
             this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -193,10 +194,11 @@ namespace POS_Sys
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(816, 298);
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel6.Location = new System.Drawing.Point(805, 298);
             this.metroLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(86, 20);
+            this.metroLabel6.Size = new System.Drawing.Size(96, 20);
             this.metroLabel6.TabIndex = 46;
             this.metroLabel6.Text = "الكمية المتاحة";
             this.metroLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -204,10 +206,11 @@ namespace POS_Sys
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(838, 254);
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel4.Location = new System.Drawing.Point(832, 250);
             this.metroLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(64, 20);
+            this.metroLabel4.Size = new System.Drawing.Size(69, 20);
             this.metroLabel4.TabIndex = 45;
             this.metroLabel4.Text = "سعر البيع";
             this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -215,10 +218,11 @@ namespace POS_Sys
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(833, 203);
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.Location = new System.Drawing.Point(825, 199);
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(71, 20);
+            this.metroLabel3.Size = new System.Drawing.Size(76, 20);
             this.metroLabel3.TabIndex = 44;
             this.metroLabel3.Text = "سعر الشراء";
             this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -226,10 +230,11 @@ namespace POS_Sys
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(867, 156);
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(858, 156);
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(35, 20);
+            this.metroLabel2.Size = new System.Drawing.Size(40, 20);
             this.metroLabel2.TabIndex = 43;
             this.metroLabel2.Text = "النوع";
             this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -289,10 +294,11 @@ namespace POS_Sys
             // metroLabel15
             // 
             this.metroLabel15.AutoSize = true;
-            this.metroLabel15.Location = new System.Drawing.Point(833, 492);
+            this.metroLabel15.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel15.Location = new System.Drawing.Point(802, 492);
             this.metroLabel15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel15.Name = "metroLabel15";
-            this.metroLabel15.Size = new System.Drawing.Size(90, 20);
+            this.metroLabel15.Size = new System.Drawing.Size(99, 20);
             this.metroLabel15.TabIndex = 35;
             this.metroLabel15.Text = "نقل الى المحل";
             this.metroLabel15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -364,10 +370,11 @@ namespace POS_Sys
             // metroLabel14
             // 
             this.metroLabel14.AutoSize = true;
-            this.metroLabel14.Location = new System.Drawing.Point(833, 101);
+            this.metroLabel14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel14.Location = new System.Drawing.Point(825, 97);
             this.metroLabel14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(69, 20);
+            this.metroLabel14.Size = new System.Drawing.Size(76, 20);
             this.metroLabel14.TabIndex = 19;
             this.metroLabel14.Text = "اسم المنتج";
             this.metroLabel14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -463,7 +470,7 @@ namespace POS_Sys
             this.metroTabPage1.Name = "metroTabPage1";
             this.metroTabPage1.Size = new System.Drawing.Size(925, 604);
             this.metroTabPage1.TabIndex = 0;
-            this.metroTabPage1.Text = "Add New Product";
+            this.metroTabPage1.Text = "اضافة منتج جديد";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarSize = 9;
             this.metroTabPage1.Resize += new System.EventHandler(this.metroTabPage1_Resize);
@@ -471,10 +478,11 @@ namespace POS_Sys
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel1.Location = new System.Drawing.Point(539, 300);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(48, 20);
+            this.metroLabel1.Size = new System.Drawing.Size(52, 20);
             this.metroLabel1.TabIndex = 53;
             this.metroLabel1.Text = "المخزن";
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -482,10 +490,11 @@ namespace POS_Sys
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel5.Location = new System.Drawing.Point(501, 254);
             this.metroLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(86, 20);
+            this.metroLabel5.Size = new System.Drawing.Size(96, 20);
             this.metroLabel5.TabIndex = 52;
             this.metroLabel5.Text = "الكمية المتاحة";
             this.metroLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -493,10 +502,11 @@ namespace POS_Sys
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
+            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel7.Location = new System.Drawing.Point(523, 202);
             this.metroLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(64, 20);
+            this.metroLabel7.Size = new System.Drawing.Size(69, 20);
             this.metroLabel7.TabIndex = 51;
             this.metroLabel7.Text = "سعر البيع";
             this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -504,10 +514,11 @@ namespace POS_Sys
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
+            this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel9.Location = new System.Drawing.Point(518, 159);
             this.metroLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(71, 20);
+            this.metroLabel9.Size = new System.Drawing.Size(76, 20);
             this.metroLabel9.TabIndex = 50;
             this.metroLabel9.Text = "سعر الشراء";
             this.metroLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -515,10 +526,11 @@ namespace POS_Sys
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
+            this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel10.Location = new System.Drawing.Point(552, 102);
             this.metroLabel10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(35, 20);
+            this.metroLabel10.Size = new System.Drawing.Size(40, 20);
             this.metroLabel10.TabIndex = 49;
             this.metroLabel10.Text = "النوع";
             this.metroLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -526,10 +538,11 @@ namespace POS_Sys
             // metroLabel11
             // 
             this.metroLabel11.AutoSize = true;
+            this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel11.Location = new System.Drawing.Point(518, 45);
             this.metroLabel11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(69, 20);
+            this.metroLabel11.Size = new System.Drawing.Size(76, 20);
             this.metroLabel11.TabIndex = 48;
             this.metroLabel11.Text = "اسم المنتج";
             this.metroLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -567,11 +580,15 @@ namespace POS_Sys
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Regular;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 55);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.metroTabControl1.Multiline = true;
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.RightToLeftLayout = true;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(933, 647);
+            this.metroTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTabControl1.SelectedIndexChanged += new System.EventHandler(this.metroTabControl1_SelectedIndexChanged);
@@ -586,7 +603,7 @@ namespace POS_Sys
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 56);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Products";
+            this.label1.Text = "المنتجات";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // flowLayoutPanel1
@@ -638,7 +655,6 @@ namespace POS_Sys
         private System.Windows.Forms.DataGridView dataGridView1;
         private MetroFramework.Controls.MetroTextBox TxtName;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
-        private MetroFramework.Controls.MetroTabControl metroTabControl1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private MetroFramework.Controls.MetroTextBox TxtIQuantity;
@@ -668,5 +684,6 @@ namespace POS_Sys
         private MetroFramework.Controls.MetroLabel metroLabel10;
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroTextBox TxtPPrice;
+        private MetroFramework.Controls.MetroTabControl metroTabControl1;
     }
 }

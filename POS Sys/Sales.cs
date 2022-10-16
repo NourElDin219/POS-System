@@ -168,7 +168,7 @@ namespace POS_Sys
         }
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         public bool ItemInCart(int ind)
@@ -188,7 +188,7 @@ namespace POS_Sys
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
 
         }
 
@@ -232,7 +232,7 @@ namespace POS_Sys
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count > 0 && rowIndex>-1&&QuantityTxt.Text!="")
+            if (dataGridView1.Rows.Count > 0 && rowIndex > -1 && QuantityTxt.Text != "")
             {
                 if (Convert.ToInt32(QuantityTxt.Text) <= (Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[3].Value) + p_List[rowIndex].ShopQuantity))
                 {
@@ -370,11 +370,11 @@ namespace POS_Sys
             pform.Dispose();
             if (Authorized)
             {
-                ReturningAProduct frm = new ReturningAProduct(CashierName,CashierId);
+                ReturningAProduct frm = new ReturningAProduct(CashierName, CashierId);
                 frm.ShowDialog();
                 frm.Dispose();
                 RefreshForm();
-              //  NInvoiceBtn.PerformClick();
+                //  NInvoiceBtn.PerformClick();
             }
             else if (!Authorized)
                 MessageBox.Show("أنت لا تملك الصلاحية للقيام بهذه العملية");
@@ -405,7 +405,7 @@ namespace POS_Sys
             }
         }
         private void ApplyGridViewFilters()
-        { 
+        {
             FilterGridviewByEmpId(comboBox2.SelectedItem.ToString());
         }
 
@@ -444,7 +444,7 @@ namespace POS_Sys
             Invoices = InvoiceVM.GetTotalInvoicesForToday(dt.Date);
             message.Body += "<html dir=\"rtl\" lang=\"ar\"><table width='100%' style='border:Solid 1px Black;'>";
             message.Body += "<tr>";
-            message.Body += "<td stlye='color:blue;'>" + "رقم الفاتورة" + "</td>" + "<td stlye='color:blue;'>" + "المبلغ الكلى" + "</td>" + "<td stlye='color:blue;'>" + "المدفوع" + "</td>" + "<td stlye='color:blue;'>" + "الخصم" + "</td>" + "<td stlye='color:blue;'>" + "طريقة الدفع" + "</td>" + "<td stlye='color:blue;'>" + "الكاشير" + "</td>" + "<td stlye='color:blue;'>" + "تاريخ العملية" + "</td>" ;
+            message.Body += "<td stlye='color:blue;'>" + "رقم الفاتورة" + "</td>" + "<td stlye='color:blue;'>" + "المبلغ الكلى" + "</td>" + "<td stlye='color:blue;'>" + "المدفوع" + "</td>" + "<td stlye='color:blue;'>" + "الخصم" + "</td>" + "<td stlye='color:blue;'>" + "طريقة الدفع" + "</td>" + "<td stlye='color:blue;'>" + "الكاشير" + "</td>" + "<td stlye='color:blue;'>" + "تاريخ العملية" + "</td>";
             message.Body += "</tr>";
             foreach (var item in Invoices)
             {
@@ -454,12 +454,12 @@ namespace POS_Sys
             }
             message.Body += "</table></html>";
             message.IsBodyHtml = true;
-            var smtpClient = new SmtpClient("smtp.gmail.com",587)
+            var smtpClient = new SmtpClient("smtp.gmail.com", 587)
             {
-               // Port = 465,
+                // Port = 465,
                 Credentials = new NetworkCredential("alhabashy1983@gmail.com", "fwbhjenehgdxshqt"),
                 EnableSsl = true,
-                
+
             };
             smtpClient.Send(message);
         }
@@ -475,7 +475,7 @@ namespace POS_Sys
 
             DateTime dt = new DateTime();
             dt = DateTime.Now;
-            message.Body = "<html dir=\"rtl\" lang=\"ar\"><body><p>"+ CashierName +" "+ "قام بتسجيل الخروج. <br>الساعة:"+" "+ dt.ToString("hh:mm tt") +"</P></body></html>";
+            message.Body = "<html dir=\"rtl\" lang=\"ar\"><body><p>" + CashierName + " " + "قام بتسجيل الخروج. <br>الساعة:" + " " + dt.ToString("hh:mm tt") + "</P></body></html>";
             message.IsBodyHtml = true;
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {
@@ -540,6 +540,50 @@ namespace POS_Sys
                     label3.Text = sum.ToString();
                 }
             }
+        }
+
+        private void SearchTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            index = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[0].Value) - 1;
+            qform = new Qform();
+            qform.ShowDialog();
+            int qtity = qform.GetQuantity();
+            int q = Convert.ToInt32(dataGridView2.Rows[index].Cells[4].Value);
+        here: if (qtity > 0)
+            {
+                if (q >= qtity)
+                {
+                    qform.dispose();
+                }
+                else
+                {
+                    MessageBox.Show("لا يوجد كمية كافية");
+                    qform.ShowDialog();
+                    qtity = qform.GetQuantity();
+                    goto here;
+                }
+
+                if (ItemInCart(index))
+                {
+                    MessageBox.Show("المنتج موجود بالعربة مسبقا");
+                    return;
+                }
+                dataGridView1.Rows.Add(0, dataGridView2.Rows[index].Cells[1].Value, dataGridView2.Rows[index].Cells[3].Value, qtity, (Convert.ToDouble(qtity) * Convert.ToDouble(dataGridView2.Rows[index].Cells[3].Value)));
+
+                P_List[index].ShopQuantity -= qtity;
+                p_List.Add(P_List[index]);
+                CalculateTotal();
+                label3.Text = sum.ToString();
+            }
+        }
+
+        private void dataGridView2_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }

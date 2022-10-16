@@ -65,23 +65,30 @@ namespace POS_Sys
 
         private void Btn_Save_Click(object sender, EventArgs e)
         {
-            if (p.Exists(TxtName.Text))
+            try
             {
-                MessageBox.Show("المنتج موجود مسبقا");
-                Clear();
+                if (p.Exists(TxtName.Text))
+                {
+                    MessageBox.Show("المنتج موجود مسبقا");
+                    Clear();
+                }
+                else
+                {
+                    Product = new Products();
+                    Product.Name = TxtName.Text;
+                    Product.PurchasingPrice = Convert.ToDouble(TxtPPrice.Text);
+                    Product.SellingPrice = Convert.ToDouble(TxtSPrice.Text);
+                    Product.ShopQuantity = Convert.ToInt32(TxtSQuantity.Text);
+                    Product.InvQuantity = Convert.ToInt32(TxtIQuantity.Text);
+                    Product.CategoryId = cs_Category.GetCategory(ComboCat.Text).Id;
+                    p.AddOrUpdateProduct(Product);
+                    MessageBox.Show("تمت اضافة المنتج بنجاح");
+                    Clear();
+                }
             }
-            else
+            catch(Exception ex)
             {
-                Product = new Products();
-                Product.Name = TxtName.Text;
-                Product.PurchasingPrice= Convert.ToDouble(TxtPPrice.Text);
-                Product.SellingPrice = Convert.ToDouble(TxtSPrice.Text);
-                Product.ShopQuantity = Convert.ToInt32(TxtSQuantity.Text);
-                Product.InvQuantity = Convert.ToInt32(TxtIQuantity.Text);
-                Product.CategoryId = cs_Category.GetCategory(ComboCat.Text).Id;
-                p.AddOrUpdateProduct(Product);
-                MessageBox.Show("تمت اضافة المنتج بنجاح");
-                Clear();
+                MessageBox.Show("برجاء ملئ جميع الخانات");
             }
         }
 
@@ -146,10 +153,17 @@ namespace POS_Sys
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            rowIndex = dataGridView1.CurrentRow.Index;
-            p.DeleteProduct(P_List[Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[0].Value)-1].Id);
-            MessageBox.Show("تمت ازالة المنتج بنجاح");
-            DisplayBtn.PerformClick();
+            try
+            {
+                rowIndex = dataGridView1.CurrentRow.Index;
+                p.DeleteProduct(P_List[Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[0].Value) - 1].Id);
+                MessageBox.Show("تمت ازالة المنتج بنجاح");
+                DisplayBtn.PerformClick();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("برجاء اختيار المنتج المراد ازالته ");
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -173,17 +187,24 @@ namespace POS_Sys
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            Product.Id = P_List[Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[0].Value) - 1].Id;
-            Product.Name = NameTxt.Text;
-            Product.PurchasingPrice= Convert.ToDouble(PPriceText.Text);
-            Product.SellingPrice = Convert.ToDouble(SPriceTxt.Text);
-            Product.ShopQuantity = Convert.ToInt32(SQtTxt.Text);
-            Product.InvQuantity=Convert.ToInt32(IQtTxt.Text);
-            Product.CategoryId = Convert.ToInt32(metroComboBox1.SelectedValue);
-           // Product.Category.Name = metroComboBox1.SelectedText;
-            p.AddOrUpdateProduct(Product);
-            MessageBox.Show("تم تعديل المنتج بنجاح");
-            DisplayBtn.PerformClick();
+            try
+            {
+                Product.Id = P_List[Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[0].Value) - 1].Id;
+                Product.Name = NameTxt.Text;
+                Product.PurchasingPrice = Convert.ToDouble(PPriceText.Text);
+                Product.SellingPrice = Convert.ToDouble(SPriceTxt.Text);
+                Product.ShopQuantity = Convert.ToInt32(SQtTxt.Text);
+                Product.InvQuantity = Convert.ToInt32(IQtTxt.Text);
+                Product.CategoryId = Convert.ToInt32(metroComboBox1.SelectedValue);
+                // Product.Category.Name = metroComboBox1.SelectedText;
+                p.AddOrUpdateProduct(Product);
+                MessageBox.Show("تم تعديل المنتج بنجاح");
+                DisplayBtn.PerformClick();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("برجاء اختيار منتج و ملئ جميع الخانات");
+            }
         }
 
         private void metroTextBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -193,19 +214,26 @@ namespace POS_Sys
 
         private void MoveBtn_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(MoveTxt.Text) < 1)
-                MessageBox.Show("برجاء ادخال رقم أكبر من الصفر");
-            else
+            try
             {
-                if (!p.MoveToShop(P_List[Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[0].Value) - 1].Id, Convert.ToInt32(MoveTxt.Text)))
-                {
-                    MessageBox.Show("لا يوجد كمية كافية فى المخزن");
-                }
+                if (Convert.ToInt32(MoveTxt.Text) < 1)
+                    MessageBox.Show("برجاء ادخال رقم أكبر من الصفر");
                 else
                 {
-                    MessageBox.Show("تم نقل المنتج بنجاح");
-                    DisplayBtn.PerformClick();
+                    if (!p.MoveToShop(P_List[Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[0].Value) - 1].Id, Convert.ToInt32(MoveTxt.Text)))
+                    {
+                        MessageBox.Show("لا يوجد كمية كافية فى المخزن");
+                    }
+                    else
+                    {
+                        MessageBox.Show("تم نقل المنتج بنجاح");
+                        DisplayBtn.PerformClick();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("برجاء كتابة الكمية المراد نقلها");
             }
         }
 
@@ -290,6 +318,7 @@ namespace POS_Sys
 
         private void ProductsForm_Load(object sender, EventArgs e)
         {
+            metroTabControl1.SelectedTab = metroTabPage2;
             DisplayBtn.PerformClick();
             CategoryList = cs_Category.GetCategoryList();
             for (int i = 0; i < CategoryList.Count; i++)

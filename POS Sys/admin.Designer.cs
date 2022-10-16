@@ -38,7 +38,6 @@ namespace POS_Sys
             this.CategoryBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -75,7 +74,6 @@ namespace POS_Sys
             this.panel1.Controls.Add(this.CategoryBtn);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button1);
@@ -143,16 +141,6 @@ namespace POS_Sys
             this.button6.Text = "تسجيل الخروج";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // label4
-            // 
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(86, 159);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(229, 23);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Admin";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pictureBox2
             // 
@@ -260,7 +248,6 @@ namespace POS_Sys
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;

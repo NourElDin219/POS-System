@@ -92,7 +92,7 @@ namespace POS_Sys
 
         private void admin_Load(object sender, EventArgs e)
         {
-            
+          //  label4.Text = CName;
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)

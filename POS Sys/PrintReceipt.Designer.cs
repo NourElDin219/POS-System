@@ -52,7 +52,10 @@ namespace POS_Sys
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PrintReceipt";
-            this.Text = "PrintReceipt";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "طباعة الفاتورة";
             this.Load += new System.EventHandler(this.PrintReceipt_Load);
             this.ResumeLayout(false);
 

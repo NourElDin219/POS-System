@@ -80,9 +80,16 @@ namespace POS_Sys
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            rowIndex = dataGridView1.CurrentRow.Index;
-            us.DeleteUser(users[rowIndex].Id);
-            dataGridView1.Rows.RemoveAt(rowIndex);
+            try
+            {
+                rowIndex = dataGridView1.CurrentRow.Index;
+                us.DeleteUser(users[rowIndex].Id);
+                dataGridView1.Rows.RemoveAt(rowIndex);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("برجاء اختيار مستخدم قبل الضغط على ازالة");
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -106,15 +113,22 @@ namespace POS_Sys
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            int updated=us.UpdateUser(users[rowIndex].Id, txt_Name.Text, txt_User.Text, txt_Password.Text, Combo_Role.Text);
-            if (updated == 1)
+            try
             {
-                MessageBox.Show("تم تعديل المستخدم بنجاح");
-                DisplayBtn.PerformClick();
+                int updated = us.UpdateUser(users[rowIndex].Id, txt_Name.Text, txt_User.Text, txt_Password.Text, Combo_Role.Text);
+                if (updated == 1)
+                {
+                    MessageBox.Show("تم تعديل المستخدم بنجاح");
+                    DisplayBtn.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("اسم المستخدم موجود مسبقا");
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("اسم المستخدم موجود مسبقا");
+                MessageBox.Show("برجاء ملئ جميع البيانات");
             }
         }
 
@@ -240,12 +254,35 @@ namespace POS_Sys
 
         private void Users_Form_Load(object sender, EventArgs e)
         {
+            metroTabControl1.SelectedTab = metroTabPage2;
             DisplayBtn.PerformClick();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("برجاء كتابة كلمة سر");
+            }
+            else
+            {
+               for(int i = 0; i < users.Count; i++)
+                {
+                    if (users[i].UserName == "Password")
+                    {
+                        using (DatabaseContext db = new DatabaseContext())
+                        {
+                            var user = db.User.Find(users[i].Id);
+                            user.Password = textBox1.Text;
+                            db.SaveChanges();
+                        }
+                        MessageBox.Show("تم التعديل بنجاح");
+                        metroTabControl1.SelectedTab = metroTabPage2;
+                        DisplayBtn.PerformClick();
+                    }
+                    
+                }
+            }
         }
     }
 }

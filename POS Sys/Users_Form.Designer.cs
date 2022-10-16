@@ -45,18 +45,13 @@ namespace POS_Sys
             this.Passtxt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.Usrtxt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.Combo_Role = new MetroFramework.Controls.MetroComboBox();
             this.txt_Name = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.txt_Password = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.txt_User = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.DeleteBtn = new MetroFramework.Controls.MetroButton();
             this.EditBtn = new MetroFramework.Controls.MetroButton();
             this.DisplayBtn = new MetroFramework.Controls.MetroButton();
@@ -65,6 +60,10 @@ namespace POS_Sys
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.flowLayoutPanel1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -92,7 +91,7 @@ namespace POS_Sys
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(171, 53);
             this.label1.TabIndex = 1;
-            this.label1.Text = "User Accounts";
+            this.label1.Text = "المستخدمين";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -102,11 +101,13 @@ namespace POS_Sys
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Bold;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 68);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.RightToLeftLayout = true;
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(1032, 685);
+            this.metroTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.metroTabControl1.TabIndex = 1;
             this.metroTabControl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTabControl1.SelectedIndexChanged += new System.EventHandler(this.metroTabControl1_SelectedIndexChanged);
@@ -122,7 +123,6 @@ namespace POS_Sys
             this.metroTabPage1.Controls.Add(this.Passtxt);
             this.metroTabPage1.Controls.Add(this.metroLabel3);
             this.metroTabPage1.Controls.Add(this.metroTextBox2);
-            this.metroTabPage1.Controls.Add(this.metroLabel2);
             this.metroTabPage1.Controls.Add(this.Usrtxt);
             this.metroTabPage1.Controls.Add(this.metroLabel1);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
@@ -137,20 +137,20 @@ namespace POS_Sys
             // 
             // CancelBtn
             // 
-            this.CancelBtn.Location = new System.Drawing.Point(714, 283);
+            this.CancelBtn.Location = new System.Drawing.Point(567, 310);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(112, 42);
             this.CancelBtn.TabIndex = 12;
-            this.CancelBtn.Text = "Cancel";
+            this.CancelBtn.Text = "الغاء";
             this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
             // Btn_Save
             // 
-            this.Btn_Save.Location = new System.Drawing.Point(545, 283);
+            this.Btn_Save.Location = new System.Drawing.Point(398, 310);
             this.Btn_Save.Name = "Btn_Save";
             this.Btn_Save.Size = new System.Drawing.Size(112, 42);
             this.Btn_Save.TabIndex = 11;
-            this.Btn_Save.Text = "Save";
+            this.Btn_Save.Text = "حفظ";
             this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
             // 
             // RoleCombo
@@ -178,21 +178,25 @@ namespace POS_Sys
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(308, 209);
+            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel7.Location = new System.Drawing.Point(720, 209);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(50, 20);
+            this.metroLabel7.Size = new System.Drawing.Size(44, 20);
             this.metroLabel7.TabIndex = 8;
-            this.metroLabel7.Text = "Name:";
+            this.metroLabel7.Text = "الاسم";
+            this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel7.Click += new System.EventHandler(this.metroLabel7_Click);
             // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(308, 156);
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel5.Location = new System.Drawing.Point(724, 156);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(39, 20);
+            this.metroLabel5.Size = new System.Drawing.Size(40, 20);
             this.metroLabel5.TabIndex = 6;
-            this.metroLabel5.Text = "Role:";
+            this.metroLabel5.Text = "الدور";
+            this.metroLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel5.Click += new System.EventHandler(this.metroLabel5_Click);
             // 
             // Passtxt
@@ -208,11 +212,13 @@ namespace POS_Sys
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(308, 99);
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.Location = new System.Drawing.Point(701, 102);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(69, 20);
             this.metroLabel3.TabIndex = 4;
-            this.metroLabel3.Text = "Password:";
+            this.metroLabel3.Text = "كلمة السر";
+            this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel3.Click += new System.EventHandler(this.metroLabel3_Click);
             // 
             // metroTextBox2
@@ -222,16 +228,6 @@ namespace POS_Sys
             this.metroTextBox2.Size = new System.Drawing.Size(220, 23);
             this.metroTextBox2.TabIndex = 5;
             this.metroTextBox2.Click += new System.EventHandler(this.metroTextBox2_Click);
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(308, 102);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(76, 20);
-            this.metroLabel2.TabIndex = 4;
-            this.metroLabel2.Text = "Username:";
-            this.metroLabel2.Click += new System.EventHandler(this.metroLabel2_Click);
             // 
             // Usrtxt
             // 
@@ -244,23 +240,25 @@ namespace POS_Sys
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(308, 49);
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.Location = new System.Drawing.Point(673, 52);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(76, 20);
+            this.metroLabel1.Size = new System.Drawing.Size(101, 20);
             this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "Username:";
+            this.metroLabel1.Text = "اسم المستخدم";
+            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
             // 
             // metroTabPage2
             // 
-            this.metroTabPage2.Controls.Add(this.Combo_Role);
-            this.metroTabPage2.Controls.Add(this.txt_Name);
+            this.metroTabPage2.Controls.Add(this.metroLabel2);
             this.metroTabPage2.Controls.Add(this.metroLabel4);
             this.metroTabPage2.Controls.Add(this.metroLabel6);
-            this.metroTabPage2.Controls.Add(this.txt_Password);
             this.metroTabPage2.Controls.Add(this.metroLabel8);
+            this.metroTabPage2.Controls.Add(this.Combo_Role);
+            this.metroTabPage2.Controls.Add(this.txt_Name);
+            this.metroTabPage2.Controls.Add(this.txt_Password);
             this.metroTabPage2.Controls.Add(this.txt_User);
-            this.metroTabPage2.Controls.Add(this.metroLabel9);
             this.metroTabPage2.Controls.Add(this.DeleteBtn);
             this.metroTabPage2.Controls.Add(this.EditBtn);
             this.metroTabPage2.Controls.Add(this.DisplayBtn);
@@ -282,7 +280,7 @@ namespace POS_Sys
             "Admin",
             "Supervisor",
             "Cashier"});
-            this.Combo_Role.Location = new System.Drawing.Point(796, 129);
+            this.Combo_Role.Location = new System.Drawing.Point(679, 145);
             this.Combo_Role.Name = "Combo_Role";
             this.Combo_Role.Size = new System.Drawing.Size(220, 30);
             this.Combo_Role.TabIndex = 18;
@@ -290,35 +288,15 @@ namespace POS_Sys
             // 
             // txt_Name
             // 
-            this.txt_Name.Location = new System.Drawing.Point(796, 182);
+            this.txt_Name.Location = new System.Drawing.Point(679, 198);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(220, 23);
             this.txt_Name.TabIndex = 17;
             this.txt_Name.Click += new System.EventHandler(this.txt_Name_Click);
             // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(684, 182);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(50, 20);
-            this.metroLabel4.TabIndex = 16;
-            this.metroLabel4.Text = "Name:";
-            this.metroLabel4.Click += new System.EventHandler(this.metroLabel4_Click);
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(684, 129);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(39, 20);
-            this.metroLabel6.TabIndex = 15;
-            this.metroLabel6.Text = "Role:";
-            this.metroLabel6.Click += new System.EventHandler(this.metroLabel6_Click);
-            // 
             // txt_Password
             // 
-            this.txt_Password.Location = new System.Drawing.Point(796, 72);
+            this.txt_Password.Location = new System.Drawing.Point(679, 88);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.PasswordChar = '●';
             this.txt_Password.Size = new System.Drawing.Size(220, 23);
@@ -326,33 +304,13 @@ namespace POS_Sys
             this.txt_Password.UseSystemPasswordChar = true;
             this.txt_Password.Click += new System.EventHandler(this.txt_Password_Click);
             // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(684, 72);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(69, 20);
-            this.metroLabel8.TabIndex = 13;
-            this.metroLabel8.Text = "Password:";
-            this.metroLabel8.Click += new System.EventHandler(this.metroLabel8_Click);
-            // 
             // txt_User
             // 
-            this.txt_User.Location = new System.Drawing.Point(796, 22);
+            this.txt_User.Location = new System.Drawing.Point(679, 38);
             this.txt_User.Name = "txt_User";
             this.txt_User.Size = new System.Drawing.Size(220, 23);
             this.txt_User.TabIndex = 12;
             this.txt_User.Click += new System.EventHandler(this.txt_User_Click);
-            // 
-            // metroLabel9
-            // 
-            this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(684, 22);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(76, 20);
-            this.metroLabel9.TabIndex = 11;
-            this.metroLabel9.Text = "Username:";
-            this.metroLabel9.Click += new System.EventHandler(this.metroLabel9_Click);
             // 
             // DeleteBtn
             // 
@@ -468,6 +426,50 @@ namespace POS_Sys
             this.textBox1.Size = new System.Drawing.Size(311, 30);
             this.textBox1.TabIndex = 4;
             // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(967, 195);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(44, 20);
+            this.metroLabel2.TabIndex = 22;
+            this.metroLabel2.Text = "الاسم";
+            this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel4.Location = new System.Drawing.Point(971, 142);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(40, 20);
+            this.metroLabel4.TabIndex = 21;
+            this.metroLabel4.Text = "الدور";
+            this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel6.Location = new System.Drawing.Point(948, 88);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(69, 20);
+            this.metroLabel6.TabIndex = 20;
+            this.metroLabel6.Text = "كلمة السر";
+            this.metroLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel8.Location = new System.Drawing.Point(920, 38);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(101, 20);
+            this.metroLabel8.TabIndex = 19;
+            this.metroLabel8.Text = "اسم المستخدم";
+            this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Users_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -509,7 +511,6 @@ namespace POS_Sys
         private MetroFramework.Controls.MetroTextBox Passtxt;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox Usrtxt;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton Btn_Save;
@@ -518,17 +519,17 @@ namespace POS_Sys
         private MetroFramework.Controls.MetroButton DisplayBtn;
         private MetroFramework.Controls.MetroComboBox Combo_Role;
         private MetroFramework.Controls.MetroTextBox txt_Name;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroTextBox txt_Password;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroTextBox txt_User;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
         private MetroFramework.Controls.MetroButton DeleteBtn;
         private MetroFramework.Controls.MetroButton EditBtn;
         private MetroFramework.Controls.MetroTabPage metroTabPage3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
     }
 }

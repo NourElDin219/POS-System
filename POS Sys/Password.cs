@@ -17,7 +17,7 @@ namespace POS_Sys
         {
             InitializeComponent();
             user = new UserCrudOps();
-            this.ActiveControl = UsernameTxt;
+            this.ActiveControl = QuantityText;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace POS_Sys
         }
         public bool Authorized()
         {
-            if (user.Authorized(UsernameTxt.Text, QuantityText.Text))
+            if (user.Authorized("Password", QuantityText.Text))
             {
                 if (user.getRole() == "Admin" || user.getRole() == "Supervisor")
                 {

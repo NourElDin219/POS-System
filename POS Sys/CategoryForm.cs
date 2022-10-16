@@ -34,10 +34,13 @@ namespace POS_Sys
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            category.Name = CatTxt.Text;
-            cat.AddOrUpdateCategory(category);
-            display();
-            category = new Category();
+            if (CatTxt.Text != "")
+            {
+                category.Name = CatTxt.Text;
+                cat.AddOrUpdateCategory(category);
+                display();
+                category = new Category();
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -60,10 +63,13 @@ namespace POS_Sys
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            category.Name = CatTxt.Text;
-            cat.AddOrUpdateCategory(category);
-            MessageBox.Show("تمت التعديل بنجاح");
-            display();
+            if (CatTxt.Text != "")
+            {
+                category.Name = CatTxt.Text;
+                cat.AddOrUpdateCategory(category);
+                MessageBox.Show("تمت التعديل بنجاح");
+                display();
+            }
         }
     }
 }
