@@ -168,41 +168,7 @@ namespace POS_Sys
         }
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            String CName = dataGridView2.Columns[e.ColumnIndex].Name;
-            if (CName == "AddToCart" && e.RowIndex != -1)
-            {
-                index = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[0].Value) - 1;
-                qform = new Qform();
-                qform.ShowDialog();
-                int qtity = qform.GetQuantity();
-                int q = Convert.ToInt32(dataGridView2.Rows[index].Cells[4].Value);
-            here: if (qtity > 0)
-                {
-                    if (q >= qtity)
-                    {
-                        qform.dispose();
-                    }
-                    else
-                    {
-                        MessageBox.Show("لا يوجد كمية كافية");
-                        qform.ShowDialog();
-                        qtity = qform.GetQuantity();
-                        goto here;
-                    }
-
-                    if (ItemInCart(index))
-                    {
-                        MessageBox.Show("المنتج موجود بالعربة مسبقا");
-                        return;
-                    }
-                    dataGridView1.Rows.Add(0, dataGridView2.Rows[index].Cells[1].Value, dataGridView2.Rows[index].Cells[3].Value, qtity, (Convert.ToDouble(qtity) * Convert.ToDouble(dataGridView2.Rows[index].Cells[3].Value)));
-
-                    P_List[index].ShopQuantity -= qtity;
-                    p_List.Add(P_List[index]);
-                    CalculateTotal();
-                    label3.Text = sum.ToString();
-                }
-            }
+            
         }
 
         public bool ItemInCart(int ind)
@@ -222,19 +188,7 @@ namespace POS_Sys
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            rowIndex = e.RowIndex;
-            PNameTxt.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            UnitPText.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            QuantityTxt.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            TotalPText.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-            String CName = dataGridView1.Columns[e.ColumnIndex].Name;
-            if (CName == "Remove")
-            {
-                p_List.RemoveAt(e.RowIndex);
-                dataGridView1.Rows.RemoveAt(e.RowIndex);
-                CalculateTotal();
-                label3.Text = sum.ToString();
-            }
+           
 
         }
 
@@ -278,20 +232,23 @@ namespace POS_Sys
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(QuantityTxt.Text) <= (Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[3].Value) + p_List[rowIndex].ShopQuantity))
+            if (dataGridView1.Rows.Count > 0 && rowIndex>-1&&QuantityTxt.Text!="")
             {
-                p_List[rowIndex].ShopQuantity += (Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[3].Value)) - Convert.ToInt32(QuantityTxt.Text);
-                dataGridView1.Rows[rowIndex].Cells[3].Value = Convert.ToInt32(QuantityTxt.Text);
-                dataGridView1.Rows[rowIndex].Cells[4].Value = Convert.ToDouble(dataGridView1.Rows[rowIndex].Cells[3].Value) * Convert.ToDouble(dataGridView1.Rows[rowIndex].Cells[2].Value);
-                sum = 0;
-                CalculateTotal();
-                label3.Text = sum.ToString();
-                MessageBox.Show("تم تعديل الكمية بنجاح");
-            }
-            else
-            {
-                MessageBox.Show("لا يوجد كمية كافية");
-                QuantityTxt.Focus();
+                if (Convert.ToInt32(QuantityTxt.Text) <= (Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[3].Value) + p_List[rowIndex].ShopQuantity))
+                {
+                    p_List[rowIndex].ShopQuantity += (Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells[3].Value)) - Convert.ToInt32(QuantityTxt.Text);
+                    dataGridView1.Rows[rowIndex].Cells[3].Value = Convert.ToInt32(QuantityTxt.Text);
+                    dataGridView1.Rows[rowIndex].Cells[4].Value = Convert.ToDouble(dataGridView1.Rows[rowIndex].Cells[3].Value) * Convert.ToDouble(dataGridView1.Rows[rowIndex].Cells[2].Value);
+                    sum = 0;
+                    CalculateTotal();
+                    label3.Text = sum.ToString();
+                    MessageBox.Show("تم تعديل الكمية بنجاح");
+                }
+                else
+                {
+                    MessageBox.Show("لا يوجد كمية كافية");
+                    QuantityTxt.Focus();
+                }
             }
         }
         public void CalulateDiscount()
@@ -334,11 +291,14 @@ namespace POS_Sys
 
         private void PayAndPrintBtn_Click(object sender, EventArgs e)
         {
-            check = false;
-            CreateInvoice();
-            PrintReceipt();
-            if (!check)
-                UpdateProducts();
+            if (dataGridView1.Rows.Count > 0)
+            {
+                check = false;
+                CreateInvoice();
+                PrintReceipt();
+                if (!check)
+                    UpdateProducts();
+            }
         }
         public void PrintReceipt()
         {
@@ -526,5 +486,60 @@ namespace POS_Sys
             smtpClient.Send(message);
         }
 
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            rowIndex = e.RowIndex;
+            PNameTxt.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            UnitPText.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            QuantityTxt.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            TotalPText.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            String CName = dataGridView1.Columns[e.ColumnIndex].Name;
+            if (CName == "Remove")
+            {
+                p_List.RemoveAt(e.RowIndex);
+                dataGridView1.Rows.RemoveAt(e.RowIndex);
+                CalculateTotal();
+                label3.Text = sum.ToString();
+            }
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            String CName = dataGridView2.Columns[e.ColumnIndex].Name;
+            if (CName == "AddToCart" && e.RowIndex != -1)
+            {
+                index = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[0].Value) - 1;
+                qform = new Qform();
+                qform.ShowDialog();
+                int qtity = qform.GetQuantity();
+                int q = Convert.ToInt32(dataGridView2.Rows[index].Cells[4].Value);
+            here: if (qtity > 0)
+                {
+                    if (q >= qtity)
+                    {
+                        qform.dispose();
+                    }
+                    else
+                    {
+                        MessageBox.Show("لا يوجد كمية كافية");
+                        qform.ShowDialog();
+                        qtity = qform.GetQuantity();
+                        goto here;
+                    }
+
+                    if (ItemInCart(index))
+                    {
+                        MessageBox.Show("المنتج موجود بالعربة مسبقا");
+                        return;
+                    }
+                    dataGridView1.Rows.Add(0, dataGridView2.Rows[index].Cells[1].Value, dataGridView2.Rows[index].Cells[3].Value, qtity, (Convert.ToDouble(qtity) * Convert.ToDouble(dataGridView2.Rows[index].Cells[3].Value)));
+
+                    P_List[index].ShopQuantity -= qtity;
+                    p_List.Add(P_List[index]);
+                    CalculateTotal();
+                    label3.Text = sum.ToString();
+                }
+            }
+        }
     }
 }

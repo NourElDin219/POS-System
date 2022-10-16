@@ -130,10 +130,69 @@ namespace POS_Sys
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+        }
+        public void RemoveAll()
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                cs_Products.AddOrUpdateProduct(products[i]);
+                //dataGridView1.Rows.RemoveAt(i);
+            }
+            dataGridView1.Rows.Clear();
+            CS_Invoice.Deleteinvoice(Convert.ToInt32(textBox1.Text));
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SearchBtn.PerformClick();
+            }
+        }
+
+        private void ReturningAProduct_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PrintBtn_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.Rows.Count>0)
+                PrintReceipt();
+        }
+        public void PrintReceipt()
+        {
+            InvoiceProduct.Clear();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                invoiceProduct = new InvoiceProduct();
+                invoiceProduct.ProductId = products[i].Id;
+                invoiceProduct.Quantity = Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value);
+                InvoiceProduct.Add(invoiceProduct);
+                invoiceProduct = null;
+                GC.Collect();
+            }
+            List<InvoiceProductVM> List = new List<InvoiceProductVM>();
+            List = IP.SendInvoiceToReport(InvoiceProduct);
+            using (PrintReceipt frm = new PrintReceipt(List, newTotal.ToString(), newTotal.ToString(), (newTotal - newTotal).ToString(), textBox1.Text, DateTime.Now.ToString(), CashierName, 0.ToString(), PaymentMethod))
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void DiscountLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
             String CName = dataGridView1.Columns[e.ColumnIndex].Name;
             if (CName == "Remove")
             {
-                if (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value) > 1) {
+                if (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value) > 1)
+                {
                     Qform qform = new Qform();
                     qform.ShowDialog();
                     int qtity = qform.GetQuantity();
@@ -171,13 +230,13 @@ namespace POS_Sys
                         }
                     }
                     newTotal = 0;
-                    double totalProfit=0;
+                    double totalProfit = 0;
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
                         newTotal += Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value);
                         totalProfit += products[i].PurchasingPrice;
                     }
-                    CS_Invoice.UpdateInvoice(Convert.ToInt32(textBox1.Text), newTotal,(newTotal-totalProfit));
+                    CS_Invoice.UpdateInvoice(Convert.ToInt32(textBox1.Text), newTotal, (newTotal - totalProfit));
                     goto end;
                 }
                 cs_Products.AddOrUpdateProduct(products[e.RowIndex]);
@@ -197,64 +256,12 @@ namespace POS_Sys
                         totalProfit += products[i].PurchasingPrice;
 
                     }
-                    CS_Invoice.UpdateInvoice(Convert.ToInt32(textBox1.Text), newTotal,(newTotal - totalProfit));
+                    CS_Invoice.UpdateInvoice(Convert.ToInt32(textBox1.Text), newTotal, (newTotal - totalProfit));
                 }
-            end:if(dataGridView1.Rows.Count>0) 
-                SearchBtn.PerformClick();
-                
+            end: if (dataGridView1.Rows.Count > 0)
+                    SearchBtn.PerformClick();
+
             }
-        }
-        public void RemoveAll()
-        {
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                cs_Products.AddOrUpdateProduct(products[i]);
-                dataGridView1.Rows.RemoveAt(i);
-            }
-            dataGridView1.Rows.Clear();
-            CS_Invoice.Deleteinvoice(Convert.ToInt32(textBox1.Text));
-        }
-
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                SearchBtn.PerformClick();
-            }
-        }
-
-        private void ReturningAProduct_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PrintBtn_Click(object sender, EventArgs e)
-        {
-            PrintReceipt();
-        }
-        public void PrintReceipt()
-        {
-            InvoiceProduct.Clear();
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                invoiceProduct = new InvoiceProduct();
-                invoiceProduct.ProductId = products[i].Id;
-                invoiceProduct.Quantity = Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value);
-                InvoiceProduct.Add(invoiceProduct);
-                invoiceProduct = null;
-                GC.Collect();
-            }
-            List<InvoiceProductVM> List = new List<InvoiceProductVM>();
-            List = IP.SendInvoiceToReport(InvoiceProduct);
-            using (PrintReceipt frm = new PrintReceipt(List, newTotal.ToString(), newTotal.ToString(), (newTotal - newTotal).ToString(), textBox1.Text, DateTime.Now.ToString(), CashierName, 0.ToString(), PaymentMethod))
-            {
-                frm.ShowDialog();
-            }
-        }
-
-        private void DiscountLabel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
