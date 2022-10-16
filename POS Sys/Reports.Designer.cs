@@ -144,6 +144,7 @@ namespace POS_Sys
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1015, 706);
             this.Controls.Add(this.DisplayDayBtn);
             this.Controls.Add(this.dateTimePicker1);

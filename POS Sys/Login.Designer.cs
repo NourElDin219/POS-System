@@ -45,16 +45,16 @@ namespace POS_Sys
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(145, 25);
+            this.pictureBox2.Location = new System.Drawing.Point(24, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(108, 131);
+            this.pictureBox2.Size = new System.Drawing.Size(356, 169);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.txt_Password);
             this.panel1.Controls.Add(this.txt_Username);
@@ -80,7 +80,6 @@ namespace POS_Sys
             // 
             // txt_Password
             // 
-            this.txt_Password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Password.Location = new System.Drawing.Point(106, 335);
             this.txt_Password.Name = "txt_Password";
@@ -92,7 +91,6 @@ namespace POS_Sys
             // 
             // txt_Username
             // 
-            this.txt_Username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Username.Location = new System.Drawing.Point(106, 235);
             this.txt_Username.Name = "txt_Username";
@@ -104,7 +102,7 @@ namespace POS_Sys
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(122, 293);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(160, 23);
@@ -124,7 +122,7 @@ namespace POS_Sys
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(122, 197);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 23);

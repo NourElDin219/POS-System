@@ -49,7 +49,7 @@ namespace POS_Sys
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.EditBtn);
             this.panel1.Controls.Add(this.AddBtn);
             this.panel1.Controls.Add(this.CatTxt);
