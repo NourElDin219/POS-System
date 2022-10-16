@@ -32,6 +32,7 @@ namespace POS_Sys
             {
                 if (user.getRole() == "Admin"|| user.getRole() == "Supervisor")
                 {
+                    user.AddNewLog(user.Id);
                     admin admin = new admin(user.getName(), user.Id, user.getRole());
                     this.Hide();
                     admin.ShowDialog();
@@ -39,6 +40,7 @@ namespace POS_Sys
                 }
                 else if(user.getRole() == "Cashier")
                 {
+                    user.AddNewLog(user.Id);
                     Sales sales = new Sales(user.getName(),user.Id);
                     this.Hide();
                     sales.ShowDialog();

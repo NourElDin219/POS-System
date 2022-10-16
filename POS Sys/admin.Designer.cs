@@ -235,6 +235,7 @@ namespace POS_Sys
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.admin_FormClosing);
             this.Load += new System.EventHandler(this.admin_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

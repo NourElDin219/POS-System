@@ -134,17 +134,17 @@ namespace POS_Sys.CS
             using (DatabaseContext db = new DatabaseContext())
             {
                 var ro = from U in db.User
-                         
-                         where U.Id == userId 
+
+                         where U.Id == userId
                          select new
                          {
                              n = U.Name,
-                            
+
                          };
                 foreach (var obj in ro)
                 {
                     Name = obj.n;
-                   
+
                 }
             }
         }
@@ -158,7 +158,7 @@ namespace POS_Sys.CS
                          select new
                          {
                              n = U.Name,
-                             i=U.Id
+                             i = U.Id
                          };
                 foreach (var obj in ro)
                 {
@@ -179,7 +179,7 @@ namespace POS_Sys.CS
                              select new
                              {
                                  n = U.Name,
-                                 i=U.Id,
+                                 i = U.Id,
                                  r = R.Name
                              };
                     foreach (var obj in ro)
@@ -252,6 +252,56 @@ namespace POS_Sys.CS
             using (DatabaseContext db = new DatabaseContext())
             {
                 var Users = db.User.ToList();
+            }
+        }
+        public void AddNewLog(int userID)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var latestEntry = db.Log.Where(x => x.UserId == userID).OrderByDescending(x => x.Id).FirstOrDefault();
+                if (latestEntry == null)
+                {
+                    db.Log.Add(new Logs() { UserId = userID, Login = DateTime.Now ,Logout= new DateTime(2019, 05, 09, 09, 15, 00)});
+                    db.SaveChanges();
+                }
+                else
+                {
+                    if(latestEntry.Login.Date==DateTime.Today&&latestEntry.Logout == new DateTime(2019, 05, 09, 09, 15, 00))
+                        return;
+                    db.Log.Add(new Logs() { UserId = userID, Login = DateTime.Now, Logout=new DateTime(2019, 05, 09, 09, 15, 00) });
+                    db.SaveChanges();
+                }
+                return;
+                
+                
+            }
+        }
+        public void AddLogout(int userId)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var latestEntry=db.Log.Where(x => x.UserId == userId).OrderByDescending(x=>x.Id).FirstOrDefault();
+                if (latestEntry.Logout == new DateTime(2019, 05, 09, 09, 15, 00))
+                {
+                    latestEntry.Logout = DateTime.Now;
+                    db.SaveChanges();
+                }
+            }
+        }
+        public List<Logs> GetLogsOfTheDay()
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var List=db.Log.ToList().Where(x=>x.Login.Date>=DateTime.Today).ToList();
+                return List;
+            }
+        }
+        public List<Logs> GetLogsOfTheMonth()
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var List = db.Log.ToList().Where(x => x.Login.Month == DateTime.Now.Month).ToList();
+                return List;
             }
         }
     }

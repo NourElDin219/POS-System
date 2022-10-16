@@ -631,6 +631,7 @@ namespace POS_Sys
             this.Name = "Sales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sales";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Sales_FormClosing);
             this.Load += new System.EventHandler(this.Sales_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

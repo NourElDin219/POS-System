@@ -36,6 +36,7 @@ namespace POS_Sys
         private InvoiceVM InvoiceVM;
         private List<InvoiceVM> Invoices;
         private InvoiceProductVM IP;
+        private UserCrudOps user;
         public Sales(string CashierName, int CashierId)
         {
             InitializeComponent();
@@ -56,6 +57,7 @@ namespace POS_Sys
             IP = new InvoiceProductVM();
             this.CashierId = CashierId;
             this.CashierName = CashierName;
+            user = new UserCrudOps();
 
         }
         public void RefreshForm()
@@ -140,7 +142,7 @@ namespace POS_Sys
 
         private void LogoutBtn_Click_1(object sender, EventArgs e)
         {
-            LogoutMail();
+            user.AddLogout(CashierId);
             Login login = new Login();
             this.Hide();
             login.ShowDialog();
@@ -431,6 +433,13 @@ namespace POS_Sys
 
         private void SendReportBtn_Click(object sender, EventArgs e)
         {
+
+            SendReport();
+        }
+        public void SendReport()
+        {
+            List<Logs> List = new List<Logs>();
+            List = user.GetLogsOfTheDay();
             string fromMail = "alhabashy1983@gmail.com";
             MailMessage message = new MailMessage();
             message.BodyEncoding = System.Text.Encoding.UTF8;
@@ -438,7 +447,6 @@ namespace POS_Sys
             message.From = new MailAddress(fromMail);
             message.Subject = "التقرير اليومى";
             message.To.Add(new MailAddress("nour.eldine@hotmail.com"));
-
             DateTime dt = new DateTime();
             dt = DateTime.Now;
             Invoices = InvoiceVM.GetTotalInvoicesForToday(dt.Date);
@@ -452,6 +460,17 @@ namespace POS_Sys
                 message.Body += "<td stlye='color:blue;'>" + item.Id + "</td>" + "<td stlye='color:blue;'>" + item.Total + "</td>" + "<td stlye='color:blue;'>" + item.Pay + "</td>" + "<td stlye='color:blue;'>" + item.Discount + "</td>" + "<td stlye='color:blue;'>" + item.PaymentMethod + "</td>" + "<td stlye='color:blue;'>" + item.UserName + "</td>" + "<td stlye='color:blue;'>" + item.CreatedDate + "</td>";
                 message.Body += "</tr>";
             }
+            message.Body += "</table><br>";
+            message.Body += "<table width='100%' style='border:Solid 1px Black;'><tr>";
+            message.Body += "<td stlye='color:blue;'>" + "اسم" + "</td>" + "<td stlye='color:blue;'>" + "تاريخ تسجيل الدخول" + "</td>" + "<td stlye='color:blue;'>" + "تاريخ تسجيل الخروج" + "</td>";
+            message.Body += "</tr>";
+            foreach (var item in List)
+            {
+                message.Body += "<tr>";
+                user.ReadUser(item.UserId);
+                message.Body += "<td stlye='color:blue;'>" + user.getName() + "</td>" + "<td stlye='color:blue;'>" + item.Login + "</td>" + "<td stlye='color:blue;'>" + item.Logout + "</td>";
+                message.Body += "</tr>";
+            }
             message.Body += "</table></html>";
             message.IsBodyHtml = true;
             var smtpClient = new SmtpClient("smtp.gmail.com", 587)
@@ -463,29 +482,7 @@ namespace POS_Sys
             };
             smtpClient.Send(message);
         }
-        public void LogoutMail()
-        {
-            string fromMail = "alhabashy1983@gmail.com";
-            MailMessage message = new MailMessage();
-            message.BodyEncoding = System.Text.Encoding.UTF8;
-            message.SubjectEncoding = System.Text.Encoding.UTF8;
-            message.From = new MailAddress(fromMail);
-            message.Subject = "تسجيل خروج";
-            message.To.Add(new MailAddress("nour.eldine@hotmail.com"));
-
-            DateTime dt = new DateTime();
-            dt = DateTime.Now;
-            message.Body = "<html dir=\"rtl\" lang=\"ar\"><body><p>" + CashierName + " " + "قام بتسجيل الخروج. <br>الساعة:" + " " + dt.ToString("hh:mm tt") + "</P></body></html>";
-            message.IsBodyHtml = true;
-            var smtpClient = new SmtpClient("smtp.gmail.com")
-            {
-                Port = 587,
-                Credentials = new NetworkCredential("alhabashy1983@gmail.com", "fwbhjenehgdxshqt"),
-                EnableSsl = true,
-            };
-            smtpClient.Send(message);
-        }
-
+        
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             rowIndex = e.RowIndex;
@@ -584,6 +581,11 @@ namespace POS_Sys
         private void dataGridView2_KeyDown(object sender, KeyEventArgs e)
         {
 
+        }
+
+        private void Sales_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            user.AddLogout(CashierId);
         }
     }
 }

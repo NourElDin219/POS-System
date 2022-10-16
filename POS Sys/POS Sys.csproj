@@ -230,12 +230,17 @@
     <Compile Include="Migrations\202210151922353_add_profit.designer.cs">
       <DependentUpon>202210151922353_add_profit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202210161809271_Adding_Logs.cs" />
+    <Compile Include="Migrations\202210161809271_Adding_Logs.designer.cs">
+      <DependentUpon>202210161809271_Adding_Logs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdvancePayment.cs" />
     <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\Database_Context.cs" />
     <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\InvoiceProduct.cs" />
+    <Compile Include="Models\Logs.cs" />
     <Compile Include="Models\PaymentMethods.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\Roles.cs" />
@@ -350,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202210151922353_add_profit.resx">
       <DependentUpon>202210151922353_add_profit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202210161809271_Adding_Logs.resx">
+      <DependentUpon>202210161809271_Adding_Logs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Password.resx">
       <DependentUpon>Password.cs</DependentUpon>

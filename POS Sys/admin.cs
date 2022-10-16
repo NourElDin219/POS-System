@@ -21,6 +21,7 @@ namespace POS_Sys
         private string CName;
         private int CId;
         private AdvancePaymentFrm afrm;
+        private UserCrudOps user;
         public admin()
         {
             InitializeComponent();
@@ -69,6 +70,7 @@ namespace POS_Sys
             panel4.Controls.Add(afrm);
             CName = Name;
             CId = id;
+            user = new UserCrudOps();
         }
         private void label8_Click(object sender, EventArgs e)
         {
@@ -113,6 +115,7 @@ namespace POS_Sys
 
         private void button6_Click(object sender, EventArgs e)
         {
+            user.AddLogout(CId);
             Login login = new Login();
             ufrm.Dispose();
             cfrm.Dispose();
@@ -161,6 +164,11 @@ namespace POS_Sys
         {
             afrm.BringToFront();
             afrm.Show();
+        }
+
+        private void admin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            user.AddLogout(CId);
         }
     }
 }
