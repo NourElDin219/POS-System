@@ -104,11 +104,13 @@ namespace POS_Sys
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 76);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Categories";
+            this.label1.Text = "الأنواع";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridView1
