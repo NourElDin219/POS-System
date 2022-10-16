@@ -131,9 +131,11 @@ namespace POS_Sys
             this.Name = "PayAndPrint";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "دفع و طباعة الفاتورة";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PayAndPrint_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PayAndPrint_FormClosed);
             this.Load += new System.EventHandler(this.PayAndPrint_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

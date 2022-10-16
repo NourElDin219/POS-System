@@ -80,6 +80,7 @@ namespace POS_Sys
             this.Name = "Password";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "أدخل كلمة السر";
             this.ResumeLayout(false);

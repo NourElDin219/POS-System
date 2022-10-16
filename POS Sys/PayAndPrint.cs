@@ -74,6 +74,11 @@ namespace POS_Sys
 
         private void PayAndPrint_FormClosing(object sender, FormClosingEventArgs e)
         {
+            
+        }
+
+        private void PayAndPrint_FormClosed(object sender, FormClosedEventArgs e)
+        {
             checkk = true;
             this.Dispose();
         }

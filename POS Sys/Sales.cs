@@ -293,6 +293,7 @@ namespace POS_Sys
 
         private void PayAndPrintBtn_Click(object sender, EventArgs e)
         {
+            
             if (dataGridView1.Rows.Count > 0)
             {
                 

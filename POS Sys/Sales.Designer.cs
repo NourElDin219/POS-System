@@ -627,6 +627,7 @@ namespace POS_Sys
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Sales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

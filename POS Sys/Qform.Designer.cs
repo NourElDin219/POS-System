@@ -69,6 +69,7 @@ namespace POS_Sys
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Qform";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "الكمية";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Qform_FormClosing);

@@ -169,6 +169,12 @@
     <Compile Include="CategoryForm.Designer.cs">
       <DependentUpon>CategoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CategoryName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryName.Designer.cs">
+      <DependentUpon>CategoryName.cs</DependentUpon>
+    </Compile>
     <Compile Include="CS\Cs_Category.cs" />
     <Compile Include="CS\CS_Invoice.cs" />
     <Compile Include="CS\Cs_Products.cs" />
@@ -316,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CategoryForm.resx">
       <DependentUpon>CategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryName.resx">
+      <DependentUpon>CategoryName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
