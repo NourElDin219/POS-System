@@ -15,12 +15,14 @@ namespace POS_Sys
         public double total;
         public double paid;
         public string method;
+        public bool checkk;
         public PayAndPrint(double sum,double total)
         {
             InitializeComponent();
             this.total = total;
             this.ActiveControl = button1;
             this.radioButton1.Checked = true;
+            checkk = false;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -68,6 +70,12 @@ namespace POS_Sys
             {
                 button1.PerformClick();
             }
+        }
+
+        private void PayAndPrint_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            checkk = true;
+            this.Dispose();
         }
     }
 }

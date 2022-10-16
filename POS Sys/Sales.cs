@@ -295,11 +295,9 @@ namespace POS_Sys
         {
             if (dataGridView1.Rows.Count > 0)
             {
-                check = false;
+                
                 CreateInvoice();
-                PrintReceipt();
-                if (!check)
-                    UpdateProducts();
+                
             }
         }
         public void PrintReceipt()
@@ -333,6 +331,8 @@ namespace POS_Sys
         {
             PayAndPrint PnP = new PayAndPrint(sum, Convert.ToDouble(label3.Text));
             PnP.ShowDialog();
+            if (PnP.checkk == true)
+                return;
             Invoice.Pay = PnP.paid;
             Invoice.Discount = sum - Convert.ToDouble(label3.Text);
             Invoice.PaymentMethod = PnP.method;
@@ -352,6 +352,10 @@ namespace POS_Sys
             }
             Invoice.TotalProfit = totalProfit;
             CS_Invoice.CreateInvoice(Invoice, InvoiceProduct);
+            PrintReceipt();
+            check = false;
+            if (!check)
+                UpdateProducts();
         }
 
         private void SearchTxt_KeyPress(object sender, KeyPressEventArgs e)

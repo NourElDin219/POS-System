@@ -133,6 +133,7 @@ namespace POS_Sys
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "دفع و طباعة الفاتورة";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PayAndPrint_FormClosing);
             this.Load += new System.EventHandler(this.PayAndPrint_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
