@@ -27,7 +27,7 @@ namespace POS_Sys
         public void display()
         {
             c.Clear();
-            
+            cat = new Cs_Category();
             c = cat.GetCategoryList();
             dataGridView1.Rows.Clear();
             for (int i = 0; i < c.Count(); i++)
