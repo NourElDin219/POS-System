@@ -21,26 +21,27 @@ namespace POS_Sys
             InitializeComponent();
             cat = new Cs_Category();
             category = new Category();
+            c = new List<Category>();
             display();
         }
         public void display()
         {
+            c.Clear();
+            
             c = cat.GetCategoryList();
             dataGridView1.Rows.Clear();
             for (int i = 0; i < c.Count(); i++)
             {
-                dataGridView1.Rows.Add(c[i].Id, c[i].Name);
+                dataGridView1.Rows.Add(i+1, c[i].Name);
             }
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            if (CatTxt.Text != "")
+            using(CategoryName frm = new CategoryName())
             {
-                category.Name = CatTxt.Text;
-                cat.AddOrUpdateCategory(category);
-                display();
-                category = new Category();
+                frm.ShowDialog();
             }
+            display();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -48,10 +49,11 @@ namespace POS_Sys
             String CName = dataGridView1.Columns[e.ColumnIndex].Name;
             if (CName == "Edit")
             {
-                CatTxt.Text = c[e.RowIndex].Name;
-                category = c[e.RowIndex];
-                //AddBtn.Visible = false;
-                //Edit.Visible = true;
+                using (CategoryName frm = new CategoryName(e.RowIndex))
+                {
+                    frm.ShowDialog();
+                }
+                display();
             }
             else if (CName == "Delete")
             {
@@ -63,13 +65,7 @@ namespace POS_Sys
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            if (CatTxt.Text != "")
-            {
-                category.Name = CatTxt.Text;
-                cat.AddOrUpdateCategory(category);
-                MessageBox.Show("تمت التعديل بنجاح");
-                display();
-            }
+            
         }
     }
 }

@@ -33,14 +33,11 @@ namespace POS_Sys
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoryForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.EditBtn = new System.Windows.Forms.Button();
             this.AddBtn = new System.Windows.Forms.Button();
-            this.CatTxt = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoryy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
@@ -50,10 +47,7 @@ namespace POS_Sys
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.EditBtn);
             this.panel1.Controls.Add(this.AddBtn);
-            this.panel1.Controls.Add(this.CatTxt);
-            this.panel1.Controls.Add(this.metroLabel1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ForeColor = System.Drawing.Color.White;
@@ -62,44 +56,16 @@ namespace POS_Sys
             this.panel1.Size = new System.Drawing.Size(900, 76);
             this.panel1.TabIndex = 0;
             // 
-            // EditBtn
-            // 
-            this.EditBtn.ForeColor = System.Drawing.Color.Black;
-            this.EditBtn.Location = new System.Drawing.Point(304, 22);
-            this.EditBtn.Name = "EditBtn";
-            this.EditBtn.Size = new System.Drawing.Size(113, 33);
-            this.EditBtn.TabIndex = 2;
-            this.EditBtn.Text = "تعديل";
-            this.EditBtn.UseVisualStyleBackColor = true;
-            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
-            // 
             // AddBtn
             // 
             this.AddBtn.ForeColor = System.Drawing.Color.Black;
-            this.AddBtn.Location = new System.Drawing.Point(440, 22);
+            this.AddBtn.Location = new System.Drawing.Point(742, 24);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(111, 33);
+            this.AddBtn.Size = new System.Drawing.Size(137, 33);
             this.AddBtn.TabIndex = 2;
-            this.AddBtn.Text = "اضافة نوع";
+            this.AddBtn.Text = "اضافة نوع جديد";
             this.AddBtn.UseVisualStyleBackColor = true;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
-            // 
-            // CatTxt
-            // 
-            this.CatTxt.Location = new System.Drawing.Point(577, 26);
-            this.CatTxt.Name = "CatTxt";
-            this.CatTxt.Size = new System.Drawing.Size(220, 23);
-            this.CatTxt.TabIndex = 5;
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(833, 29);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(27, 20);
-            this.metroLabel1.TabIndex = 4;
-            this.metroLabel1.Text = "نوع";
-            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -117,6 +83,7 @@ namespace POS_Sys
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -130,7 +97,7 @@ namespace POS_Sys
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.Category,
+            this.Categoryy,
             this.Edit,
             this.Delete});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -146,6 +113,7 @@ namespace POS_Sys
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -163,13 +131,12 @@ namespace POS_Sys
             this.Id.ReadOnly = true;
             this.Id.Width = 49;
             // 
-            // Category
+            // Categoryy
             // 
-            this.Category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Category.HeaderText = "Category";
-            this.Category.MinimumWidth = 6;
-            this.Category.Name = "Category";
-            this.Category.ReadOnly = true;
+            this.Categoryy.HeaderText = "النوع";
+            this.Categoryy.MinimumWidth = 6;
+            this.Categoryy.Name = "Categoryy";
+            this.Categoryy.ReadOnly = true;
             // 
             // Edit
             // 
@@ -205,7 +172,6 @@ namespace POS_Sys
             this.Text = "CategoryForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -216,13 +182,10 @@ namespace POS_Sys
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button AddBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoryy;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
-        private System.Windows.Forms.Button AddBtn;
-        private MetroFramework.Controls.MetroTextBox CatTxt;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private System.Windows.Forms.Button EditBtn;
     }
 }
