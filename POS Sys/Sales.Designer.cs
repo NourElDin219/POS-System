@@ -51,7 +51,6 @@ namespace POS_Sys
             this.SendReportBtn = new System.Windows.Forms.Button();
             this.ResetFilterBtn = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.PrintLastBtn = new System.Windows.Forms.Button();
             this.ReturnBtn = new System.Windows.Forms.Button();
             this.EditBtn = new System.Windows.Forms.Button();
             this.NInvoiceBtn = new System.Windows.Forms.Button();
@@ -204,7 +203,6 @@ namespace POS_Sys
             this.panel3.Controls.Add(this.SendReportBtn);
             this.panel3.Controls.Add(this.ResetFilterBtn);
             this.panel3.Controls.Add(this.comboBox2);
-            this.panel3.Controls.Add(this.PrintLastBtn);
             this.panel3.Controls.Add(this.ReturnBtn);
             this.panel3.Controls.Add(this.EditBtn);
             this.panel3.Controls.Add(this.NInvoiceBtn);
@@ -255,16 +253,6 @@ namespace POS_Sys
             this.comboBox2.Size = new System.Drawing.Size(175, 31);
             this.comboBox2.TabIndex = 24;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // PrintLastBtn
-            // 
-            this.PrintLastBtn.ForeColor = System.Drawing.Color.Black;
-            this.PrintLastBtn.Location = new System.Drawing.Point(894, 12);
-            this.PrintLastBtn.Name = "PrintLastBtn";
-            this.PrintLastBtn.Size = new System.Drawing.Size(142, 30);
-            this.PrintLastBtn.TabIndex = 23;
-            this.PrintLastBtn.Text = "طباعة اخر فاتورة";
-            this.PrintLastBtn.UseVisualStyleBackColor = true;
             // 
             // ReturnBtn
             // 
@@ -678,7 +666,6 @@ namespace POS_Sys
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button PrintLastBtn;
         private System.Windows.Forms.Button ReturnBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
