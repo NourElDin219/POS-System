@@ -28,6 +28,11 @@ namespace POS_Sys
             InvoiceList = InvoiceVM.Getinvoices();
             InvoiceDGV.DataSource = InvoiceList;
         }
+        public void DisplayLatest20()
+        {
+            InvoiceList = InvoiceVM.Getinvoices();
+            InvoiceDGV.DataSource = InvoiceList;
+        }
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
@@ -108,6 +113,11 @@ namespace POS_Sys
                     }
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DisplayLatest20();
         }
     }
 }

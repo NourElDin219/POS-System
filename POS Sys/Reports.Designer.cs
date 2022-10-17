@@ -38,6 +38,7 @@ namespace POS_Sys
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.DisplayDayBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.InvoiceDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,12 +141,24 @@ namespace POS_Sys
             this.DisplayDayBtn.UseVisualStyleBackColor = true;
             this.DisplayDayBtn.Click += new System.EventHandler(this.DisplayDayBtn_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(803, 46);
+            this.button1.Name = "button1";
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button1.Size = new System.Drawing.Size(196, 32);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "عرض اخر 20 فاتورة";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1015, 706);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.DisplayDayBtn);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.SearchBtn);
@@ -174,5 +187,6 @@ namespace POS_Sys
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button DisplayDayBtn;
+        private System.Windows.Forms.Button button1;
     }
 }

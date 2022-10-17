@@ -307,7 +307,7 @@ namespace POS_Sys
             List = IP.SendInvoiceToReport(InvoiceProduct);
             if (Invoice.Discount > 0)
             {
-                using (PrintReceipt frm = new PrintReceipt(List, Invoice.Total.ToString(), Invoice.Pay.ToString(), (Invoice.Pay - Invoice.Total).ToString(), CS_Invoice.GetLatestInvoiceNumber().ToString(), Invoice.CreatedDate.ToString(), CashierName, (comboBox1.SelectedItem.ToString() + " " + Invoice.Discount.ToString()), Invoice.PaymentMethod))
+                using (PrintReceipt frm = new PrintReceipt(List, Invoice.Total.ToString(), Invoice.Pay.ToString(), (Invoice.Pay - Invoice.Total).ToString(), CS_Invoice.GetLatestInvoiceNumber().ToString(), Invoice.CreatedDate.ToString(), CashierName, (comboBox1.SelectedItem.ToString() + " " + textBox1.Text), Invoice.PaymentMethod))
                 {
                     frm.ShowDialog();
                 }
