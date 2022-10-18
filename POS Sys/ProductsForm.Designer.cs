@@ -29,9 +29,9 @@ namespace POS_Sys
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CancelBtn = new MetroFramework.Controls.MetroButton();
             this.Btn_Save = new MetroFramework.Controls.MetroButton();
             this.ComboCat = new MetroFramework.Controls.MetroComboBox();
@@ -99,6 +99,7 @@ namespace POS_Sys
             this.Btn_Save.TabIndex = 11;
             this.Btn_Save.Text = "اضافة";
             this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
+            this.Btn_Save.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Btn_Save_KeyDown);
             // 
             // ComboCat
             // 
@@ -121,7 +122,7 @@ namespace POS_Sys
             this.TxtSPrice.Name = "TxtSPrice";
             this.TxtSPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.TxtSPrice.Size = new System.Drawing.Size(193, 24);
-            this.TxtSPrice.TabIndex = 9;
+            this.TxtSPrice.TabIndex = 5;
             this.TxtSPrice.Click += new System.EventHandler(this.TxtSPrice_Click);
             this.TxtSPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSPrice_KeyPress);
             // 
@@ -246,7 +247,7 @@ namespace POS_Sys
             this.PPriceText.Name = "PPriceText";
             this.PPriceText.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.PPriceText.Size = new System.Drawing.Size(192, 24);
-            this.PPriceText.TabIndex = 42;
+            this.PPriceText.TabIndex = 9;
             this.PPriceText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PPriceText_KeyPress);
             // 
             // comboBox2
@@ -289,6 +290,7 @@ namespace POS_Sys
             this.MoveTxt.Name = "MoveTxt";
             this.MoveTxt.Size = new System.Drawing.Size(192, 24);
             this.MoveTxt.TabIndex = 36;
+            this.MoveTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MoveTxt_KeyDown);
             this.MoveTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroTextBox1_KeyPress);
             // 
             // metroLabel15
@@ -320,7 +322,8 @@ namespace POS_Sys
             this.IQtTxt.Name = "IQtTxt";
             this.IQtTxt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.IQtTxt.Size = new System.Drawing.Size(192, 24);
-            this.IQtTxt.TabIndex = 30;
+            this.IQtTxt.TabIndex = 12;
+            this.IQtTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IQtTxt_KeyDown);
             this.IQtTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IQtTxt_KeyPress);
             // 
             // SQtTxt
@@ -330,7 +333,7 @@ namespace POS_Sys
             this.SQtTxt.Name = "SQtTxt";
             this.SQtTxt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.SQtTxt.Size = new System.Drawing.Size(192, 24);
-            this.SQtTxt.TabIndex = 28;
+            this.SQtTxt.TabIndex = 11;
             this.SQtTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SQtTxt_KeyPress);
             // 
             // metroComboBox1
@@ -354,7 +357,7 @@ namespace POS_Sys
             this.SPriceTxt.Name = "SPriceTxt";
             this.SPriceTxt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.SPriceTxt.Size = new System.Drawing.Size(192, 24);
-            this.SPriceTxt.TabIndex = 25;
+            this.SPriceTxt.TabIndex = 10;
             this.SPriceTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SPriceTxt_KeyPress);
             // 
             // NameTxt
@@ -364,7 +367,7 @@ namespace POS_Sys
             this.NameTxt.Name = "NameTxt";
             this.NameTxt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.NameTxt.Size = new System.Drawing.Size(192, 24);
-            this.NameTxt.TabIndex = 20;
+            this.NameTxt.TabIndex = 8;
             this.NameTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTxt_KeyPress);
             // 
             // metroLabel14
@@ -396,23 +399,23 @@ namespace POS_Sys
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LimeGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.LimeGreen;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -421,14 +424,14 @@ namespace POS_Sys
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -554,7 +557,7 @@ namespace POS_Sys
             this.TxtPPrice.Name = "TxtPPrice";
             this.TxtPPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.TxtPPrice.Size = new System.Drawing.Size(192, 24);
-            this.TxtPPrice.TabIndex = 43;
+            this.TxtPPrice.TabIndex = 4;
             this.TxtPPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPPrice_KeyPress);
             // 
             // TxtIQuantity
@@ -564,7 +567,8 @@ namespace POS_Sys
             this.TxtIQuantity.Name = "TxtIQuantity";
             this.TxtIQuantity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.TxtIQuantity.Size = new System.Drawing.Size(193, 24);
-            this.TxtIQuantity.TabIndex = 16;
+            this.TxtIQuantity.TabIndex = 7;
+            this.TxtIQuantity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtIQuantity_KeyDown);
             // 
             // TxtSQuantity
             // 
@@ -573,7 +577,7 @@ namespace POS_Sys
             this.TxtSQuantity.Name = "TxtSQuantity";
             this.TxtSQuantity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.TxtSQuantity.Size = new System.Drawing.Size(193, 24);
-            this.TxtSQuantity.TabIndex = 14;
+            this.TxtSQuantity.TabIndex = 6;
             // 
             // metroTabControl1
             // 

@@ -46,10 +46,12 @@ namespace POS_Sys
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -68,6 +70,7 @@ namespace POS_Sys
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.AdvacnePayBtn);
             this.panel1.Controls.Add(this.SalesBtn);
             this.panel1.Controls.Add(this.ProfitBtn);
@@ -87,7 +90,7 @@ namespace POS_Sys
             // 
             // AdvacnePayBtn
             // 
-            this.AdvacnePayBtn.Location = new System.Drawing.Point(86, 584);
+            this.AdvacnePayBtn.Location = new System.Drawing.Point(86, 608);
             this.AdvacnePayBtn.Name = "AdvacnePayBtn";
             this.AdvacnePayBtn.Size = new System.Drawing.Size(226, 34);
             this.AdvacnePayBtn.TabIndex = 13;
@@ -97,7 +100,7 @@ namespace POS_Sys
             // 
             // SalesBtn
             // 
-            this.SalesBtn.Location = new System.Drawing.Point(89, 522);
+            this.SalesBtn.Location = new System.Drawing.Point(89, 546);
             this.SalesBtn.Name = "SalesBtn";
             this.SalesBtn.Size = new System.Drawing.Size(226, 34);
             this.SalesBtn.TabIndex = 12;
@@ -107,7 +110,7 @@ namespace POS_Sys
             // 
             // ProfitBtn
             // 
-            this.ProfitBtn.Location = new System.Drawing.Point(89, 462);
+            this.ProfitBtn.Location = new System.Drawing.Point(89, 486);
             this.ProfitBtn.Name = "ProfitBtn";
             this.ProfitBtn.Size = new System.Drawing.Size(226, 34);
             this.ProfitBtn.TabIndex = 11;
@@ -117,7 +120,7 @@ namespace POS_Sys
             // 
             // CategoryBtn
             // 
-            this.CategoryBtn.Location = new System.Drawing.Point(89, 280);
+            this.CategoryBtn.Location = new System.Drawing.Point(89, 304);
             this.CategoryBtn.Name = "CategoryBtn";
             this.CategoryBtn.Size = new System.Drawing.Size(226, 34);
             this.CategoryBtn.TabIndex = 10;
@@ -154,7 +157,7 @@ namespace POS_Sys
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(89, 402);
+            this.button4.Location = new System.Drawing.Point(89, 426);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(226, 34);
             this.button4.TabIndex = 7;
@@ -164,7 +167,7 @@ namespace POS_Sys
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(89, 219);
+            this.button1.Location = new System.Drawing.Point(89, 243);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(226, 34);
             this.button1.TabIndex = 4;
@@ -174,7 +177,7 @@ namespace POS_Sys
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(89, 343);
+            this.button3.Location = new System.Drawing.Point(89, 367);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(226, 34);
             this.button3.TabIndex = 6;
@@ -221,6 +224,17 @@ namespace POS_Sys
             this.panel4.Size = new System.Drawing.Size(1033, 753);
             this.panel4.TabIndex = 2;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(171, 159);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(54, 57);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 14;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -241,6 +255,7 @@ namespace POS_Sys
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -263,6 +278,7 @@ namespace POS_Sys
         private System.Windows.Forms.Button ProfitBtn;
         private System.Windows.Forms.Button SalesBtn;
         private System.Windows.Forms.Button AdvacnePayBtn;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 

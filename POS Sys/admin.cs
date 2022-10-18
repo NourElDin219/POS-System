@@ -20,6 +20,7 @@ namespace POS_Sys
         private Reports rfrm;
         private string CName;
         private int CId;
+        private string role;
         private AdvancePaymentFrm afrm;
         private UserCrudOps user;
         public admin()
@@ -44,6 +45,7 @@ namespace POS_Sys
         public admin(string Name,int id,string role)
         {
             InitializeComponent();
+            this.role = role;
             pfrm = new ProductsForm();
             ufrm = new Users_Form();
             cfrm = new CategoryForm();
@@ -127,6 +129,48 @@ namespace POS_Sys
             login.ShowDialog();
             this.Close();
         }
+        public void ClearMemory()
+        {
+            ufrm.Dispose();
+            cfrm.Dispose();
+            pfrm.Dispose();
+            prfrm.Dispose();
+            rfrm.Dispose();
+            afrm.Dispose();
+            panel4.Controls.Remove(pfrm);
+            panel4.Controls.Remove(ufrm);
+            panel4.Controls.Remove(cfrm);
+            panel4.Controls.Remove(prfrm);
+            panel4.Controls.Remove(rfrm);
+            panel4.Controls.Remove(afrm);
+        }
+        public void Refresh()
+        {
+            pfrm = new ProductsForm();
+            ufrm = new Users_Form();
+            cfrm = new CategoryForm();
+            prfrm = new Profit();
+            rfrm = new Reports();
+            afrm = new AdvancePaymentFrm();
+            pfrm.TopLevel = false;
+            ufrm.TopLevel = false;
+            cfrm.TopLevel = false;
+            prfrm.TopLevel = false;
+            rfrm.TopLevel = false;
+            afrm.TopLevel = false;
+            if (role == "Supervisor")
+            {
+                pfrm.Supervisor();
+                this.CategoryBtn.Hide();
+                ufrm.Supervisor();
+            }
+            panel4.Controls.Add(pfrm);
+            panel4.Controls.Add(ufrm);
+            panel4.Controls.Add(cfrm);
+            panel4.Controls.Add(prfrm);
+            panel4.Controls.Add(rfrm);
+            panel4.Controls.Add(afrm);
+        }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
@@ -169,6 +213,12 @@ namespace POS_Sys
         private void admin_FormClosing(object sender, FormClosingEventArgs e)
         {
             user.AddLogout(CId);
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            ClearMemory();
+            Refresh();
         }
     }
 }

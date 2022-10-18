@@ -408,5 +408,34 @@ namespace POS_Sys
             }
 
         }
+
+        private void Btn_Save_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void TxtIQuantity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Btn_Save_Click(this, new EventArgs());
+            }
+        }
+
+        private void IQtTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                EditBtn_Click(this, new EventArgs());
+            }
+        }
+
+        private void MoveTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                MoveBtn_Click(this, new EventArgs());
+            }
+        }
     }
 }

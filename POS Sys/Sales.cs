@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Mail;
 using System.Net;
+using System.Globalization;
 
 namespace POS_Sys
 {
@@ -143,6 +144,12 @@ namespace POS_Sys
         private void LogoutBtn_Click_1(object sender, EventArgs e)
         {
             user.AddLogout(CashierId);
+            TimeSpan target = TimeSpan.Parse("21:00");   // 9 PM
+            TimeSpan now = DateTime.Now.TimeOfDay;
+            if (now >= target)
+            {
+                SendReport();
+            }
             Login login = new Login();
             this.Hide();
             login.ShowDialog();
@@ -592,6 +599,12 @@ namespace POS_Sys
         private void Sales_FormClosing(object sender, FormClosingEventArgs e)
         {
             user.AddLogout(CashierId);
+            TimeSpan target = TimeSpan.Parse("21:00");   // 9 PM
+            TimeSpan now = DateTime.Now.TimeOfDay;
+            if (now >= target)
+            {
+                SendReport();
+            }
         }
     }
 }

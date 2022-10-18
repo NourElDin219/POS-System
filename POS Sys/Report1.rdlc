@@ -833,7 +833,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>للطلبات و التواصل:</Value>
+                    <Value>للطلبات:</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -944,8 +944,41 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Textbox Name="Textbox30">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>۱۲٦ صقر قريش - ش البحث الجنائى - المعادى الجديدة</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox16</rd:DefaultName>
+            <Top>3.04338in</Top>
+            <Left>0.33319in</Left>
+            <Height>0.35833in</Height>
+            <Width>2.25791in</Width>
+            <ZIndex>21</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+              <Direction>RTL</Direction>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>3.10625in</Height>
+        <Height>3.62292in</Height>
         <Style>
           <Border>
             <Style>None</Style>
