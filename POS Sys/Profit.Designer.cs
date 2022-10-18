@@ -64,6 +64,24 @@ namespace POS_Sys
             this.YearlyProfit2 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.DailyTotal = new System.Windows.Forms.Label();
+            this.MonthlyTotal = new System.Windows.Forms.Label();
+            this.YearlyTotal = new System.Windows.Forms.Label();
+            this.TotalDaily = new System.Windows.Forms.Label();
+            this.TotalMonthly = new System.Windows.Forms.Label();
+            this.TotalYearly = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,6 +111,9 @@ namespace POS_Sys
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel4.Controls.Add(this.label14);
+            this.panel4.Controls.Add(this.DailyTotal);
+            this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.DailyProfit);
             this.panel4.Controls.Add(this.groupBox1);
@@ -105,7 +126,7 @@ namespace POS_Sys
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 95);
+            this.label4.Location = new System.Drawing.Point(20, 106);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(167, 31);
             this.label4.TabIndex = 3;
@@ -114,10 +135,10 @@ namespace POS_Sys
             // 
             // DailyProfit
             // 
-            this.DailyProfit.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DailyProfit.Location = new System.Drawing.Point(20, 33);
+            this.DailyProfit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DailyProfit.Location = new System.Drawing.Point(20, 60);
             this.DailyProfit.Name = "DailyProfit";
-            this.DailyProfit.Size = new System.Drawing.Size(167, 31);
+            this.DailyProfit.Size = new System.Drawing.Size(84, 31);
             this.DailyProfit.TabIndex = 2;
             this.DailyProfit.Text = "0.0";
             this.DailyProfit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -146,6 +167,9 @@ namespace POS_Sys
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.MonthlyTotal);
+            this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.MonthlyProfit);
             this.panel3.Controls.Add(this.groupBox2);
@@ -158,7 +182,7 @@ namespace POS_Sys
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 95);
+            this.label5.Location = new System.Drawing.Point(23, 106);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(167, 31);
             this.label5.TabIndex = 4;
@@ -167,10 +191,10 @@ namespace POS_Sys
             // 
             // MonthlyProfit
             // 
-            this.MonthlyProfit.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MonthlyProfit.Location = new System.Drawing.Point(23, 33);
+            this.MonthlyProfit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MonthlyProfit.Location = new System.Drawing.Point(23, 60);
             this.MonthlyProfit.Name = "MonthlyProfit";
-            this.MonthlyProfit.Size = new System.Drawing.Size(167, 31);
+            this.MonthlyProfit.Size = new System.Drawing.Size(84, 31);
             this.MonthlyProfit.TabIndex = 3;
             this.MonthlyProfit.Text = "0.0";
             this.MonthlyProfit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -198,6 +222,9 @@ namespace POS_Sys
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel2.Controls.Add(this.label18);
+            this.panel2.Controls.Add(this.label19);
+            this.panel2.Controls.Add(this.YearlyTotal);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.YearlyProfit);
             this.panel2.Controls.Add(this.groupBox3);
@@ -210,7 +237,7 @@ namespace POS_Sys
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(20, 95);
+            this.label6.Location = new System.Drawing.Point(20, 106);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(167, 31);
             this.label6.TabIndex = 5;
@@ -219,10 +246,10 @@ namespace POS_Sys
             // 
             // YearlyProfit
             // 
-            this.YearlyProfit.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.YearlyProfit.Location = new System.Drawing.Point(20, 33);
+            this.YearlyProfit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YearlyProfit.Location = new System.Drawing.Point(20, 60);
             this.YearlyProfit.Name = "YearlyProfit";
-            this.YearlyProfit.Size = new System.Drawing.Size(167, 31);
+            this.YearlyProfit.Size = new System.Drawing.Size(84, 31);
             this.YearlyProfit.TabIndex = 4;
             this.YearlyProfit.Text = "0.0";
             this.YearlyProfit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -269,6 +296,9 @@ namespace POS_Sys
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel6.Controls.Add(this.label9);
+            this.panel6.Controls.Add(this.TotalDaily);
+            this.panel6.Controls.Add(this.label3);
             this.panel6.Controls.Add(this.label1);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.groupBox4);
@@ -281,7 +311,7 @@ namespace POS_Sys
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 84);
+            this.label1.Location = new System.Drawing.Point(23, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 31);
             this.label1.TabIndex = 9;
@@ -291,10 +321,10 @@ namespace POS_Sys
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 33);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 31);
+            this.label2.Size = new System.Drawing.Size(84, 31);
             this.label2.TabIndex = 2;
             this.label2.Text = "0.0";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -332,6 +362,9 @@ namespace POS_Sys
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel7.Controls.Add(this.label10);
+            this.panel7.Controls.Add(this.TotalMonthly);
+            this.panel7.Controls.Add(this.label11);
             this.panel7.Controls.Add(this.label7);
             this.panel7.Controls.Add(this.MonthlyProfit2);
             this.panel7.Controls.Add(this.groupBox5);
@@ -344,7 +377,7 @@ namespace POS_Sys
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(23, 84);
+            this.label7.Location = new System.Drawing.Point(23, 112);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(167, 31);
             this.label7.TabIndex = 7;
@@ -353,10 +386,10 @@ namespace POS_Sys
             // 
             // MonthlyProfit2
             // 
-            this.MonthlyProfit2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MonthlyProfit2.Location = new System.Drawing.Point(23, 33);
+            this.MonthlyProfit2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MonthlyProfit2.Location = new System.Drawing.Point(23, 61);
             this.MonthlyProfit2.Name = "MonthlyProfit2";
-            this.MonthlyProfit2.Size = new System.Drawing.Size(167, 31);
+            this.MonthlyProfit2.Size = new System.Drawing.Size(84, 31);
             this.MonthlyProfit2.TabIndex = 3;
             this.MonthlyProfit2.Text = "0.0";
             this.MonthlyProfit2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -384,6 +417,9 @@ namespace POS_Sys
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel8.Controls.Add(this.label12);
+            this.panel8.Controls.Add(this.TotalYearly);
+            this.panel8.Controls.Add(this.label13);
             this.panel8.Controls.Add(this.label8);
             this.panel8.Controls.Add(this.YearlyProfit2);
             this.panel8.Controls.Add(this.groupBox6);
@@ -396,7 +432,7 @@ namespace POS_Sys
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(20, 84);
+            this.label8.Location = new System.Drawing.Point(20, 112);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(167, 31);
             this.label8.TabIndex = 8;
@@ -405,10 +441,10 @@ namespace POS_Sys
             // 
             // YearlyProfit2
             // 
-            this.YearlyProfit2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.YearlyProfit2.Location = new System.Drawing.Point(20, 33);
+            this.YearlyProfit2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YearlyProfit2.Location = new System.Drawing.Point(20, 61);
             this.YearlyProfit2.Name = "YearlyProfit2";
-            this.YearlyProfit2.Size = new System.Drawing.Size(167, 31);
+            this.YearlyProfit2.Size = new System.Drawing.Size(84, 31);
             this.YearlyProfit2.TabIndex = 4;
             this.YearlyProfit2.Text = "0.0";
             this.YearlyProfit2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -432,6 +468,186 @@ namespace POS_Sys
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 2;
             this.pictureBox6.TabStop = false;
+            // 
+            // DailyTotal
+            // 
+            this.DailyTotal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DailyTotal.Location = new System.Drawing.Point(20, 19);
+            this.DailyTotal.Name = "DailyTotal";
+            this.DailyTotal.Size = new System.Drawing.Size(84, 31);
+            this.DailyTotal.TabIndex = 4;
+            this.DailyTotal.Text = "0.0";
+            this.DailyTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // MonthlyTotal
+            // 
+            this.MonthlyTotal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MonthlyTotal.Location = new System.Drawing.Point(23, 19);
+            this.MonthlyTotal.Name = "MonthlyTotal";
+            this.MonthlyTotal.Size = new System.Drawing.Size(84, 31);
+            this.MonthlyTotal.TabIndex = 5;
+            this.MonthlyTotal.Text = "0.0";
+            this.MonthlyTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // YearlyTotal
+            // 
+            this.YearlyTotal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YearlyTotal.Location = new System.Drawing.Point(20, 19);
+            this.YearlyTotal.Name = "YearlyTotal";
+            this.YearlyTotal.Size = new System.Drawing.Size(84, 31);
+            this.YearlyTotal.TabIndex = 6;
+            this.YearlyTotal.Text = "0.0";
+            this.YearlyTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TotalDaily
+            // 
+            this.TotalDaily.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalDaily.Location = new System.Drawing.Point(20, 19);
+            this.TotalDaily.Name = "TotalDaily";
+            this.TotalDaily.Size = new System.Drawing.Size(84, 31);
+            this.TotalDaily.TabIndex = 5;
+            this.TotalDaily.Text = "0.0";
+            this.TotalDaily.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TotalMonthly
+            // 
+            this.TotalMonthly.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalMonthly.Location = new System.Drawing.Point(23, 19);
+            this.TotalMonthly.Name = "TotalMonthly";
+            this.TotalMonthly.Size = new System.Drawing.Size(84, 31);
+            this.TotalMonthly.TabIndex = 10;
+            this.TotalMonthly.Text = "0.0";
+            this.TotalMonthly.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TotalYearly
+            // 
+            this.TotalYearly.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalYearly.Location = new System.Drawing.Point(22, 19);
+            this.TotalYearly.Name = "TotalYearly";
+            this.TotalYearly.Size = new System.Drawing.Size(84, 31);
+            this.TotalYearly.TabIndex = 11;
+            this.TotalYearly.Text = "0.0";
+            this.TotalYearly.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(117, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 31);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "الدخل";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(110, 61);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 31);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "المكسب";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(113, 61);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 31);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "المكسب";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(120, 19);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 31);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "الدخل";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(110, 61);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(77, 31);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "المكسب";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(117, 19);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(70, 31);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "الدخل";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(107, 61);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(77, 31);
+            this.label14.TabIndex = 13;
+            this.label14.Text = "المكسب";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(114, 19);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(70, 31);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "الدخل";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label16
+            // 
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(113, 61);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(77, 31);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "المكسب";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label17
+            // 
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(120, 19);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 31);
+            this.label17.TabIndex = 14;
+            this.label17.Text = "الدخل";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(110, 61);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(77, 31);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "المكسب";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label19
+            // 
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(117, 19);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(70, 31);
+            this.label19.TabIndex = 12;
+            this.label19.Text = "الدخل";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Profit
             // 
@@ -504,5 +720,23 @@ namespace POS_Sys
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label DailyTotal;
+        private System.Windows.Forms.Label MonthlyTotal;
+        private System.Windows.Forms.Label YearlyTotal;
+        private System.Windows.Forms.Label TotalDaily;
+        private System.Windows.Forms.Label TotalMonthly;
+        private System.Windows.Forms.Label TotalYearly;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }

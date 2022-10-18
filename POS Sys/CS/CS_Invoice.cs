@@ -96,6 +96,15 @@ namespace POS_Sys.CS
             
             return Result;
         }
+        public double GetTotalInvoiceTotalForToday()
+        {
+
+            var Result = db.Invoice.Where(x => x.CreatedDate >= DateTime.Today).Sum(x => (double?)x.Total) ?? 0;
+            var AP = db.AdvancePayment.Where(x => x.CreatedDate >= DateTime.Today).Sum(x => (double?)x.Amount) ?? 0;
+            Result -= AP;
+
+            return Result;
+        }
         //public double GetTotalInvoiceSumForThisMonth()
         //{
         //    DateTime d = DateTime.Now;
@@ -112,6 +121,15 @@ namespace POS_Sys.CS
             Result -= AP;
             return Result;
         }
+        public double GetTotalInvoiceTotalForThisMonth()
+        {
+            DateTime d = DateTime.Now;
+            var MonthDate = new DateTime(d.Year, d.Month, 1);
+            var Result = db.Invoice.Where(x => x.CreatedDate >= MonthDate).Sum(x => (double?)x.Total) ?? 0;
+            var AP = db.AdvancePayment.Where(x => x.CreatedDate >= MonthDate).Sum(x => (double?)x.Amount) ?? 0;
+            Result -= AP;
+            return Result;
+        }
         //public double GetTotalInvoiceSumForThisYear()
         //{
         //    DateTime d = DateTime.Now;
@@ -124,6 +142,15 @@ namespace POS_Sys.CS
             DateTime d = DateTime.Now;
             var YearDate = new DateTime(d.Year, 1, 1);
             var Result = db.Invoice.Where(x => x.CreatedDate >= YearDate).Sum(x => (double?)x.TotalProfit)??0;
+            var AP = db.AdvancePayment.Where(x => x.CreatedDate >= YearDate).Sum(x => (double?)x.Amount) ?? 0;
+            Result -= AP;
+            return Result;
+        }
+        public double GetTotalInvoiceTotalForThisYear()
+        {
+            DateTime d = DateTime.Now;
+            var YearDate = new DateTime(d.Year, 1, 1);
+            var Result = db.Invoice.Where(x => x.CreatedDate >= YearDate).Sum(x => (double?)x.Total) ?? 0;
             var AP = db.AdvancePayment.Where(x => x.CreatedDate >= YearDate).Sum(x => (double?)x.Amount) ?? 0;
             Result -= AP;
             return Result;
@@ -145,6 +172,16 @@ namespace POS_Sys.CS
             Result -= AP;
             return Result;
         }
+        public double GetTotalInvoiceTotalForThisMonth(DateTime dt)
+        {
+            dt = dt.Date;
+            dt = new DateTime(dt.Year, dt.Month, 1);
+            var MonthDate = dt.AddMonths(1);
+            var Result = db.Invoice.Where(x => x.CreatedDate >= dt && x.CreatedDate < MonthDate).Sum(x => (double?)x.Total) ?? 0;
+            var AP = db.AdvancePayment.Where(x => x.CreatedDate >= dt && x.CreatedDate < MonthDate).Sum(x => (double?)x.Amount) ?? 0;
+            Result -= AP;
+            return Result;
+        }
         //public double GetTotalInvoiceSumForThisYear(DateTime dt)
         //{
         //    dt = new DateTime(dt.Year, 1, 1);
@@ -162,6 +199,16 @@ namespace POS_Sys.CS
             Result -= AP;
             return Result;
         }
+        public double GetTotalInvoiceTotalForThisYear(DateTime dt)
+        {
+            dt = dt.Date;
+            dt = new DateTime(dt.Year, 1, 1);
+            var MonthDate = dt.AddYears(1);
+            var Result = db.Invoice.Where(x => x.CreatedDate >= dt && x.CreatedDate < MonthDate).Sum(x => (double?)x.Total) ?? 0;
+            var AP = db.AdvancePayment.Where(x => x.CreatedDate >= dt && x.CreatedDate < MonthDate).Sum(x => (double?)x.Amount) ?? 0;
+            Result -= AP;
+            return Result;
+        }
         //public double GetTotalInvoiceSumForToday(DateTime dt)
         //{
         //    var MonthDate = dt.AddDays(1);
@@ -174,6 +221,15 @@ namespace POS_Sys.CS
             var MonthDate = dt.AddDays(1);
             var Result = db.Invoice.Where(x => x.CreatedDate >= dt&&x.CreatedDate<MonthDate).Sum(x => (double?)x.TotalProfit) ?? 0;
             var AP = db.AdvancePayment.Where(x => x.CreatedDate >=dt&&x.CreatedDate<MonthDate).Sum(x => (double?)x.Amount) ?? 0;
+            Result -= AP;
+            return Result;
+        }
+        public double GetTotalInvoiceTotalForToday(DateTime dt)
+        {
+            dt = dt.Date;
+            var MonthDate = dt.AddDays(1);
+            var Result = db.Invoice.Where(x => x.CreatedDate >= dt && x.CreatedDate < MonthDate).Sum(x => (double?)x.Total) ?? 0;
+            var AP = db.AdvancePayment.Where(x => x.CreatedDate >= dt && x.CreatedDate < MonthDate).Sum(x => (double?)x.Amount) ?? 0;
             Result -= AP;
             return Result;
         }
