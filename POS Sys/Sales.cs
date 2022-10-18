@@ -77,6 +77,8 @@ namespace POS_Sys
         private void DisplayProducts()
         {
             dataGridView2.Rows.Clear();
+            p = new Cs_Products();
+            P_List.Clear();
             P_List = p.GetProducts();
             for (int i = 0; i < P_List.Count(); i++)
             {
@@ -506,6 +508,7 @@ namespace POS_Sys
             String CName = dataGridView1.Columns[e.ColumnIndex].Name;
             if (CName == "Remove")
             {
+               // P_List[index].ShopQuantity += Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
                 p_List.RemoveAt(e.RowIndex);
                 dataGridView1.Rows.RemoveAt(e.RowIndex);
                 CalculateTotal();
