@@ -129,6 +129,25 @@ namespace POS_Sys.CS
                 }
             }
         }
+        public void ReadUserS(int user_ID)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var ro = from U in db.User
+                         from R in db.Role
+                         where U.Role.Id == R.Id && U.Id == user_ID
+                         select new
+                         {
+                             n = U.Name,
+                             r = R.Name
+                         };
+                foreach (var obj in ro)
+                {
+                    Name = obj.n;
+                    Role = obj.r;
+                }
+            }
+        }
         public void ReadUser(int userId)
         {
             using (DatabaseContext db = new DatabaseContext())

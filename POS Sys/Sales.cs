@@ -50,6 +50,7 @@ namespace POS_Sys
             p = new Cs_Products();
             Cs_Category = new Cs_Category();
             DisplayProducts();
+            Suggest();
             sum = 0;
             cs_Products = new Cs_Products();
             CatList = new List<Category>();
@@ -80,10 +81,15 @@ namespace POS_Sys
             p = new Cs_Products();
             P_List.Clear();
             P_List = p.GetProducts();
+            //SearchTxt.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            //SearchTxt.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
             for (int i = 0; i < P_List.Count(); i++)
             {
                 dataGridView2.Rows.Add(i + 1, P_List[i].Name, Cs_Category.GetCategory(P_List[i].CategoryId).Name, P_List[i].SellingPrice, P_List[i].ShopQuantity);
+                //coll.Add (P_List[i].Name);
             }
+            //SearchTxt.AutoCompleteCustomSource = coll;
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -117,7 +123,7 @@ namespace POS_Sys
 
         private void SearchTxt_TextChanged(object sender, EventArgs e)
         {
-
+            //Suggest();
             string searchValue = SearchTxt.Text;
 
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -156,8 +162,8 @@ namespace POS_Sys
             this.Hide();
             login.ShowDialog();
             this.Close();
-        }
-
+        }        
+        
         private void NInvoiceBtn_Click(object sender, EventArgs e)
         {
             Invoice = new Invoice();
@@ -299,6 +305,56 @@ namespace POS_Sys
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+        // a function that gets SearchTxt to suggest resluts based on the list of items contained in P_List and remove all other results from the datagaridview
+        //private void SearchTxt_TextChanged(object sender, EventArgs e)
+        //{
+        //    if (SearchTxt.Text != "")
+        //    {
+        //        List<Products> searchList = new List<Products>();
+        //        foreach (Products p in P_List)
+        //        {
+        //            if (p.Name.Contains(SearchTxt.Text))
+        //            {
+        //                searchList.Add(p);
+        //            }
+        //        }
+        //        dataGridView2.DataSource = searchList;
+        //    }
+        //    else
+        //    {
+        //        dataGridView2.DataSource = P_List;
+        //    }
+        //}
+
+
+        public void Suggest()
+        {
+            {
+                SearchTxt.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                SearchTxt.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
+                foreach (Products p in P_List)
+                {
+                    coll.Add(p.Name);
+                }
+                SearchTxt.AutoCompleteCustomSource = coll;
+
+            }
+        }
+        
+        // create a function the displays the items in P_List in the datagridview using paging
+        //public void Display(int index)
+        //{
+        //    dataGridView2.Rows.Clear();
+        //    for (int i = index; i < index + 10; i++)
+        //    {
+        //        if (i < P_List.Count)
+        //        {
+        //            dataGridView2.Rows.Add(P_List[i].Name, P_List[i].SellingPrice, P_List[i].ShopQuantity);
+        //        }
+        //    }
+        //}
+
 
         private void PayAndPrintBtn_Click(object sender, EventArgs e)
         {
@@ -601,6 +657,9 @@ namespace POS_Sys
 
         private void Sales_FormClosing(object sender, FormClosingEventArgs e)
         {
+            user.ReadUserS(CashierId);
+            if (user.getRole() == "Admin" || user.getRole() == "Supervisor")
+                return;
             user.AddLogout(CashierId);
             TimeSpan target = TimeSpan.Parse("21:00");   // 9 PM
             TimeSpan now = DateTime.Now.TimeOfDay;

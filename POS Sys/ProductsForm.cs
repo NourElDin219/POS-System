@@ -106,6 +106,7 @@ namespace POS_Sys
             ResetFilterBtn.PerformClick();
             table.Columns.Clear();
             table.Rows.Clear();
+            p = new Cs_Products();
             P_List = p.GetProducts();
             table.Columns.Add("#", typeof(int));
             table.Columns.Add("اسم المنتج", typeof(string));
@@ -114,13 +115,17 @@ namespace POS_Sys
             table.Columns.Add("الكمية فى المتجر", typeof(int));
             table.Columns.Add("الكمية فى المخزن", typeof(int));
             table.Columns.Add("سعر الشراء", typeof(double));
+            SearchTxt.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            SearchTxt.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
             for (int i = 0; i < P_List.Count(); i++)
             {
                 table.Rows.Add(i+1,P_List[i].Name, cs_Category.GetCategorys(P_List[i].Name), P_List[i].SellingPrice, P_List[i].ShopQuantity, P_List[i].InvQuantity, P_List[i].PurchasingPrice);
+                coll.Add(P_List[i].Name);
             }
             dataGridView1.DataSource = table;
+            SearchTxt.AutoCompleteCustomSource = coll;
 
-            
         }
         private void ApplyGridViewFilters()
         {
