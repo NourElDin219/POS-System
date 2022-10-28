@@ -309,6 +309,7 @@ namespace POS_Sys
                     if (row.Cells[1].Value.ToString().Contains(searchValue))
                     {
                         row.Selected = true;
+                        dataGridView1.FirstDisplayedScrollingRowIndex = row.Index;
                         break;
                     }
                 }

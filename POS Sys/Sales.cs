@@ -134,6 +134,7 @@ namespace POS_Sys
                     if (row.Cells[1].Value.ToString().Contains(searchValue))
                     {
                         row.Selected = true;
+                        dataGridView2.FirstDisplayedScrollingRowIndex = row.Index;
                         break;
                     }
                 }
@@ -305,26 +306,6 @@ namespace POS_Sys
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
-        // a function that gets SearchTxt to suggest resluts based on the list of items contained in P_List and remove all other results from the datagaridview
-        //private void SearchTxt_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (SearchTxt.Text != "")
-        //    {
-        //        List<Products> searchList = new List<Products>();
-        //        foreach (Products p in P_List)
-        //        {
-        //            if (p.Name.Contains(SearchTxt.Text))
-        //            {
-        //                searchList.Add(p);
-        //            }
-        //        }
-        //        dataGridView2.DataSource = searchList;
-        //    }
-        //    else
-        //    {
-        //        dataGridView2.DataSource = P_List;
-        //    }
-        //}
 
 
         public void Suggest()
@@ -342,18 +323,6 @@ namespace POS_Sys
             }
         }
         
-        // create a function the displays the items in P_List in the datagridview using paging
-        //public void Display(int index)
-        //{
-        //    dataGridView2.Rows.Clear();
-        //    for (int i = index; i < index + 10; i++)
-        //    {
-        //        if (i < P_List.Count)
-        //        {
-        //            dataGridView2.Rows.Add(P_List[i].Name, P_List[i].SellingPrice, P_List[i].ShopQuantity);
-        //        }
-        //    }
-        //}
 
 
         private void PayAndPrintBtn_Click(object sender, EventArgs e)
@@ -469,7 +438,11 @@ namespace POS_Sys
         {
             if (comboBox2.SelectedIndex == -1)
             {
-                SetAllRowsVisible(dataGridView2, true);
+                dataGridView2.Rows.Clear();
+                for (int i = 0; i < P_List.Count; i++)
+                {
+                    dataGridView2.Rows.Add(i + 1, P_List[i].Name, Cs_Category.GetCategory(P_List[i].CategoryId).Name, P_List[i].SellingPrice, P_List[i].ShopQuantity);
+                }
             }
             else
             {
@@ -483,12 +456,15 @@ namespace POS_Sys
 
         private void FilterGridviewByEmpId(string category)
         {
-            SetAllRowsVisible(dataGridView2, true);
-            foreach (DataGridViewRow row in dataGridView2.Rows)
+            dataGridView2.Rows.Clear();
+            for (int i = 0; i < P_List.Count; i++)
             {
-                if (!row.Cells[2].Value.Equals(category))
                 {
-                    row.Visible = false;
+                    if (Cs_Category.GetCategory(P_List[i].CategoryId).Name.Equals(category))
+                    {
+                        dataGridView2.Rows.Add(i + 1, P_List[i].Name, Cs_Category.GetCategory(P_List[i].CategoryId).Name, P_List[i].SellingPrice, P_List[i].ShopQuantity);
+                    }
+
                 }
             }
         }
@@ -581,7 +557,7 @@ namespace POS_Sys
                 qform = new Qform();
                 qform.ShowDialog();
                 int qtity = qform.GetQuantity();
-                int q = Convert.ToInt32(dataGridView2.Rows[index].Cells[4].Value);
+                int q = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[4].Value);
             here: if (qtity > 0)
                 {
                     if (q >= qtity)
@@ -601,7 +577,7 @@ namespace POS_Sys
                         MessageBox.Show("المنتج موجود بالعربة مسبقا");
                         return;
                     }
-                    dataGridView1.Rows.Add(0, dataGridView2.Rows[index].Cells[1].Value, dataGridView2.Rows[index].Cells[3].Value, qtity, (Convert.ToDouble(qtity) * Convert.ToDouble(dataGridView2.Rows[index].Cells[3].Value)));
+                    dataGridView1.Rows.Add(0, dataGridView2.Rows[e.RowIndex].Cells[1].Value, dataGridView2.Rows[e.RowIndex].Cells[3].Value, qtity, (Convert.ToDouble(qtity) * Convert.ToDouble(dataGridView2.Rows[e.RowIndex].Cells[3].Value)));
 
                     P_List[index].ShopQuantity -= qtity;
                     p_List.Add(P_List[index]);
@@ -621,7 +597,7 @@ namespace POS_Sys
             qform = new Qform();
             qform.ShowDialog();
             int qtity = qform.GetQuantity();
-            int q = Convert.ToInt32(dataGridView2.Rows[index].Cells[4].Value);
+            int q = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[4].Value);
         here: if (qtity > 0)
             {
                 if (q >= qtity)
@@ -641,7 +617,7 @@ namespace POS_Sys
                     MessageBox.Show("المنتج موجود بالعربة مسبقا");
                     return;
                 }
-                dataGridView1.Rows.Add(0, dataGridView2.Rows[index].Cells[1].Value, dataGridView2.Rows[index].Cells[3].Value, qtity, (Convert.ToDouble(qtity) * Convert.ToDouble(dataGridView2.Rows[index].Cells[3].Value)));
+                dataGridView1.Rows.Add(0, dataGridView2.Rows[e.RowIndex].Cells[1].Value, dataGridView2.Rows[e.RowIndex].Cells[3].Value, qtity, (Convert.ToDouble(qtity) * Convert.ToDouble(dataGridView2.Rows[e.RowIndex].Cells[3].Value)));
 
                 P_List[index].ShopQuantity -= qtity;
                 p_List.Add(P_List[index]);
